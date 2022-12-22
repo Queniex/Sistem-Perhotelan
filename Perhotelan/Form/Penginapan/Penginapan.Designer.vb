@@ -29,7 +29,7 @@ Partial Class Penginapan
         Me.DataGridViewPenginapan = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PbUser = New System.Windows.Forms.PictureBox()
         Me.LblEmail = New System.Windows.Forms.Label()
         Me.LblUser = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -49,7 +49,7 @@ Partial Class Penginapan
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.DataGridViewPenginapan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PbUser, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,7 +98,7 @@ Partial Class Penginapan
         '
         Me.Panel1.BackColor = System.Drawing.Color.Black
         Me.Panel1.Controls.Add(Me.Label14)
-        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.PbUser)
         Me.Panel1.Controls.Add(Me.LblEmail)
         Me.Panel1.Controls.Add(Me.LblUser)
         Me.Panel1.Controls.Add(Me.Label4)
@@ -122,16 +122,16 @@ Partial Class Penginapan
         Me.Label14.TabIndex = 107
         Me.Label14.Text = "HOTEL AYO'S"
         '
-        'PictureBox2
+        'PbUser
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.White
-        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(599, 7)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(78, 69)
-        Me.PictureBox2.TabIndex = 36
-        Me.PictureBox2.TabStop = False
+        Me.PbUser.BackColor = System.Drawing.Color.White
+        Me.PbUser.BackgroundImage = CType(resources.GetObject("PbUser.BackgroundImage"), System.Drawing.Image)
+        Me.PbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PbUser.Location = New System.Drawing.Point(599, 7)
+        Me.PbUser.Name = "PbUser"
+        Me.PbUser.Size = New System.Drawing.Size(78, 69)
+        Me.PbUser.TabIndex = 36
+        Me.PbUser.TabStop = False
         '
         'LblEmail
         '
@@ -139,7 +139,7 @@ Partial Class Penginapan
         Me.LblEmail.BackColor = System.Drawing.Color.Transparent
         Me.LblEmail.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LblEmail.ForeColor = System.Drawing.Color.White
-        Me.LblEmail.Location = New System.Drawing.Point(443, 35)
+        Me.LblEmail.Location = New System.Drawing.Point(455, 39)
         Me.LblEmail.Name = "LblEmail"
         Me.LblEmail.Size = New System.Drawing.Size(138, 21)
         Me.LblEmail.TabIndex = 35
@@ -150,7 +150,7 @@ Partial Class Penginapan
         Me.LblUser.AutoSize = True
         Me.LblUser.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LblUser.ForeColor = System.Drawing.Color.White
-        Me.LblUser.Location = New System.Drawing.Point(543, 16)
+        Me.LblUser.Location = New System.Drawing.Point(500, 20)
         Me.LblUser.Name = "LblUser"
         Me.LblUser.Size = New System.Drawing.Size(44, 21)
         Me.LblUser.TabIndex = 34
@@ -161,7 +161,7 @@ Partial Class Penginapan
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(493, 16)
+        Me.Label4.Location = New System.Drawing.Point(455, 20)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 21)
         Me.Label4.TabIndex = 33
@@ -307,7 +307,7 @@ Partial Class Penginapan
         CType(Me.DataGridViewPenginapan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PbUser, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
@@ -323,7 +323,7 @@ Partial Class Penginapan
     Friend WithEvents DataGridViewPenginapan As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label14 As Label
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PbUser As PictureBox
     Friend WithEvents LblEmail As Label
     Friend WithEvents LblUser As Label
     Friend WithEvents Label4 As Label

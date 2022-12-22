@@ -1,14 +1,23 @@
-﻿Public Class Penginapan
+﻿Imports Microsoft.VisualBasic.ApplicationServices
 
-    Public Sub New()
+Public Class Penginapan
+
+    Public Sub New(ByVal Username As String, ByVal Email As String)
 
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
         LblTgl.Text = DateTime.Now.ToString("dd/MM/yyyy")
-    End Sub
+        Dim usn As String = Username
+        LblUser.Text = usn.ToUpper()
+        LblEmail.Text = Email
 
+        If Not String.IsNullOrEmpty(Login.Users.GSFoto) Then
+            PbUser.Load(Login.Users.GSFoto)
+            PbUser.SizeMode = PictureBoxSizeMode.StretchImage
+        End If
+    End Sub
 
     Private Sub BtnLogout_Click(sender As Object, e As EventArgs) Handles BtnLogout.Click
         Me.Close()

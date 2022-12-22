@@ -35,10 +35,10 @@ Public Class Login
 
         If count > 0 Then
             Users.GSFoto = chk(4)
-            'Dim test As New test(chk(1), chk(3))
-            'test.Show()
+            Dim main As New Penginapan(chk(1), chk(3))
+            main.Show()
             Me.Hide()
-            Penginapan.Show()
+            'Penginapan.Show()
         Else
             MessageBox.Show("Wrong Password/Username")
         End If
