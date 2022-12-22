@@ -65,4 +65,44 @@ Public Class Users
 
         Return Convert.ToBase64String(ms.ToArray)
     End Function
+
+    Public Function CheckUsn(ByVal username As String, ByVal email As String)
+
+        Dim a As Boolean
+
+        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            DbConn.Open()
+            sqlQuery = "SELECT Username, Email FROM user WHERE Username = '" & username & "' OR Email = '" & email & "'"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, DbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                If sqlRead.Read Then
+                    a = True
+                Else
+                    a = False
+                End If
+
+                Return a
+            Catch ex As Exception
+                MsgBox("Problem loading data: " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection Error: " & ex.Message.ToString)
+        End Try
+
+    End Function
+
+    Public Function EncryptMD5(ByVal password As String)
+        Dim x As New System.Security.Cryptography.MD5CryptoServiceProvider()
+        Dim bs As Byte() = System.Text.Encoding.UTF8.GetBytes(password)
+        bs = x.ComputeHash(bs)
+        Dim s As New System.Text.StringBuilder()
+        For Each b As Byte In bs
+            s.Append(b.ToString("x2").ToLower())
+        Next
+        Return s.ToString()
+    End Function
 End Class
