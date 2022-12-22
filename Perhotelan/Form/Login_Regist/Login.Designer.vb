@@ -79,7 +79,7 @@ Partial Class Login
         '
         Me.ChkShow.AutoSize = True
         Me.ChkShow.ForeColor = System.Drawing.Color.White
-        Me.ChkShow.Location = New System.Drawing.Point(326, 224)
+        Me.ChkShow.Location = New System.Drawing.Point(328, 237)
         Me.ChkShow.Name = "ChkShow"
         Me.ChkShow.Size = New System.Drawing.Size(108, 19)
         Me.ChkShow.TabIndex = 124
@@ -90,7 +90,7 @@ Partial Class Login
         '
         Me.LblRegistrasi.AutoSize = True
         Me.LblRegistrasi.LinkColor = System.Drawing.Color.LightGray
-        Me.LblRegistrasi.Location = New System.Drawing.Point(326, 252)
+        Me.LblRegistrasi.Location = New System.Drawing.Point(326, 262)
         Me.LblRegistrasi.Name = "LblRegistrasi"
         Me.LblRegistrasi.Size = New System.Drawing.Size(184, 15)
         Me.LblRegistrasi.TabIndex = 123
@@ -99,10 +99,11 @@ Partial Class Login
         '
         'BtnSignIn
         '
-        Me.BtnSignIn.BackColor = System.Drawing.Color.Black
+        Me.BtnSignIn.BackColor = System.Drawing.Color.Transparent
         Me.BtnSignIn.FlatAppearance.BorderColor = System.Drawing.Color.Gray
-        Me.BtnSignIn.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnSignIn.Location = New System.Drawing.Point(326, 270)
+        Me.BtnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnSignIn.ForeColor = System.Drawing.Color.White
+        Me.BtnSignIn.Location = New System.Drawing.Point(325, 286)
         Me.BtnSignIn.Name = "BtnSignIn"
         Me.BtnSignIn.Size = New System.Drawing.Size(229, 27)
         Me.BtnSignIn.TabIndex = 122
@@ -115,7 +116,7 @@ Partial Class Login
         Me.Label3.BackColor = System.Drawing.Color.Black
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Variable Display", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(326, 176)
+        Me.Label3.Location = New System.Drawing.Point(329, 181)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 16)
         Me.Label3.TabIndex = 121
@@ -127,7 +128,7 @@ Partial Class Login
         Me.Label2.BackColor = System.Drawing.Color.Black
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Variable Display", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(327, 132)
+        Me.Label2.Location = New System.Drawing.Point(330, 127)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(59, 16)
         Me.Label2.TabIndex = 120
@@ -138,7 +139,7 @@ Partial Class Login
         Me.TxtPassword.BackColor = System.Drawing.Color.White
         Me.TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtPassword.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TxtPassword.Location = New System.Drawing.Point(326, 194)
+        Me.TxtPassword.Location = New System.Drawing.Point(326, 202)
         Me.TxtPassword.Name = "TxtPassword"
         Me.TxtPassword.Size = New System.Drawing.Size(230, 29)
         Me.TxtPassword.TabIndex = 119
@@ -171,7 +172,7 @@ Partial Class Login
         Me.PictureBox2.Location = New System.Drawing.Point(287, 71)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(301, 253)
+        Me.PictureBox2.Size = New System.Drawing.Size(301, 270)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 125
         Me.PictureBox2.TabStop = False
@@ -181,7 +182,7 @@ Partial Class Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(597, 334)
+        Me.ClientSize = New System.Drawing.Size(597, 352)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Label1)

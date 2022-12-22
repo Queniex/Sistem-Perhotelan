@@ -38,6 +38,7 @@ Public Class Login
             'Dim test As New test(chk(1), chk(3))
             'test.Show()
             Me.Hide()
+            Penginapan.Show()
         Else
             MessageBox.Show("Wrong Password/Username")
         End If

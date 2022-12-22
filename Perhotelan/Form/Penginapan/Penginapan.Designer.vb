@@ -26,7 +26,6 @@ Partial Class Penginapan
         Me.BtnBooking = New System.Windows.Forms.Button()
         Me.BtnLogout = New System.Windows.Forms.Button()
         Me.DataGridViewPenginapan = New System.Windows.Forms.DataGridView()
-        Me.No = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -44,12 +43,14 @@ Partial Class Penginapan
         Me.FormTamu = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormBukuTamu = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.DataGridViewPenginapan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnBooking
@@ -57,7 +58,7 @@ Partial Class Penginapan
         Me.BtnBooking.BackColor = System.Drawing.Color.Black
         Me.BtnBooking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnBooking.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnBooking.Location = New System.Drawing.Point(11, 173)
+        Me.BtnBooking.Location = New System.Drawing.Point(11, 166)
         Me.BtnBooking.Name = "BtnBooking"
         Me.BtnBooking.Size = New System.Drawing.Size(91, 29)
         Me.BtnBooking.TabIndex = 106
@@ -70,7 +71,7 @@ Partial Class Penginapan
         Me.BtnLogout.BackColor = System.Drawing.Color.Black
         Me.BtnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnLogout.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnLogout.Location = New System.Drawing.Point(108, 173)
+        Me.BtnLogout.Location = New System.Drawing.Point(108, 166)
         Me.BtnLogout.Name = "BtnLogout"
         Me.BtnLogout.Size = New System.Drawing.Size(91, 29)
         Me.BtnLogout.TabIndex = 108
@@ -82,21 +83,13 @@ Partial Class Penginapan
         '
         Me.DataGridViewPenginapan.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGridViewPenginapan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewPenginapan.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.No})
         Me.DataGridViewPenginapan.GridColor = System.Drawing.Color.Black
-        Me.DataGridViewPenginapan.Location = New System.Drawing.Point(8, 208)
+        Me.DataGridViewPenginapan.Location = New System.Drawing.Point(8, 321)
         Me.DataGridViewPenginapan.Name = "DataGridViewPenginapan"
         Me.DataGridViewPenginapan.RowHeadersWidth = 62
         Me.DataGridViewPenginapan.RowTemplate.Height = 25
-        Me.DataGridViewPenginapan.Size = New System.Drawing.Size(684, 193)
+        Me.DataGridViewPenginapan.Size = New System.Drawing.Size(684, 80)
         Me.DataGridViewPenginapan.TabIndex = 107
-        '
-        'No
-        '
-        Me.No.HeaderText = "No"
-        Me.No.MinimumWidth = 8
-        Me.No.Name = "No"
-        Me.No.Width = 150
         '
         'Panel1
         '
@@ -108,7 +101,7 @@ Partial Class Penginapan
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Location = New System.Drawing.Point(8, 67)
+        Me.Panel1.Location = New System.Drawing.Point(8, 59)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(685, 83)
         Me.Panel1.TabIndex = 109
@@ -116,9 +109,10 @@ Partial Class Penginapan
         'Label14
         '
         Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Papyrus", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(100, 16)
+        Me.Label14.Location = New System.Drawing.Point(100, 12)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(245, 38)
@@ -130,9 +124,9 @@ Partial Class Penginapan
         Me.PictureBox2.BackColor = System.Drawing.Color.White
         Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(600, 0)
+        Me.PictureBox2.Location = New System.Drawing.Point(599, 7)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(84, 82)
+        Me.PictureBox2.Size = New System.Drawing.Size(78, 69)
         Me.PictureBox2.TabIndex = 36
         Me.PictureBox2.TabStop = False
         '
@@ -176,7 +170,7 @@ Partial Class Penginapan
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(100, 50)
+        Me.Label1.Location = New System.Drawing.Point(105, 50)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(161, 21)
         Me.Label1.TabIndex = 1
@@ -197,7 +191,7 @@ Partial Class Penginapan
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(614, 187)
+        Me.Label3.Location = New System.Drawing.Point(614, 180)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(65, 15)
         Me.Label3.TabIndex = 112
@@ -207,7 +201,7 @@ Partial Class Penginapan
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(636, 169)
+        Me.Label2.Location = New System.Drawing.Point(636, 162)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 15)
         Me.Label2.TabIndex = 111
@@ -215,13 +209,13 @@ Partial Class Penginapan
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(13, 13)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripBtnPenginapan})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStrip1.Size = New System.Drawing.Size(702, 31)
-        Me.ToolStrip1.TabIndex = 110
+        Me.ToolStrip1.Size = New System.Drawing.Size(702, 25)
+        Me.ToolStrip1.TabIndex = 90
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripBtnPenginapan
@@ -231,7 +225,7 @@ Partial Class Penginapan
         Me.ToolStripBtnPenginapan.Image = CType(resources.GetObject("ToolStripBtnPenginapan.Image"), System.Drawing.Image)
         Me.ToolStripBtnPenginapan.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripBtnPenginapan.Name = "ToolStripBtnPenginapan"
-        Me.ToolStripBtnPenginapan.Size = New System.Drawing.Size(37, 28)
+        Me.ToolStripBtnPenginapan.Size = New System.Drawing.Size(26, 22)
         Me.ToolStripBtnPenginapan.Text = "ToolStripDropDownButton1"
         '
         'FormJenisKamar
@@ -265,13 +259,25 @@ Partial Class Penginapan
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(11, 42)
+        Me.PictureBox3.Location = New System.Drawing.Point(11, 36)
         Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(680, 119)
+        Me.PictureBox3.Size = New System.Drawing.Size(680, 117)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 113
         Me.PictureBox3.TabStop = False
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.GridColor = System.Drawing.Color.Black
+        Me.DataGridView1.Location = New System.Drawing.Point(7, 202)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 62
+        Me.DataGridView1.RowTemplate.Height = 25
+        Me.DataGridView1.Size = New System.Drawing.Size(684, 98)
+        Me.DataGridView1.TabIndex = 114
         '
         'Penginapan
         '
@@ -279,6 +285,7 @@ Partial Class Penginapan
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(702, 408)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.BtnBooking)
         Me.Controls.Add(Me.BtnLogout)
         Me.Controls.Add(Me.DataGridViewPenginapan)
@@ -297,6 +304,7 @@ Partial Class Penginapan
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -305,7 +313,6 @@ Partial Class Penginapan
     Friend WithEvents BtnBooking As Button
     Friend WithEvents BtnLogout As Button
     Friend WithEvents DataGridViewPenginapan As DataGridView
-    Friend WithEvents No As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label14 As Label
     Friend WithEvents PictureBox2 As PictureBox
@@ -323,4 +330,5 @@ Partial Class Penginapan
     Friend WithEvents FormTamu As ToolStripMenuItem
     Friend WithEvents FormBukuTamu As ToolStripMenuItem
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

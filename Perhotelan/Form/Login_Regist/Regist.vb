@@ -58,6 +58,11 @@ Public Class Regist
         Return Convert.ToBase64String(ms.ToArray)
     End Function
 
+    Private Sub LblLogin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
+        Me.Close()
+        Login.Show()
+    End Sub
+
     Private Sub BtnSignUp_Click(sender As Object, e As EventArgs) Handles BtnSignUp.Click
         If TxtPassword2.Text.Length = 0 Then
             TxtPassword2.Select()
@@ -80,6 +85,7 @@ Public Class Regist
                                             Login.Users.GSEmail,
                                             Login.Users.GSFoto)
                     Me.Close()
+                    Login.Show()
                 End If
             End If
         End If
