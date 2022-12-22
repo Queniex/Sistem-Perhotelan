@@ -39,6 +39,7 @@ Partial Class Regist
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LblLogin = New System.Windows.Forms.LinkLabel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -220,6 +221,10 @@ Partial Class Regist
         Me.PictureBox2.TabIndex = 119
         Me.PictureBox2.TabStop = False
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'Regist
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -268,4 +273,5 @@ Partial Class Regist
     Friend WithEvents Label1 As Label
     Friend WithEvents LblLogin As LinkLabel
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class
