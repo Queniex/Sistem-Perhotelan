@@ -92,7 +92,6 @@ Public Class Users
         Catch ex As Exception
             MsgBox("Connection Error: " & ex.Message.ToString)
         End Try
-
     End Function
 
     Public Function EncryptMD5(ByVal password As String)
@@ -104,5 +103,56 @@ Public Class Users
             s.Append(b.ToString("x2").ToLower())
         Next
         Return s.ToString()
+    End Function
+
+    Public Function AddKoleksiUser(
+                                    Username As String,
+                                    Password As String,
+                                    Email As String,
+                                    Foto As String
+                                    )
+
+        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            DbConn.Open()
+            sqlQuery = "INSERT INTO user(Id_User, Username, Pass, Email, Foto) VALUES ('','" & Username & "','" _
+                                        & EncryptMD5(Password) & "','" & Email & "','" & Foto & "')"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, DbConn)
+                sqlRead = sqlCommand.ExecuteReader()
+                sqlRead.Close()
+                MsgBox("Data inserted.")
+            Catch ex As Exception
+                MsgBox("Failed to insert data: " & ex.Message.ToString())
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection Error: " & ex.Message.ToString)
+        End Try
+    End Function
+
+    Public Function GetDataUser()
+        Dim result As New ArrayList
+
+        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            DbConn.Open()
+            sqlQuery = "SELECT Username, Pass, Email, Foto FROM user"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, DbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add({sqlRead.GetString(0), sqlRead.GetString(1), sqlRead.GetString(2), sqlRead.GetString(3)})
+                End While
+
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem loading data: " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection Error: " & ex.Message.ToString)
+        End Try
     End Function
 End Class
