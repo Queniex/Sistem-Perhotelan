@@ -70,7 +70,7 @@ Public Class Users
 
         Dim a As Boolean
 
-        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
         Try
             DbConn.Open()
             sqlQuery = "SELECT Username, Email FROM user WHERE Username = '" & username & "' OR Email = '" & email & "'"
@@ -112,7 +112,7 @@ Public Class Users
                                     Foto As String
                                     )
 
-        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
         Try
             DbConn.Open()
             sqlQuery = "INSERT INTO user(Id_User, Username, Pass, Email, Foto) VALUES ('','" & Username & "','" _
@@ -134,7 +134,7 @@ Public Class Users
     Public Function GetDataUser()
         Dim result As New ArrayList
 
-        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
         Try
             DbConn.Open()
             sqlQuery = "SELECT Username, Pass, Email, Foto FROM user"
@@ -162,7 +162,7 @@ Public Class Users
                                 )
         Dim result As New ArrayList
 
-        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
         Try
             DbConn.Open()
             sqlQuery = "SELECT Id_User, Username, Pass, Email, Foto FROM user WHERE Username = '" & Username & "' "
@@ -189,7 +189,7 @@ Public Class Users
 
         Dim result As New List(Of String)
 
-        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
         Try
             DbConn.Open()
             sqlQuery = "SELECT Id_User, Username, Pass, Email, Foto FROM user WHERE Username = '" & username & "' "
