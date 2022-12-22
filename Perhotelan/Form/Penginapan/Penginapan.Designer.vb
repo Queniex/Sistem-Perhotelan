@@ -44,6 +44,7 @@ Partial Class Penginapan
         Me.FormBukuTamu = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.DataGridViewPenginapan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -279,6 +280,10 @@ Partial Class Penginapan
         Me.DataGridView1.Size = New System.Drawing.Size(684, 98)
         Me.DataGridView1.TabIndex = 114
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'Penginapan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -331,4 +336,5 @@ Partial Class Penginapan
     Friend WithEvents FormBukuTamu As ToolStripMenuItem
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

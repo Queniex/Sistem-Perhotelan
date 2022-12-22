@@ -15,11 +15,11 @@ Public Class Regist
         Login.Users.GSFoto = Login.Users.GSFoto.Replace("\", "/")
     End Sub
 
-    'Private Sub BtnPre_Click(sender As Object, e As EventArgs) Handles BtnPre.Click
-    '    'Munculkan preview gambar using custom message box
-    '    Dim pre As New Preview()
-    '    pre.ShowDialog()
-    'End Sub
+    Private Sub BtnPre_Click(sender As Object, e As EventArgs) Handles BtnPre.Click
+        'Munculkan preview gambar using custom message box
+        Dim pre As New preview()
+        pre.ShowDialog()
+    End Sub
 
     Private Sub TxtUsernsme2_Leave(sender As Object, e As EventArgs) Handles TxtUsernsme2.Leave
         If TxtUsernsme2.Text.Length < 1 Then
