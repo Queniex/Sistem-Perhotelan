@@ -22,6 +22,7 @@ Partial Class Penginapan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Penginapan))
         Me.BtnBooking = New System.Windows.Forms.Button()
         Me.BtnLogout = New System.Windows.Forms.Button()
@@ -34,8 +35,8 @@ Partial Class Penginapan
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LblTgl = New System.Windows.Forms.Label()
+        Me.LblJam = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripBtnPenginapan = New System.Windows.Forms.ToolStripDropDownButton()
         Me.FormJenisKamar = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,6 +46,7 @@ Partial Class Penginapan
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.DataGridViewPenginapan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,25 +190,23 @@ Partial Class Penginapan
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'Label3
+        'LblTgl
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(614, 180)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 15)
-        Me.Label3.TabIndex = 112
-        Me.Label3.Text = "15/12/2022"
+        Me.LblTgl.ForeColor = System.Drawing.Color.White
+        Me.LblTgl.Location = New System.Drawing.Point(610, 178)
+        Me.LblTgl.Name = "LblTgl"
+        Me.LblTgl.Size = New System.Drawing.Size(78, 15)
+        Me.LblTgl.TabIndex = 112
+        Me.LblTgl.Text = "15/12/2022"
         '
-        'Label2
+        'LblJam
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(636, 162)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 15)
-        Me.Label2.TabIndex = 111
-        Me.Label2.Text = "13 : 40 "
+        Me.LblJam.ForeColor = System.Drawing.Color.White
+        Me.LblJam.Location = New System.Drawing.Point(610, 162)
+        Me.LblJam.Name = "LblJam"
+        Me.LblJam.Size = New System.Drawing.Size(78, 15)
+        Me.LblJam.TabIndex = 111
+        Me.LblJam.Text = "01:23:40 AM"
         '
         'ToolStrip1
         '
@@ -284,6 +284,9 @@ Partial Class Penginapan
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'Timer1
+        '
+        '
         'Penginapan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -295,8 +298,8 @@ Partial Class Penginapan
         Me.Controls.Add(Me.BtnLogout)
         Me.Controls.Add(Me.DataGridViewPenginapan)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.LblTgl)
+        Me.Controls.Add(Me.LblJam)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.PictureBox3)
         Me.Name = "Penginapan"
@@ -326,8 +329,8 @@ Partial Class Penginapan
     Friend WithEvents Label4 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LblTgl As Label
+    Friend WithEvents LblJam As Label
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripBtnPenginapan As ToolStripDropDownButton
     Friend WithEvents FormJenisKamar As ToolStripMenuItem
@@ -337,4 +340,5 @@ Partial Class Penginapan
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Timer1 As Timer
 End Class
