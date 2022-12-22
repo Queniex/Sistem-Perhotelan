@@ -26,4 +26,36 @@ Public Class Login
             TxtPassword.UseSystemPasswordChar = True
         End If
     End Sub
+
+    Private Sub BtnSignIn_Click(sender As Object, e As EventArgs) Handles BtnSignIn.Click
+        Dim plainUsername As String = TxtUsername.Text
+        Dim plainPassword As String = TxtPassword.Text
+        Dim chk = Users.CheckAuth(plainUsername, plainPassword)
+        Dim count = chk.Count
+
+        If count > 0 Then
+            Users.GSFoto = chk(4)
+            'Dim test As New test(chk(1), chk(3))
+            'test.Show()
+            Me.Hide()
+        Else
+            MessageBox.Show("Wrong Password/Username")
+        End If
+    End Sub
+
+    Public Function EncryptData(ByVal plaintext As String)
+
+        Dim plaintextBytes() As Byte =
+            System.Text.Encoding.Unicode.GetBytes(plaintext)
+
+        Dim ms As New System.IO.MemoryStream
+        Dim encStream As New CryptoStream(ms,
+            TripleDes.CreateEncryptor(),
+            System.Security.Cryptography.CryptoStreamMode.Write)
+
+        encStream.Write(plaintextBytes, 0, plaintextBytes.Length)
+        encStream.FlushFinalBlock()
+
+        Return Convert.ToBase64String(ms.ToArray)
+    End Function
 End Class
