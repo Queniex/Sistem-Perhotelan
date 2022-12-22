@@ -127,9 +127,9 @@ Partial Class Penginapan
         Me.PbUser.BackColor = System.Drawing.Color.White
         Me.PbUser.BackgroundImage = CType(resources.GetObject("PbUser.BackgroundImage"), System.Drawing.Image)
         Me.PbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PbUser.Location = New System.Drawing.Point(599, 7)
+        Me.PbUser.Location = New System.Drawing.Point(617, 14)
         Me.PbUser.Name = "PbUser"
-        Me.PbUser.Size = New System.Drawing.Size(78, 69)
+        Me.PbUser.Size = New System.Drawing.Size(55, 53)
         Me.PbUser.TabIndex = 36
         Me.PbUser.TabStop = False
         '
