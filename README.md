@@ -76,4 +76,4 @@ __💠ACTIVITY DIAGRAM [BOOKING] :__ <br>
 <p align="left"> <img src="https://i.postimg.cc/ZR7Wz5Lx/Use-Case-Booking.png"> </p> <br>
 
 __💠ACTIVITY DIAGRAM [BOOKING] :__ <br>
-<p align="left"> <img src="https://i.postimg.cc/Hxkks1ZW/activity01.png"> </p> <br>
+<p align="left"> <img src="https://i.postimg.cc/mgdbX5Z0/activity01.png"> </p> <br>
