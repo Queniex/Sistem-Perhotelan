@@ -31,4 +31,9 @@ Public Class Penginapan
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         LblJam.Text = TimeOfDay.ToString("h:mm:ss tt")
     End Sub
+
+    Private Sub FormJenisKamar_Click(sender As Object, e As EventArgs) Handles FormJenisKamar.Click
+        JenisKamar_.Show()
+        Me.Close()
+    End Sub
 End Class
