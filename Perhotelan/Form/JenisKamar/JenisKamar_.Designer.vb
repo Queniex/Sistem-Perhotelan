@@ -27,7 +27,7 @@ Partial Class JenisKamar_
         Me.ToolStripBtnJKamar = New System.Windows.Forms.ToolStripButton()
         Me.LblEmail = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PbUser = New System.Windows.Forms.PictureBox()
         Me.LblUser = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -43,7 +43,7 @@ Partial Class JenisKamar_
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.ToolStripKamar_.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PbUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridViewJKamar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -87,7 +87,7 @@ Partial Class JenisKamar_
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.LblEmail)
-        Me.Panel3.Controls.Add(Me.PictureBox1)
+        Me.Panel3.Controls.Add(Me.PbUser)
         Me.Panel3.Controls.Add(Me.LblUser)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Location = New System.Drawing.Point(13, 194)
@@ -96,14 +96,14 @@ Partial Class JenisKamar_
         Me.Panel3.Size = New System.Drawing.Size(668, 217)
         Me.Panel3.TabIndex = 111
         '
-        'PictureBox1
+        'PbUser
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(61, 28)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(143, 167)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.PbUser.Location = New System.Drawing.Point(61, 28)
+        Me.PbUser.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PbUser.Name = "PbUser"
+        Me.PbUser.Size = New System.Drawing.Size(143, 167)
+        Me.PbUser.TabIndex = 0
+        Me.PbUser.TabStop = False
         '
         'LblUser
         '
@@ -279,7 +279,7 @@ Partial Class JenisKamar_
         Me.ToolStripKamar_.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PbUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.DataGridViewJKamar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -294,7 +294,7 @@ Partial Class JenisKamar_
     Friend WithEvents ToolStripBtnJKamar As ToolStripButton
     Friend WithEvents LblEmail As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PbUser As PictureBox
     Friend WithEvents LblUser As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel2 As Panel
