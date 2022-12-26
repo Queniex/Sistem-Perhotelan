@@ -33,7 +33,8 @@ Public Class Penginapan
     End Sub
 
     Private Sub FormJenisKamar_Click(sender As Object, e As EventArgs) Handles FormJenisKamar.Click
-        JenisKamar_.Show()
+        Dim jk As New JenisKamar_(Login.Users.GSUserName, Login.Users.GSEmail)
+        jk.Show()
         Me.Close()
     End Sub
 End Class
