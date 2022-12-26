@@ -8,10 +8,11 @@
 
     End Sub
 
-    Private Sub TxtBoxJKamar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtBoxJKamar.KeyPress
+
+    Private Sub TxtBoxJKamar_Leave(sender As Object, e As EventArgs) Handles TxtBoxJKamar.Leave
         If TxtBoxJKamar.Text.Length < 1 Then
             TxtBoxJKamar.Select()
-            MessageBox.Show("Please add At least 1 String")
+            MessageBox.Show("Silahkan masukkan nama jenis kamar terlebih dahulu!")
         End If
     End Sub
 
@@ -20,10 +21,12 @@
             e.Handled = True
             MessageBox.Show("Hanya angka yang dapat di input!")
         End If
+    End Sub
 
+    Private Sub TxtBoxHarga_Leave(sender As Object, e As EventArgs) Handles TxtBoxHarga.Leave
         If TxtBoxJKamar.Text.Length < 1 Then
             TxtBoxJKamar.Select()
-            MessageBox.Show("Please add At least 1 String")
+            MessageBox.Show("Silahkan masukkan harga jenis kamar terlebih dahulu!")
         End If
     End Sub
 
@@ -46,4 +49,5 @@
 
         Me.Close()
     End Sub
+
 End Class
