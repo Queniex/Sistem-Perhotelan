@@ -28,7 +28,8 @@
     End Sub
 
     Private Sub BtnBatalKamar_Click(sender As Object, e As EventArgs) Handles BtnBatalKamar.Click
-        JenisKamar_.Show()
+        Dim jk As New JenisKamar_(Login.Users.GSUserName, Login.Users.GSEmail)
+        jk.Show()
         Me.Close()
     End Sub
 
