@@ -36,6 +36,10 @@
         JenisKamar_.JenisKamar.GSJenis = TxtBoxJKamar.Text
         JenisKamar_.JenisKamar.GSHarga = Integer.Parse(TxtBoxHarga.Text)
 
+        JenisKamar_.JenisKamar.AddJenisKamar(JenisKamar_.JenisKamar.GSJenis,
+                                           JenisKamar_.JenisKamar.GSHarga
+                                           )
+
         Dim info = New InfoJenisKamar()
         info.Show()
 
