@@ -1,6 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Form\JenisKamar\EditJenisKamar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\JenisKamar\HapusJenisKamar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\JenisKamar\InfoJenisKamar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\JenisKamar\JenisKamar_.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\JenisKamar\TambahJenisKamar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form\Login_Regist\Login.vb">
       <SubType>Form</SubType>
     </Compile>

@@ -35,6 +35,8 @@ Public Class Login
 
         If count > 0 Then
             Users.GSFoto = chk(4)
+            Users.GSUserName = chk(1)
+            Users.GSEmail = chk(3)
             Dim main As New Penginapan(chk(1), chk(3))
             main.Show()
             Me.Hide()
