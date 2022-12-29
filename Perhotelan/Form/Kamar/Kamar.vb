@@ -21,4 +21,18 @@ Public Class Kamar
     Private Sub Kamar_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         ReloadDataTableDatabase()
     End Sub
+
+    'BUTTON
+
+    Private Sub BtnTambah_Click(sender As Object, e As EventArgs) Handles BtnTambah.Click
+        TambahKamar.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub ToolStripKamar__ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles ToolStripKamar_.ItemClicked
+        Dim main As New Penginapan(Login.Users.GSUserName, Login.Users.GSEmail)
+        main.Show()
+        Me.Close()
+    End Sub
+
 End Class

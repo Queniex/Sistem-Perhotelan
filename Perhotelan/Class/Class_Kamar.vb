@@ -184,6 +184,4 @@ Public Class Class_Kamar
             MessageBox.Show("Connection : " & ex.Message.ToString())
         End Try
     End Function
-
-
 End Class
