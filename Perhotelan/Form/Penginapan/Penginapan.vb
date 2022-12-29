@@ -37,4 +37,11 @@ Public Class Penginapan
         jk.Show()
         Me.Close()
     End Sub
+
+    Private Sub FormKamar_Click(sender As Object, e As EventArgs) Handles FormKamar.Click
+        Dim k As New Kamar(Login.Users.GSUserName, Login.Users.GSEmail)
+        k.Show()
+        Me.Close()
+    End Sub
+
 End Class

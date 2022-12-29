@@ -44,10 +44,9 @@ Partial Class InfoJenisKamar
         Me.Panel6.BackColor = System.Drawing.Color.Black
         Me.Panel6.BackgroundImage = CType(resources.GetObject("Panel6.BackgroundImage"), System.Drawing.Image)
         Me.Panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Panel6.Location = New System.Drawing.Point(19, 603)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Panel6.Location = New System.Drawing.Point(13, 362)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(499, 98)
+        Me.Panel6.Size = New System.Drawing.Size(349, 59)
         Me.Panel6.TabIndex = 99
         '
         'Panel5
@@ -55,20 +54,18 @@ Partial Class InfoJenisKamar
         Me.Panel5.BackColor = System.Drawing.Color.Black
         Me.Panel5.BackgroundImage = CType(resources.GetObject("Panel5.BackgroundImage"), System.Drawing.Image)
         Me.Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Panel5.Location = New System.Drawing.Point(19, 25)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Panel5.Location = New System.Drawing.Point(13, 15)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(499, 98)
+        Me.Panel5.Size = New System.Drawing.Size(349, 59)
         Me.Panel5.TabIndex = 98
         '
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel3.Controls.Add(Me.Label16)
-        Me.Panel3.Location = New System.Drawing.Point(19, 148)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Panel3.Location = New System.Drawing.Point(13, 89)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(497, 127)
+        Me.Panel3.Size = New System.Drawing.Size(349, 78)
         Me.Panel3.TabIndex = 100
         '
         'Label16
@@ -76,10 +73,9 @@ Partial Class InfoJenisKamar
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Segoe UI Variable Text", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(43, 36)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label16.Location = New System.Drawing.Point(30, 22)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(419, 43)
+        Me.Label16.Size = New System.Drawing.Size(277, 28)
         Me.Label16.TabIndex = 1
         Me.Label16.Text = "INFORMASI JENIS KAMAR"
         '
@@ -88,10 +84,9 @@ Partial Class InfoJenisKamar
         Me.BtnKembali.BackColor = System.Drawing.Color.Black
         Me.BtnKembali.Font = New System.Drawing.Font("Segoe UI Variable Display", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.BtnKembali.ForeColor = System.Drawing.Color.White
-        Me.BtnKembali.Location = New System.Drawing.Point(19, 523)
-        Me.BtnKembali.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnKembali.Location = New System.Drawing.Point(13, 314)
         Me.BtnKembali.Name = "BtnKembali"
-        Me.BtnKembali.Size = New System.Drawing.Size(169, 50)
+        Me.BtnKembali.Size = New System.Drawing.Size(118, 30)
         Me.BtnKembali.TabIndex = 102
         Me.BtnKembali.Text = "<< Kembali"
         Me.BtnKembali.UseVisualStyleBackColor = False
@@ -105,11 +100,9 @@ Partial Class InfoJenisKamar
         Me.GbKamar.Controls.Add(Me.Label2)
         Me.GbKamar.Controls.Add(Me.Label10)
         Me.GbKamar.ForeColor = System.Drawing.Color.White
-        Me.GbKamar.Location = New System.Drawing.Point(19, 288)
-        Me.GbKamar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GbKamar.Location = New System.Drawing.Point(13, 173)
         Me.GbKamar.Name = "GbKamar"
-        Me.GbKamar.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GbKamar.Size = New System.Drawing.Size(499, 215)
+        Me.GbKamar.Size = New System.Drawing.Size(349, 129)
         Me.GbKamar.TabIndex = 101
         Me.GbKamar.TabStop = False
         Me.GbKamar.Text = "Informasi Jenis Kamar"
@@ -119,10 +112,9 @@ Partial Class InfoJenisKamar
         Me.LblHarga.AutoSize = True
         Me.LblHarga.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LblHarga.ForeColor = System.Drawing.Color.White
-        Me.LblHarga.Location = New System.Drawing.Point(281, 139)
-        Me.LblHarga.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblHarga.Location = New System.Drawing.Point(197, 83)
         Me.LblHarga.Name = "LblHarga"
-        Me.LblHarga.Size = New System.Drawing.Size(62, 24)
+        Me.LblHarga.Size = New System.Drawing.Size(40, 16)
         Me.LblHarga.TabIndex = 103
         Me.LblHarga.Text = "Harga"
         '
@@ -130,10 +122,9 @@ Partial Class InfoJenisKamar
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(101, 71)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(71, 43)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(104, 25)
+        Me.Label6.Size = New System.Drawing.Size(69, 15)
         Me.Label6.TabIndex = 98
         Me.Label6.Text = "Jenis Kamar"
         '
@@ -141,10 +132,9 @@ Partial Class InfoJenisKamar
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(101, 139)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(71, 83)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(60, 25)
+        Me.Label5.Size = New System.Drawing.Size(39, 15)
         Me.Label5.TabIndex = 100
         Me.Label5.Text = "Harga"
         '
@@ -153,10 +143,9 @@ Partial Class InfoJenisKamar
         Me.LblJenisKamar.AutoSize = True
         Me.LblJenisKamar.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LblJenisKamar.ForeColor = System.Drawing.Color.White
-        Me.LblJenisKamar.Location = New System.Drawing.Point(281, 71)
-        Me.LblJenisKamar.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblJenisKamar.Location = New System.Drawing.Point(197, 43)
         Me.LblJenisKamar.Name = "LblJenisKamar"
-        Me.LblJenisKamar.Size = New System.Drawing.Size(112, 24)
+        Me.LblJenisKamar.Size = New System.Drawing.Size(72, 16)
         Me.LblJenisKamar.TabIndex = 102
         Me.LblJenisKamar.Text = "Jenis Kamar"
         '
@@ -164,10 +153,9 @@ Partial Class InfoJenisKamar
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(253, 139)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(177, 83)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(16, 25)
+        Me.Label2.Size = New System.Drawing.Size(10, 15)
         Me.Label2.TabIndex = 101
         Me.Label2.Text = ":"
         '
@@ -175,24 +163,24 @@ Partial Class InfoJenisKamar
         '
         Me.Label10.AutoSize = True
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(253, 71)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Location = New System.Drawing.Point(177, 43)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(16, 25)
+        Me.Label10.Size = New System.Drawing.Size(10, 15)
         Me.Label10.TabIndex = 99
         Me.Label10.Text = ":"
         '
         'InfoJenisKamar
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(537, 727)
+        Me.ClientSize = New System.Drawing.Size(376, 436)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.BtnKembali)
         Me.Controls.Add(Me.GbKamar)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "InfoJenisKamar"
         Me.Text = "InfoJenisKamar"
         Me.Panel3.ResumeLayout(False)
