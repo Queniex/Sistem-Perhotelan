@@ -76,7 +76,9 @@ Public Class Kamar
         Try
             Class_Kamar.GSnamaKamar = dataSelected(2)
             Class_Kamar.GSStatus = dataSelected(3)
-            'Class_Kamar.GSJenisKamar = dataselected2(0)
+
+            Dim dataselected2 As List(Of String) = Class_Kamar.GetJenisKamarById(dataSelected(1))
+            Class_Kamar.GSJenisKamar = dataselected2(0)
             Dim formUpdate = New EditKamar()
             formUpdate.Show()
             Me.Hide()

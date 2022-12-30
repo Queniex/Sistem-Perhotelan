@@ -32,6 +32,15 @@ Public Class Class_Kamar
         End Set
     End Property
 
+    Public Property GSJenisKamar() As String
+        Get
+            Return jeniskamar
+        End Get
+        Set(value As String)
+            jeniskamar = value
+        End Set
+    End Property
+
     Public Property GSid_jenisKamar() As Integer
         Get
             Return id_jenisKamar
@@ -206,6 +215,30 @@ Public Class Class_Kamar
             sqlRead.Close()
         Catch ex As Exception
             MessageBox.Show("Connection : " & ex.Message.ToString())
+        End Try
+    End Function
+
+    Public Function GetJenisKamarById(ID As Integer) As List(Of String)
+        Dim result As New List(Of String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT jenis_kamar FROM jenis_kamar WHERE id_jenis_kamar='" & ID & "'"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0).ToString())
+                End While
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem loading data: " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection Error: " & ex.Message.ToString)
         End Try
     End Function
 End Class
