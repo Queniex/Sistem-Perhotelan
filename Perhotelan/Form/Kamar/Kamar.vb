@@ -86,4 +86,5 @@ Public Class Kamar
             MsgBox("Anda belum memilih baris apa pun!")
         End Try
     End Sub
+
 End Class
