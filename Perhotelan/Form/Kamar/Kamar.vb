@@ -16,6 +16,15 @@ Public Class Kamar
         ' Add any initialization after the InitializeComponent() call.
         Class_Kamar = New Class_Kamar()
         ReloadDataTableDatabase()
+
+        Dim usn As String = Username
+        LblUser.Text = usn.ToUpper()
+        LblEmail.Text = Email
+
+        If Not String.IsNullOrEmpty(Login.Users.GSFoto) Then
+            PictBoxNama.Load(Login.Users.GSFoto)
+            PictBoxNama.SizeMode = PictureBoxSizeMode.StretchImage
+        End If
     End Sub
 
     Private Sub ReloadDataTableDatabase()

@@ -101,6 +101,30 @@ Public Class Class_Kamar
         End Try
     End Function
 
+    Public Function getIdJenis(id_jenis_kamar As String)
+        Dim result As New List(Of String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT id_jenis_kamar FROM jenis_kamar WHERE jenis_kamar='" & id_jenis_kamar & "'"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0))
+                End While
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem : " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        End Try
+    End Function
+
     Public Function GetDataKoleksiById(ID As Integer) As List(Of String)
         Dim result As New List(Of String)
 
