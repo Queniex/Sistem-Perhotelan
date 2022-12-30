@@ -69,4 +69,19 @@ Public Class Kamar
         main.Show()
         Me.Close()
     End Sub
+
+    Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
+        'EditKamar.Show()
+        Dim dataSelected As List(Of String) = Class_Kamar.GetDataKoleksiById(selectedTableKoleksi)
+        Try
+            Class_Kamar.GSnamaKamar = dataSelected(2)
+            Class_Kamar.GSStatus = dataSelected(3)
+            'Class_Kamar.GSJenisKamar = dataselected2(0)
+            Dim formUpdate = New EditKamar()
+            formUpdate.Show()
+            Me.Hide()
+        Catch ex As Exception
+            MsgBox("Anda belum memilih baris apa pun!")
+        End Try
+    End Sub
 End Class
