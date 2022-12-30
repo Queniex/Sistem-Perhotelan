@@ -3,6 +3,10 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 
 Public Class Kamar
     Public Shared Class_Kamar As Class_Kamar
+    Public Shared selectedTableKoleksi
+    Public Shared selectedTableKoleksiNama
+    Public Shared selectedTableKoleksiJenis
+    Public Shared selectedTableKoleksiStatus
 
     Public Sub New(ByVal Username As String, ByVal Email As String)
 
@@ -35,4 +39,14 @@ Public Class Kamar
         Me.Close()
     End Sub
 
+    Private Sub DataGridViewKamar_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewKamar.CellClick
+        Dim index As Integer = e.RowIndex
+        Dim selectedRow As DataGridViewRow
+        selectedRow = DataGridViewKamar.Rows(index)
+
+        selectedTableKoleksi = selectedRow.Cells(0).Value
+        selectedTableKoleksiJenis = selectedRow.Cells(1).Value
+        selectedTableKoleksiNama = selectedRow.Cells(2).Value
+        selectedTableKoleksiStatus = selectedRow.Cells(3).Value
+    End Sub
 End Class
