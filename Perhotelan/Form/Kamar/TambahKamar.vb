@@ -12,12 +12,6 @@ Public Class TambahKamar
 
     End Sub
 
-    Private Sub BtnBatal_Click(sender As Object, e As EventArgs) Handles BtnBatal.Click
-        Dim k As New Kamar(Login.Users.GSUserName, Login.Users.GSEmail)
-        k.Show()
-        Me.Close()
-    End Sub
-
     Private Sub BtnSimpan_Click(sender As Object, e As EventArgs) Handles BtnSimpan.Click
         If TxtBoxNamaKamar.Text.Length > 0 Then
             Kamar.Class_Kamar.GSnamaKamar = TxtBoxNamaKamar.Text.ToString()
@@ -39,6 +33,13 @@ Public Class TambahKamar
             Dim Info = New InfoKamar()
             Info.Show()
             Me.Close()
+        Else
+            MessageBox.Show("Tolong Lengkapi Data.")
         End If
+    End Sub
+    Private Sub BtnBatal_Click(sender As Object, e As EventArgs) Handles BtnBatal.Click
+        Dim k As New Kamar(Login.Users.GSUserName, Login.Users.GSEmail)
+        k.Show()
+        Me.Close()
     End Sub
 End Class

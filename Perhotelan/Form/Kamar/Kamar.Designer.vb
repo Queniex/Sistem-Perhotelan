@@ -55,10 +55,10 @@ Partial Class Kamar
         Me.ToolStripKamar_.Dock = System.Windows.Forms.DockStyle.Right
         Me.ToolStripKamar_.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ToolStripKamar_.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1})
-        Me.ToolStripKamar_.Location = New System.Drawing.Point(1107, 0)
+        Me.ToolStripKamar_.Location = New System.Drawing.Point(1104, 0)
         Me.ToolStripKamar_.Name = "ToolStripKamar_"
         Me.ToolStripKamar_.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStripKamar_.Size = New System.Drawing.Size(30, 565)
+        Me.ToolStripKamar_.Size = New System.Drawing.Size(33, 565)
         Me.ToolStripKamar_.TabIndex = 72
         Me.ToolStripKamar_.Text = "ToolStrip1"
         '
@@ -68,7 +68,7 @@ Partial Class Kamar
         Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(25, 28)
+        Me.ToolStripButton1.Size = New System.Drawing.Size(28, 28)
         Me.ToolStripButton1.Text = "ToolStripButton1"
         '
         'DataGridViewKamar

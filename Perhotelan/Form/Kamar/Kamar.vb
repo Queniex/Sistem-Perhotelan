@@ -35,6 +35,17 @@ Public Class Kamar
         ReloadDataTableDatabase()
     End Sub
 
+    Private Sub DataGridViewKamar_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewKamar.CellClick
+        Dim index As Integer = e.RowIndex
+        Dim selectedRow As DataGridViewRow
+        selectedRow = DataGridViewKamar.Rows(index)
+
+        selectedTableKoleksi = selectedRow.Cells(0).Value
+        selectedTableKoleksiJenis = selectedRow.Cells(1).Value
+        selectedTableKoleksiNama = selectedRow.Cells(2).Value
+        selectedTableKoleksiStatus = selectedRow.Cells(3).Value
+    End Sub
+
     'BUTTON
 
     Private Sub BtnTambah_Click(sender As Object, e As EventArgs) Handles BtnTambah.Click
@@ -48,14 +59,14 @@ Public Class Kamar
         Me.Close()
     End Sub
 
-    Private Sub DataGridViewKamar_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewKamar.CellClick
-        Dim index As Integer = e.RowIndex
-        Dim selectedRow As DataGridViewRow
-        selectedRow = DataGridViewKamar.Rows(index)
+    Private Sub BtnLogOut_Click(sender As Object, e As EventArgs) Handles BtnLogOut.Click
+        Login.Show()
+        Me.Close()
+    End Sub
 
-        selectedTableKoleksi = selectedRow.Cells(0).Value
-        selectedTableKoleksiJenis = selectedRow.Cells(1).Value
-        selectedTableKoleksiNama = selectedRow.Cells(2).Value
-        selectedTableKoleksiStatus = selectedRow.Cells(3).Value
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        Dim main As New Penginapan(Login.Users.GSUserName, Login.Users.GSEmail)
+        main.Show()
+        Me.Close()
     End Sub
 End Class
