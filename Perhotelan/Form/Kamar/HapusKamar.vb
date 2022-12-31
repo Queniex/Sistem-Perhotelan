@@ -6,6 +6,10 @@
 
         ' Add any initialization after the InitializeComponent() call.
 
+        LblHapusKamar.Text = Kamar.Class_Kamar.GSnamaKamar
+        LblHapusJenisKamar.Text = Kamar.Class_Kamar.GSid_jenisKamar
+        LblHapusStatus.Text = Kamar.Class_Kamar.GSStatus
+
     End Sub
 
     Private Sub BtnBatal_Click(sender As Object, e As EventArgs) Handles BtnBatal.Click
