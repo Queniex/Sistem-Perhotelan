@@ -47,4 +47,22 @@ Public Class EditKamar
         k.Show()
         Me.Close()
     End Sub
+
+    Private Sub EditKamar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim conn As New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+            Dim cmd As New MySqlCommand("SELECT id_jenis_kamar, jenis_kamar FROM jenis_kamar", conn)
+            Dim da As New MySqlDataAdapter(cmd)
+            Dim dt As New DataTable()
+            da.Fill(dt)
+            CbChangeJenisKamar.DataSource = dt
+            CbChangeJenisKamar.ValueMember = "jenis_kamar"
+            CbChangeJenisKamar.DisplayMember = "jenis_kamar"
+            CbChangeJenisKamar.Text = Kamar.Class_Kamar.GSJenisKamar
+        Catch ex As Exception
+            MsgBox("Error : " + ex.Message)
+        Finally
+            Class_Kamar.dbConn.Close()
+        End Try
+    End Sub
 End Class
