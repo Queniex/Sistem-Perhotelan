@@ -81,4 +81,20 @@ Public Class Kamar
         End Try
     End Sub
 
+    Private Sub BtnInfo_Click(sender As Object, e As EventArgs) Handles BtnInfo.Click
+        'InfoKamar.Show()
+        Dim dataselected = Class_Kamar.GetDataKoleksiById(selectedTableKoleksi)
+
+        Try
+            Class_Kamar.GSnamaKamar = dataselected(2)
+            Class_Kamar.GSid_jenisKamar = dataselected(1)
+            Class_Kamar.GSStatus = dataselected(3)
+
+            Dim infoTambah = New InfoKamar()
+            infoTambah.Show()
+            Me.Hide()
+        Catch ex As Exception
+            MsgBox("Anda belum memilih baris apa pun!")
+        End Try
+    End Sub
 End Class
