@@ -53,12 +53,6 @@ Public Class Kamar
         Me.Hide()
     End Sub
 
-    Private Sub ToolStripKamar__ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles ToolStripKamar_.ItemClicked
-        Dim main As New Penginapan(Login.Users.GSUserName, Login.Users.GSEmail)
-        main.Show()
-        Me.Close()
-    End Sub
-
     Private Sub BtnLogOut_Click(sender As Object, e As EventArgs) Handles BtnLogOut.Click
         Login.Show()
         Me.Close()
