@@ -39,6 +39,8 @@ Public Class EditKamar
             Dim Info = New InfoKamar()
             Info.Show()
             Me.Close()
+        Else
+            MessageBox.Show("Tolong Lengkapi Data.")
         End If
     End Sub
 
