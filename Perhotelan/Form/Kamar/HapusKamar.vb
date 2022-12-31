@@ -13,4 +13,13 @@
         k.Show()
         Me.Close()
     End Sub
+
+    Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
+        Kamar.Class_Kamar.DeleteDatakoleksiById(Kamar.selectedTableKoleksi)
+        'MessageBox.Show("Data berhasil dihapus")
+
+        Dim k As New Kamar(Login.Users.GSUserName, Login.Users.GSEmail)
+        k.Show()
+        Me.Close()
+    End Sub
 End Class
