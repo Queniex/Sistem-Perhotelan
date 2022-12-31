@@ -41,4 +41,10 @@ Public Class EditKamar
             Me.Close()
         End If
     End Sub
+
+    Private Sub BtnBatal_Click(sender As Object, e As EventArgs) Handles BtnBatal.Click
+        Dim k As New Kamar(Login.Users.GSUserName, Login.Users.GSEmail)
+        k.Show()
+        Me.Close()
+    End Sub
 End Class
