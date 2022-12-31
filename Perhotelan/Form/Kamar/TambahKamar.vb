@@ -42,4 +42,22 @@ Public Class TambahKamar
         k.Show()
         Me.Close()
     End Sub
+
+    Private Sub TambahKamar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim conn As New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+            Dim cmd As New MySqlCommand("SELECT id_jenis_kamar, jenis_kamar FROM jenis_kamar", conn)
+            Dim da As New MySqlDataAdapter(cmd)
+            Dim dt As New DataTable()
+            da.Fill(dt)
+            CbJenisKamar.DataSource = dt
+            CbJenisKamar.ValueMember = "jenis_kamar"
+            CbJenisKamar.DisplayMember = "jenis_kamar"
+            CbJenisKamar.Text = "Jenis Kamar"
+        Catch ex As Exception
+            MsgBox("Error : " + ex.Message)
+        Finally
+            Class_Kamar.dbConn.Close()
+        End Try
+    End Sub
 End Class
