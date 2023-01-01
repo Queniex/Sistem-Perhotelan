@@ -107,4 +107,5 @@ Public Class JenisKamar_
         selectedTableKoleksi = selectedRow.Cells(0).Value
         selectedTableKoleksiNama = selectedRow.Cells(1).Value
     End Sub
+
 End Class

@@ -40,7 +40,7 @@ Public Class JenisKamar
                                 harga As Integer
                                 )
 
-        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
         Try
             dbConn.Open()
             sqlQuery = "INSERT INTO jenis_kamar(id_jenis_kamar, jenis_kamar, harga) VALUES ('','" & jenis_kamar & "','" _
@@ -64,7 +64,7 @@ Public Class JenisKamar
                                           harga As Integer
                                           )
 
-        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
@@ -92,7 +92,7 @@ Public Class JenisKamar
     Public Function GetDataKoleksiDatabase() As DataTable
         Dim result As New DataTable
 
-        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
         Try
             dbConn.Open()
             sqlQuery = "SELECT id_jenis_kamar AS 'No Jenis Kamar',
@@ -116,7 +116,7 @@ Public Class JenisKamar
     Public Function GetDataKoleksiById(ID As Integer) As List(Of String)
         Dim result As New List(Of String)
 
-        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
         Try
             dbConn.Open()
             sqlQuery = "SELECT * FROM jenis_kamar WHERE id_jenis_kamar='" & ID & "'"
@@ -141,7 +141,7 @@ Public Class JenisKamar
 
 
     Public Function DeleteDatakoleksiById(ID As Integer)
-        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=proyek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
