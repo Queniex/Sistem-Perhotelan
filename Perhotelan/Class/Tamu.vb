@@ -31,4 +31,22 @@ Public Class Tamu
         End Set
     End Property
 
+    Public Property GSAlamat() As String
+        Get
+            Return Alamat
+        End Get
+        Set(value As String)
+            Alamat = value
+        End Set
+    End Property
+
+    Public Property GSJenisKelamin() As String
+        Get
+            Return Jenis_Kelamin
+        End Get
+        Set(value As String)
+            Jenis_Kelamin = value
+        End Set
+    End Property
+
 End Class
