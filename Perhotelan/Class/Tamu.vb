@@ -78,4 +78,32 @@ Public Class Tamu
         End Try
     End Function
 
+    Public Function GetDataTamuDatabase() As DataTable
+        Dim result As New DataTable
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT nik AS 'No Identitas',
+                        nama AS 'Nama Lengkap',
+                        alamat AS 'Alamat',
+                        jenis_kelamin AS 'Jenis Kelamin'
+                        FROM tamu"
+
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+                result.Load(sqlRead)
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem : " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
 End Class
