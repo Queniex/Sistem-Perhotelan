@@ -134,4 +134,34 @@ Public Class Tamu
 
     End Function
 
+    Public Function GetDataTamuByNIK(Nik As Integer) As List(Of String)
+        Dim result As New List(Of String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT * FROM tamu WHERE nik='" & Nik & "'"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0).ToString())
+                    result.Add(sqlRead.GetString(1).ToString())
+                    result.Add(sqlRead.GetString(2).ToString())
+                    result.Add(sqlRead.GetString(3).ToString())
+                End While
+                Return result
+            Catch ex As Exception
+                MessageBox.Show("Problem : " & ex.Message.ToString())
+            End Try
+            sqlRead.Close()
+            dbConn.Close()
+        Catch ex As Exception
+            MessageBox.Show("Connection : " & ex.Message.ToString())
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
 End Class
