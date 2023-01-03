@@ -13,4 +13,22 @@ Public Class Tamu
     Public Shared sqlCommand As New MySqlCommand
     Public Shared sqlRead As MySqlDataReader
     Private sqlQuery As String
+
+    Public Property GSNIK() As Integer
+        Get
+            Return NIK
+        End Get
+        Set(value As Integer)
+            NIK = value
+        End Set
+    End Property
+    Public Property GSNama() As String
+        Get
+            Return Nama
+        End Get
+        Set(value As String)
+            Nama = value
+        End Set
+    End Property
+
 End Class
