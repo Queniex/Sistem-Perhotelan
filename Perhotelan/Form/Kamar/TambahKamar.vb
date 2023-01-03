@@ -60,4 +60,11 @@ Public Class TambahKamar
             Class_Kamar.dbConn.Close()
         End Try
     End Sub
+
+    Private Sub TxtBoxNamaKamar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtBoxNamaKamar.KeyPress
+        If Not Char.IsNumber(e.KeyChar) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) Then
+            e.Handled = True
+            MessageBox.Show("Hanya angka yang dapat di input!")
+        End If
+    End Sub
 End Class
