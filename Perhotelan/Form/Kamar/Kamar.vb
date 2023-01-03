@@ -97,4 +97,20 @@ Public Class Kamar
             MsgBox("Anda belum memilih baris apa pun!")
         End Try
     End Sub
+
+    Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
+        'HapusKamar.Show()
+        Dim dataSelected As List(Of String) = Class_Kamar.GetDataKoleksiById(selectedTableKoleksi)
+        Try
+            Class_Kamar.GSnamaKamar = dataSelected(2)
+            Class_Kamar.GSid_jenisKamar = dataSelected(1)
+            Class_Kamar.GSStatus = dataSelected(3)
+
+            Dim formHapus = New HapusKamar()
+            formHapus.Show()
+            Me.Hide()
+        Catch ex As Exception
+            MsgBox("Anda belum memilih baris apa pun!")
+        End Try
+    End Sub
 End Class
