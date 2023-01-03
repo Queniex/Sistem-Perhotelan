@@ -106,4 +106,32 @@ Public Class Tamu
         End Try
     End Function
 
+    Public Function UpdateDataTamuByNIK(nik_tamu As Integer,
+                                            nama_tamu As String,
+                                            alamat_tamu As String,
+                                            jeniskelamin_tamu As String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+
+            sqlQuery = "UPDATE tamu SET " _
+                        + "nik='" & nik_tamu & "'," _
+                        + "nama='" & nama_tamu & "'," _
+                        + "alamat='" & alamat_tamu & "'," _
+                        + "jenis_kelamin='" & jeniskelamin_tamu & "' WHERE nik='" & nik_tamu & "' "
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+
+    End Function
+
 End Class
