@@ -49,4 +49,33 @@ Public Class Tamu
         End Set
     End Property
 
+    Public Function AddTamu(nik_tamu As Integer,
+                            nama_tamu As String,
+                            alamat_tamu As String,
+                            jeniskelamin_tamu As String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "INSERT INTO tamu(nik, nama, alamat,
+                                         jenis_kelamin) VALUES ('" & nik_tamu & "','" & nama_tamu & "','" _
+                                         & alamat_tamu & "','" _
+                                         & jeniskelamin_tamu & "')"
+
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader()
+                sqlRead.Close()
+                MsgBox("Data Berhasil Ditambahkan.")
+            Catch ex As Exception
+                MsgBox("Failed : " & ex.Message.ToString())
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
 End Class
