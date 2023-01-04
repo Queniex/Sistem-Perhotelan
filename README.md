@@ -74,3 +74,18 @@ __💠ACTIVITY DIAGRAM [TAMU] :__ <br>
 
 __💠ACTIVITY DIAGRAM [BOOKING] :__ <br>
 <p align="left"> <img src="https://i.postimg.cc/ZR7Wz5Lx/Use-Case-Booking.png"> </p> <br>
+
+__💠CLASS DIAGRAM [USER] :__ <br>
+<p align="left"> <img src="https://i.postimg.cc/pTRzBd6n/cd-users.jpg"> </p> <br>
+
+__💠CLASS DIAGRAM [JENIS KAMAR] :__ <br>
+<p align="left"> <img src="https://i.postimg.cc/0QkKwBzY/cd-jenis-Kamar.jpg"> </p> <br>
+
+__💠CLASS DIAGRAM [KAMAR] :__ <br>
+<p align="left"> <img src="https://i.postimg.cc/4yKdvks9/cd-Kamar.jpg"> </p> <br>
+
+__💠CLASS DIAGRAM [TAMU] :__ <br>
+<p align="left"> <img src="https://i.postimg.cc/cJrLGGt5/cd-Tamu.jpg"> </p> <br>
+
+__💠CLASS DIAGRAM [BOOKING] :__ <br>
+<p align="left"> <img src="https://i.postimg.cc/d3qMvGSt/cd-Booking.jpg"> </p> <br>
