@@ -81,4 +81,20 @@ Public Class Tamu_
             MsgBox("Anda belum memilih baris apa pun!")
         End Try
     End Sub
+
+    Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
+        Dim dataSelected As List(Of String) = tamu.GetDataTamuByNIK(selectedTableTamuNik)
+        Try
+            tamu.GSNIK = dataSelected(0)
+            tamu.GSNama = dataSelected(1)
+            tamu.GSAlamat = dataSelected(2)
+            tamu.GSJenisKelamin = dataSelected(3)
+
+            Dim formHapus = New HapusTamu()
+            formHapus.Show()
+            Me.Hide()
+        Catch ex As Exception
+            MsgBox("Anda belum memilih baris apa pun!")
+        End Try
+    End Sub
 End Class
