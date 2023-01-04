@@ -32,4 +32,15 @@ Public Class Tamu_
     Private Sub Tamu__Activated(sender As Object, e As EventArgs) Handles Me.Activated
         ReloadDataTableDatabase()
     End Sub
+
+    Private Sub DataGridViewTamu_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewTamu.CellClick
+        Dim index As Integer = e.RowIndex
+        Dim selectedRow As DataGridViewRow
+        selectedRow = DataGridViewTamu.Rows(index)
+
+        selectedTableTamuNik = selectedRow.Cells(0).Value
+        selectedTableTamuNama = selectedRow.Cells(1).Value
+        selectedTableTamuAlamat = selectedRow.Cells(2).Value
+        selectedTableTamuJenisKelamin = selectedRow.Cells(3).Value
+    End Sub
 End Class
