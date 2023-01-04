@@ -65,4 +65,20 @@ Public Class Tamu_
         TambahTamu.Show()
         Me.Hide()
     End Sub
+
+    Private Sub BtnInfo_Click(sender As Object, e As EventArgs) Handles BtnInfo.Click
+        Dim dataSelected As List(Of String) = tamu.GetDataTamuByNIK(selectedTableTamuNik)
+        Try
+            tamu.GSNIK = dataSelected(0)
+            tamu.GSNama = dataSelected(1)
+            tamu.GSAlamat = dataSelected(2)
+            tamu.GSJenisKelamin = dataSelected(3)
+
+            Dim formInfo = New InfoTamu()
+            formInfo.Show()
+            Me.Hide()
+        Catch ex As Exception
+            MsgBox("Anda belum memilih baris apa pun!")
+        End Try
+    End Sub
 End Class
