@@ -43,4 +43,21 @@ Public Class Tamu_
         selectedTableTamuAlamat = selectedRow.Cells(2).Value
         selectedTableTamuJenisKelamin = selectedRow.Cells(3).Value
     End Sub
+
+    Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
+        Dim dataSelected As List(Of String) = tamu.GetDataTamuByNIK(selectedTableTamuNik)
+
+        Try
+            tamu.GSNIK = dataSelected(0)
+            tamu.GSNama = dataSelected(1)
+            tamu.GSAlamat = dataSelected(2)
+            tamu.GSJenisKelamin = dataSelected(3)
+
+            Dim formEdit = New EditTamu()
+            formEdit.Show()
+            Me.Hide()
+        Catch ex As Exception
+            MsgBox("Anda belum memilih baris apa pun!")
+        End Try
+    End Sub
 End Class
