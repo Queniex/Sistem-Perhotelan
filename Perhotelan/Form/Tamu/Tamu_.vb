@@ -97,4 +97,15 @@ Public Class Tamu_
             MsgBox("Anda belum memilih baris apa pun!")
         End Try
     End Sub
+
+    Private Sub BtnLogout_Click_1(sender As Object, e As EventArgs) Handles BtnLogout.Click
+        Login.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub ToolStripBtnTamu_Click_1(sender As Object, e As EventArgs) Handles ToolStripBtnTamu.Click
+        Dim main As New Penginapan(Login.Users.GSUserName, Login.Users.GSEmail)
+        main.Show()
+        Me.Close()
+    End Sub
 End Class
