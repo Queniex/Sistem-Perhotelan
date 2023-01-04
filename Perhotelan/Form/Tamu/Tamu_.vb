@@ -60,4 +60,9 @@ Public Class Tamu_
             MsgBox("Anda belum memilih baris apa pun!")
         End Try
     End Sub
+
+    Private Sub BtnTambah_Click(sender As Object, e As EventArgs) Handles BtnTambah.Click
+        TambahTamu.Show()
+        Me.Hide()
+    End Sub
 End Class
