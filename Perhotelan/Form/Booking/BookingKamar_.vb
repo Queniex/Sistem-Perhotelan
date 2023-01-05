@@ -70,4 +70,45 @@ Public Class BookingKamar_
         main.Show()
         Me.Close()
     End Sub
+
+    Private Sub BtnSaveBooking_Click(sender As Object, e As EventArgs) Handles BtnSaveBooking.Click
+
+        Dim chk = booking.CheckTxtKamar(textnokamar)
+        Dim count = chk.Count
+        Dim cek = booking.CheckTxtTamu(textnamatamu)
+        Dim count_ = cek.Count
+
+        If count > 0 Then
+            If count_ > 0 Then
+                booking.GSCheckIn = DtpCheckIn.Value.ToString("yyyy/MM/dd")
+                booking.GSCheckOut = DtpCheckOut.Value.ToString("yyyy/MM/dd")
+                booking.GSIdTamu = booking.getIdTamuByNama(textnamatamu)
+                booking.GSIdKamar = booking.getIdKamarByNoKamar(textnokamar)
+                booking.GSStatus = CbStatusKamar.Text.ToString()
+
+                booking.AddBooking(booking.GSIdTamu,
+                                   booking.GSIdKamar,
+                                   booking.GSCheckIn,
+                                   booking.GSCheckOut,
+                                   booking.GSStatus)
+
+                Dim status As String = "Terisi"
+                booking.UpdateDataStatusKamarById(booking.GSIdKamar, status)
+                textnamatamu = ""
+                textnokamar = ""
+                TxtBoxNoKamar.Text = ""
+                TxtNamaTamu.Text = ""
+                CbStatusKamar.Text = "Reserved"
+                LblTotalBayar.Text = "Total Bayar"
+                DtpCheckIn.Value = DateTime.Today
+                DtpCheckOut.Value = DateTime.Today
+
+                ReloadDataTableDatabase()
+            Else
+                MessageBox.Show("Data Tamu Yang Anda Masukkan Salah")
+            End If
+        Else
+            MessageBox.Show("Data Kamar Yang Anda Masukkan Salah")
+        End If
+    End Sub
 End Class
