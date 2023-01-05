@@ -458,4 +458,34 @@ Public Class Booking
             MsgBox("Connection : " & ex.Message.ToString)
         End Try
     End Function
+
+    Public Function UpdateDataBookingById(ID As Integer,
+                                           ID_Tamu As Integer,
+                                           ID_Kamar As Integer,
+                                           Check_In As String,
+                                           Check_Out As String,
+                                           Status As String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+
+            sqlQuery = "UPDATE booking_kamar SET " _
+                        + "id_tamu='" & ID_Tamu & "'," _
+                        + "id_kamar='" & ID_Kamar & "'," _
+                        + "check_in='" & Check_In & "'," _
+                        + "check_out='" & Check_Out & "'," _
+                        + "status='" & Status & "' WHERE id='" & ID & "' "
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
 End Class
