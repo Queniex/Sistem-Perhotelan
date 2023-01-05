@@ -111,4 +111,40 @@ Public Class BookingKamar_
             MessageBox.Show("Data Kamar Yang Anda Masukkan Salah")
         End If
     End Sub
+
+    Public Shared Function getDay(CheckIn As Date, Checkout As Date, JenisKamar As Integer)
+        Dim day As Integer = DateDiff(DateInterval.Day, CheckIn, Checkout)
+        Dim total As Integer = day * JenisKamar
+        Return total
+    End Function
+
+    Private Sub DtpCheckOut_ValueChanged(sender As Object, e As EventArgs) Handles DtpCheckOut.ValueChanged
+        If DtpCheckOut.Value.Year > DateTime.Today.Year Then
+
+            booking.GSTotal = getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, harga).ToString()
+
+        ElseIf DtpCheckOut.Value.Year = DateTime.Today.Year Then
+
+            If DtpCheckOut.Value.Month > DateTime.Today.Month Then
+                booking.GSTotal = getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, harga).ToString()
+
+            ElseIf DtpCheckOut.Value.Month = DateTime.Today.Month Then
+
+                If DtpCheckOut.Value.Day > DateTime.Today.Day Then
+                    booking.GSTotal = getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, harga).ToString()
+
+                Else
+                    booking.GSTotal = 0
+                End If
+
+            ElseIf DtpCheckOut.Value.Month < DateTime.Today.Month Then
+                booking.GSTotal = 0
+            End If
+
+        ElseIf DtpCheckOut.Value.Year < DateTime.Today.Year Then
+            booking.GSTotal = 0
+        End If
+
+        LblTotalBayar.Text = booking.GSTotal.ToString()
+    End Sub
 End Class
