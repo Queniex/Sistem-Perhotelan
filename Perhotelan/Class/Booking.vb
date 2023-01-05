@@ -53,4 +53,40 @@ Public Class Booking
             NoKamar = value
         End Set
     End Property
+
+    Public Property GSNamaTamu() As String
+        Get
+            Return NamaTamu
+        End Get
+        Set(ByVal value As String)
+            NamaTamu = value
+        End Set
+    End Property
+
+    Public Property GSCheckIn() As String
+        Get
+            Return check_in
+        End Get
+        Set(value As String)
+            check_in = value
+        End Set
+    End Property
+
+    Public Property GSCheckOut() As String
+        Get
+            Return check_out
+        End Get
+        Set(value As String)
+            check_out = value
+        End Set
+    End Property
+
+    Public Property GSStatus() As String
+        Get
+            Return status
+        End Get
+        Set(value As String)
+            status = value
+        End Set
+    End Property
 End Class
