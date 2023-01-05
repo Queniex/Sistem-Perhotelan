@@ -156,4 +156,32 @@ Public Class BookingKamar_
         selectedTableBookingNoKamar = selectedRow.Cells(1).Value
         selectedTableBookingNamaTamu = selectedRow.Cells(0).Value
     End Sub
+
+    Private Sub TxtBoxNoKamar_TextChanged(sender As Object, e As EventArgs) Handles TxtBoxNoKamar.TextChanged
+        textnokamar = TxtBoxNoKamar.Text
+        Dim chk = booking.CheckTxtKamar2(textnokamar)
+        Dim count = chk.Count
+
+        If count > 0 Then
+            harga = chk(2)
+        End If
+    End Sub
+
+    Private Sub TxtNamaTamu_TextChanged(sender As Object, e As EventArgs) Handles TxtNamaTamu.TextChanged
+        textnamatamu = TxtNamaTamu.Text
+    End Sub
+
+    Private Sub TxtBoxNoKamar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtBoxNoKamar.KeyPress
+        If Not Char.IsNumber(e.KeyChar) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) Then
+            e.Handled = True
+            MessageBox.Show("Hanya Dapat Memasukkan Angka!")
+        End If
+    End Sub
+
+    Private Sub TxtNamaTamu_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNamaTamu.KeyPress
+        If Not Char.IsLetter(e.KeyChar) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) And Not e.KeyChar = Chr(Keys.Space) Then
+            e.Handled = True
+            MessageBox.Show("Karakter Tidak Diketahui")
+        End If
+    End Sub
 End Class
