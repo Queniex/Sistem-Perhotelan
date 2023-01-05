@@ -361,4 +361,51 @@ Public Class Booking
             MsgBox("Connection : " & ex.Message.ToString)
         End Try
     End Function
+
+    Public Function getIdBookingByIdKamar(Id_kamar As String)
+        Dim result As Integer
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT id FROM booking_kamar WHERE id_kamar='" & Id_kamar & "'"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result = sqlRead.GetString(0).ToString
+                End While
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem : " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        End Try
+    End Function
+    Public Function getIdTamuByNama(nama_tamu As String)
+        Dim result As Integer
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT nik FROM tamu WHERE nama='" & nama_tamu & "'"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result = sqlRead.GetString(0).ToString
+                End While
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem : " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        End Try
+    End Function
 End Class
