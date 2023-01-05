@@ -313,4 +313,52 @@ Public Class Booking
             MsgBox("Connection Error: " & ex.Message.ToString)
         End Try
     End Function
+
+    Public Function getNoKamarByIdKamar(Id_kamar As Integer)
+        Dim result As New List(Of String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT nama_kamar FROM kamar WHERE id_kamar='" & Id_kamar & "'"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0).ToString())
+                End While
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem : " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        End Try
+    End Function
+
+    Public Function getNamaTamuByIdTamu(id_tamu As Integer)
+        Dim result As New List(Of String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT nama FROM tamu WHERE nik='" & id_tamu & "'"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0).ToString())
+                End While
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem : " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        End Try
+    End Function
 End Class
