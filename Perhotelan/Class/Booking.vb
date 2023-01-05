@@ -537,4 +537,31 @@ Public Class Booking
             dbConn.Dispose()
         End Try
     End Function
+
+    Public Function getHargaKamar(Id As Integer)
+
+        Dim result As New List(Of String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT jenis_kamar.harga FROM booking_kamar JOIN kamar ON booking_kamar.id_kamar = kamar.id_kamar 
+                        JOIN jenis_kamar ON jenis_kamar.id_jenis_kamar = kamar.id_jenis_kamar WHERE booking_kamar.id_kamar = '" & Id & "' "
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0).ToString())
+                End While
+
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem loading data: " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection Error: " & ex.Message.ToString)
+        End Try
+    End Function
 End Class
