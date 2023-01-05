@@ -205,4 +205,27 @@ Public Class BookingKamar_
             MsgBox("Anda belum memilih baris apa pun!")
         End Try
     End Sub
+
+    Private Sub BtnInfo_Click(sender As Object, e As EventArgs) Handles BtnInfo.Click
+        Dim id_kamar As Integer = booking.getIdKamarByNoKamar(selectedTableBookingNoKamar)
+        selectedTableBookingIdBooking = booking.getIdBookingByIdKamar(id_kamar)
+        Dim dataSelected As List(Of String) = booking.GetDataBookingById(selectedTableBookingIdBooking)
+        Dim dataSelected2 As List(Of String) = booking.getHargaKamar(id_kamar)
+
+        Try
+            booking.GSIdTamu = dataSelected(1)
+            booking.GSIdKamar = dataSelected(2)
+            booking.GSCheckIn = dataSelected(3)
+            booking.GSCheckOut = dataSelected(4)
+            booking.GSStatus = dataSelected(5)
+            booking.GSTotal = getDay(Convert.ToDateTime(dataSelected(3)), Convert.ToDateTime(dataSelected(4)), dataSelected2(0))
+
+            Dim formInfo = New InfoBookingKamar()
+            formInfo.Show()
+            Me.Hide()
+
+        Catch ex As Exception
+            MsgBox("Anda belum memilih baris apa pun!")
+        End Try
+    End Sub
 End Class
