@@ -21,4 +21,15 @@
     Private Sub PilihKamar_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         ReloadDataTableDatabase()
     End Sub
+
+    Private Sub DataGridViewDataKamar_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewDataKamar.CellClick
+        Dim index As Integer = e.RowIndex
+        Dim selectedRow As DataGridViewRow
+        selectedRow = DataGridViewDataKamar.Rows(index)
+
+        selectedTableKamarID = selectedRow.Cells(0).Value
+        selectedTableKamarJenis = selectedRow.Cells(1).Value
+        selectedTableKamarNama = selectedRow.Cells(2).Value
+        selectedTableKamarHarga = selectedRow.Cells(3).Value
+    End Sub
 End Class
