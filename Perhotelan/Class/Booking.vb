@@ -510,4 +510,31 @@ Public Class Booking
             dbConn.Dispose()
         End Try
     End Function
+
+    Public Function DeleteDataBookingById(ID As Integer)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+
+            sqlQuery = "DELETE FROM booking_kamar " &
+                       "WHERE id='" & ID & "'"
+            Try
+                Debug.WriteLine(sqlQuery)
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+                dbConn.Close()
+                sqlRead.Close()
+                MsgBox("Data Berhasil Dihapus.")
+            Catch ex As Exception
+                MessageBox.Show("Problem : " & ex.Message.ToString())
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MessageBox.Show("Connection : " & ex.Message.ToString())
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
 End Class
