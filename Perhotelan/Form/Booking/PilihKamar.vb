@@ -32,4 +32,23 @@
         selectedTableKamarNama = selectedRow.Cells(2).Value
         selectedTableKamarHarga = selectedRow.Cells(3).Value
     End Sub
+
+    Private Sub BtnPilihDataKamar_Click(sender As Object, e As EventArgs) Handles BtnPilihDataKamar.Click
+        Try
+            BookingKamar_.textnokamar = selectedTableKamarNama
+            harga = selectedTableKamarHarga
+            BookingKamar_.booking.GSIdKamar = selectedTableKamarID
+            Me.Close()
+            Dim bk As New BookingKamar_(Login.Users.GSUserName, Login.Users.GSEmail)
+            bk.Show()
+        Catch ex As Exception
+            MsgBox("Anda belum memilih baris apa pun!")
+        End Try
+    End Sub
+
+    Private Sub BtnBatalDataKamar_Click(sender As Object, e As EventArgs) Handles BtnBatalDataKamar.Click
+        Dim bk As New BookingKamar_(Login.Users.GSUserName, Login.Users.GSEmail)
+        bk.Show()
+        Me.Close()
+    End Sub
 End Class
