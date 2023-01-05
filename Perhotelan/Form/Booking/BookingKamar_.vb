@@ -147,4 +147,13 @@ Public Class BookingKamar_
 
         LblTotalBayar.Text = booking.GSTotal.ToString()
     End Sub
+
+    Private Sub DataGridViewBooking_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewBooking.CellClick
+        Dim index As Integer = e.RowIndex
+        Dim selectedRow As DataGridViewRow
+        selectedRow = DataGridViewBooking.Rows(index)
+
+        selectedTableBookingNoKamar = selectedRow.Cells(1).Value
+        selectedTableBookingNamaTamu = selectedRow.Cells(0).Value
+    End Sub
 End Class
