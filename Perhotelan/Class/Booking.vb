@@ -180,4 +180,64 @@ Public Class Booking
             dbConn.Dispose()
         End Try
     End Function
+
+    Public Function CheckTxtKamar(nama_kamar As String)
+
+        Dim result As New List(Of String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT id_kamar, nama_kamar, jenis_kamar.harga FROM kamar INNER JOIN jenis_kamar on kamar.id_jenis_kamar = jenis_kamar.id_jenis_kamar "
+            sqlQuery &= "WHERE nama_kamar = '" & nama_kamar & "' OR status='Belum Terisi'"
+            sqlQuery &= ""
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0).ToString())
+                    result.Add(sqlRead.GetString(1).ToString())
+                    result.Add(sqlRead.GetString(2).ToString())
+                End While
+
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem loading data: " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection Error: " & ex.Message.ToString)
+        End Try
+    End Function
+
+    Public Function CheckTxtKamar2(nama_kamar As String)
+
+        Dim result As New List(Of String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT id_kamar, nama_kamar, jenis_kamar.harga FROM kamar INNER JOIN jenis_kamar on kamar.id_jenis_kamar = jenis_kamar.id_jenis_kamar "
+            sqlQuery &= "WHERE nama_kamar = '" & nama_kamar & "'"
+            sqlQuery &= ""
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0).ToString())
+                    result.Add(sqlRead.GetString(1).ToString())
+                    result.Add(sqlRead.GetString(2).ToString())
+                End While
+
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem loading data: " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection Error: " & ex.Message.ToString)
+        End Try
+    End Function
 End Class
