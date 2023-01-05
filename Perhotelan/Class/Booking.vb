@@ -117,4 +117,35 @@ Public Class Booking
             MsgBox("Connection : " & ex.Message.ToString)
         End Try
     End Function
+
+    Public Function GetDataBookingDatabase() As DataTable
+        Dim result As New DataTable
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT tamu.nama AS 'Nama Lengkap',
+                        kamar.nama_kamar AS 'No. Kamar',
+                        check_in AS 'Tanggal Check In',
+                        check_out AS 'Tanggal Check Out',
+                        booking_kamar.status AS 'Status'
+                        FROM booking_kamar
+                        INNER JOIN tamu ON booking_kamar.id_tamu = tamu.nik
+                        INNER JOIN kamar ON booking_kamar.id_kamar = kamar.id_kamar WHERE booking_kamar.status = 'Reserved' "
+
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+                result.Load(sqlRead)
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem : " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
 End Class
