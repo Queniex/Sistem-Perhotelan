@@ -488,4 +488,26 @@ Public Class Booking
             dbConn.Dispose()
         End Try
     End Function
+
+    Public Function UpdateDataStatusKamarById(ID_Kamar As Integer,
+                                           Status As String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+
+            sqlQuery = "UPDATE kamar SET " _
+                        + "status='" & Status & "' WHERE id_kamar='" & ID_Kamar & "' "
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
 End Class
