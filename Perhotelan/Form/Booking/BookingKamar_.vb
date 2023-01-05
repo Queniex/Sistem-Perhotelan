@@ -184,4 +184,25 @@ Public Class BookingKamar_
             MessageBox.Show("Karakter Tidak Diketahui")
         End If
     End Sub
+
+    Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
+        Dim id_kamar As Integer = booking.getIdKamarByNoKamar(selectedTableBookingNoKamar)
+        selectedTableBookingIdBooking = booking.getIdBookingByIdKamar(id_kamar)
+        Dim dataSelected As List(Of String) = booking.GetDataBookingById(selectedTableBookingIdBooking)
+        Dim dataSelected2 As List(Of String) = booking.getHargaKamar(id_kamar)
+        Try
+            booking.GSIdTamu = dataSelected(1)
+            booking.GSIdKamar = dataSelected(2)
+            booking.GSCheckIn = dataSelected(3)
+            booking.GSCheckOut = dataSelected(4)
+            booking.GSStatus = dataSelected(5)
+            booking.GSTotal = getDay(Convert.ToDateTime(dataSelected(3)), Convert.ToDateTime(dataSelected(4)), dataSelected2(0)).ToString()
+
+            Dim formUpdate = New EditBookingKamar()
+            formUpdate.Show()
+            Me.Hide()
+        Catch ex As Exception
+            MsgBox("Anda belum memilih baris apa pun!")
+        End Try
+    End Sub
 End Class
