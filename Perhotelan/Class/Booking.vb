@@ -267,4 +267,50 @@ Public Class Booking
             MsgBox("Connection Error: " & ex.Message.ToString)
         End Try
     End Function
+
+    Public Function getDataTamu()
+        Dim result As New DataTable
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT nik AS 'NIK',
+                        nama AS 'Nama Tamu'
+                        FROM tamu"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+                result.Load(sqlRead)
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem loading data: " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection Error: " & ex.Message.ToString)
+        End Try
+    End Function
+
+    Public Function getDataKamar()
+        Dim result As New DataTable
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT id_kamar AS 'Id',
+                        jenis_kamar.jenis_kamar AS 'Info Jenis Kamar',
+                        nama_kamar AS 'Nomor Kamar',
+                        jenis_kamar.harga AS 'Harga'
+                        FROM kamar INNER JOIN jenis_kamar on kamar.id_jenis_kamar = jenis_kamar.id_jenis_kamar WHERE kamar.status = 'Belum Terisi'"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+                result.Load(sqlRead)
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem loading data: " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection Error: " & ex.Message.ToString)
+        End Try
+    End Function
 End Class
