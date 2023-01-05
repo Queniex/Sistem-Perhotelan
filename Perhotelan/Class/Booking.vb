@@ -89,4 +89,32 @@ Public Class Booking
             status = value
         End Set
     End Property
+
+    Public Function AddBooking(ID_Tamu As Integer,
+                               ID_Kamar As Integer,
+                               Check_In As String,
+                               Check_Out As String,
+                               Status As String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "INSERT INTO booking_kamar (id, id_tamu, id_kamar, check_in, 
+                                         check_out, status) VALUES ('','" & ID_Tamu & "','" & ID_Kamar & "','" _
+                                         & Check_In & "','" _
+                                         & Check_Out & "','" _
+                                         & Status & "')"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader()
+                sqlRead.Close()
+                MsgBox("Data Berhasil Ditambahkan.")
+            Catch ex As Exception
+                MsgBox("Failed : " & ex.Message.ToString())
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        End Try
+    End Function
 End Class
