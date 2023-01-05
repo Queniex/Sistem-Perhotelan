@@ -240,4 +240,31 @@ Public Class Booking
             MsgBox("Connection Error: " & ex.Message.ToString)
         End Try
     End Function
+
+    Public Function CheckTxtTamu(nama_tamu As String)
+
+        Dim result As New List(Of String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT nik, nama FROM tamu WHERE nama = '" & nama_tamu & "' "
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0).ToString())
+                    result.Add(sqlRead.GetString(1).ToString())
+                End While
+
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem loading data: " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection Error: " & ex.Message.ToString)
+        End Try
+    End Function
 End Class
