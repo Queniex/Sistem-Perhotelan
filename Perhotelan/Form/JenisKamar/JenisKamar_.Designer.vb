@@ -41,6 +41,7 @@ Partial Class JenisKamar_
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtnLogout = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.ToolStripKamar_.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PbUser, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,7 +77,7 @@ Partial Class JenisKamar_
         Me.LblEmail.BackColor = System.Drawing.Color.Transparent
         Me.LblEmail.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LblEmail.ForeColor = System.Drawing.Color.Black
-        Me.LblEmail.Location = New System.Drawing.Point(161, 66)
+        Me.LblEmail.Location = New System.Drawing.Point(128, 63)
         Me.LblEmail.Name = "LblEmail"
         Me.LblEmail.Size = New System.Drawing.Size(138, 21)
         Me.LblEmail.TabIndex = 99
@@ -96,9 +97,9 @@ Partial Class JenisKamar_
         '
         'PbUser
         '
-        Me.PbUser.Location = New System.Drawing.Point(43, 17)
+        Me.PbUser.Location = New System.Drawing.Point(29, 29)
         Me.PbUser.Name = "PbUser"
-        Me.PbUser.Size = New System.Drawing.Size(100, 100)
+        Me.PbUser.Size = New System.Drawing.Size(76, 70)
         Me.PbUser.TabIndex = 0
         Me.PbUser.TabStop = False
         '
@@ -108,7 +109,7 @@ Partial Class JenisKamar_
         Me.LblUser.BackColor = System.Drawing.Color.Transparent
         Me.LblUser.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LblUser.ForeColor = System.Drawing.Color.Black
-        Me.LblUser.Location = New System.Drawing.Point(208, 46)
+        Me.LblUser.Location = New System.Drawing.Point(175, 43)
         Me.LblUser.Name = "LblUser"
         Me.LblUser.Size = New System.Drawing.Size(44, 21)
         Me.LblUser.TabIndex = 98
@@ -120,7 +121,7 @@ Partial Class JenisKamar_
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(161, 46)
+        Me.Label7.Location = New System.Drawing.Point(128, 43)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(49, 21)
         Me.Label7.TabIndex = 97
@@ -144,9 +145,9 @@ Partial Class JenisKamar_
         Me.BtnTambah.BackColor = System.Drawing.Color.DimGray
         Me.BtnTambah.BackgroundImage = CType(resources.GetObject("BtnTambah.BackgroundImage"), System.Drawing.Image)
         Me.BtnTambah.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnTambah.Location = New System.Drawing.Point(689, 13)
+        Me.BtnTambah.Location = New System.Drawing.Point(648, 5)
         Me.BtnTambah.Name = "BtnTambah"
-        Me.BtnTambah.Size = New System.Drawing.Size(27, 23)
+        Me.BtnTambah.Size = New System.Drawing.Size(36, 33)
         Me.BtnTambah.TabIndex = 103
         Me.BtnTambah.UseVisualStyleBackColor = False
         '
@@ -155,10 +156,10 @@ Partial Class JenisKamar_
         Me.BtnHapus.BackColor = System.Drawing.Color.DimGray
         Me.BtnHapus.BackgroundImage = CType(resources.GetObject("BtnHapus.BackgroundImage"), System.Drawing.Image)
         Me.BtnHapus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnHapus.Location = New System.Drawing.Point(783, 13)
+        Me.BtnHapus.Location = New System.Drawing.Point(768, 5)
         Me.BtnHapus.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnHapus.Name = "BtnHapus"
-        Me.BtnHapus.Size = New System.Drawing.Size(27, 23)
+        Me.BtnHapus.Size = New System.Drawing.Size(39, 33)
         Me.BtnHapus.TabIndex = 99
         Me.BtnHapus.UseVisualStyleBackColor = False
         '
@@ -178,10 +179,10 @@ Partial Class JenisKamar_
         Me.BtnEdit.BackColor = System.Drawing.Color.DimGray
         Me.BtnEdit.BackgroundImage = CType(resources.GetObject("BtnEdit.BackgroundImage"), System.Drawing.Image)
         Me.BtnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnEdit.Location = New System.Drawing.Point(720, 13)
+        Me.BtnEdit.Location = New System.Drawing.Point(689, 5)
         Me.BtnEdit.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnEdit.Name = "BtnEdit"
-        Me.BtnEdit.Size = New System.Drawing.Size(27, 23)
+        Me.BtnEdit.Size = New System.Drawing.Size(35, 33)
         Me.BtnEdit.TabIndex = 98
         Me.BtnEdit.UseVisualStyleBackColor = False
         '
@@ -190,10 +191,10 @@ Partial Class JenisKamar_
         Me.BtnInfo.BackColor = System.Drawing.Color.DimGray
         Me.BtnInfo.BackgroundImage = CType(resources.GetObject("BtnInfo.BackgroundImage"), System.Drawing.Image)
         Me.BtnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnInfo.Location = New System.Drawing.Point(752, 13)
+        Me.BtnInfo.Location = New System.Drawing.Point(728, 4)
         Me.BtnInfo.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnInfo.Name = "BtnInfo"
-        Me.BtnInfo.Size = New System.Drawing.Size(27, 23)
+        Me.BtnInfo.Size = New System.Drawing.Size(36, 34)
         Me.BtnInfo.TabIndex = 100
         Me.BtnInfo.UseVisualStyleBackColor = False
         '
@@ -210,14 +211,16 @@ Partial Class JenisKamar_
         '
         'DataGridViewJKamar
         '
+        Me.DataGridViewJKamar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.DataGridViewJKamar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders
         Me.DataGridViewJKamar.BackgroundColor = System.Drawing.Color.Black
         Me.DataGridViewJKamar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridViewJKamar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewJKamar.Location = New System.Drawing.Point(9, 260)
         Me.DataGridViewJKamar.Name = "DataGridViewJKamar"
-        Me.DataGridViewJKamar.RowHeadersWidth = 62
+        Me.DataGridViewJKamar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DataGridViewJKamar.RowTemplate.Height = 25
-        Me.DataGridViewJKamar.Size = New System.Drawing.Size(820, 233)
+        Me.DataGridViewJKamar.Size = New System.Drawing.Size(468, 233)
         Me.DataGridViewJKamar.TabIndex = 116
         '
         'Panel1
@@ -236,9 +239,9 @@ Partial Class JenisKamar_
         Me.BtnLogout.BackColor = System.Drawing.Color.Black
         Me.BtnLogout.BackgroundImage = CType(resources.GetObject("BtnLogout.BackgroundImage"), System.Drawing.Image)
         Me.BtnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnLogout.Location = New System.Drawing.Point(780, 13)
+        Me.BtnLogout.Location = New System.Drawing.Point(769, 6)
         Me.BtnLogout.Name = "BtnLogout"
-        Me.BtnLogout.Size = New System.Drawing.Size(29, 23)
+        Me.BtnLogout.Size = New System.Drawing.Size(36, 33)
         Me.BtnLogout.TabIndex = 82
         Me.BtnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnLogout.UseVisualStyleBackColor = False
@@ -251,12 +254,21 @@ Partial Class JenisKamar_
         Me.Panel4.Size = New System.Drawing.Size(335, 130)
         Me.Panel4.TabIndex = 112
         '
+        'Panel5
+        '
+        Me.Panel5.BackgroundImage = CType(resources.GetObject("Panel5.BackgroundImage"), System.Drawing.Image)
+        Me.Panel5.Location = New System.Drawing.Point(494, 260)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(335, 233)
+        Me.Panel5.TabIndex = 113
+        '
         'JenisKamar_
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(865, 511)
+        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.ToolStripKamar_)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
@@ -299,4 +311,5 @@ Partial Class JenisKamar_
     Friend WithEvents Panel1 As Panel
     Friend WithEvents BtnLogout As Button
     Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel5 As Panel
 End Class
