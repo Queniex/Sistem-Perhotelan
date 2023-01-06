@@ -250,4 +250,9 @@ Public Class BookingKamar_
         End Try
     End Sub
 
+    Private Sub BtnCheckIn_Click(sender As Object, e As EventArgs) Handles BtnCheckIn.Click
+        Dim bk As New BukuTamu_(Login.Users.GSUserName, Login.Users.GSEmail)
+        bk.Show()
+        Me.Close()
+    End Sub
 End Class

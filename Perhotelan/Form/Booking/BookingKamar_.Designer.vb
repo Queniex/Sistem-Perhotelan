@@ -62,6 +62,7 @@ Partial Class BookingKamar_
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnCheckIn = New System.Windows.Forms.Button()
         CType(Me.PictureBoxBooking, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.ToolStripKamar_.SuspendLayout()
@@ -295,7 +296,7 @@ Partial Class BookingKamar_
         Me.DataGridViewBooking.Name = "DataGridViewBooking"
         Me.DataGridViewBooking.RowHeadersWidth = 62
         Me.DataGridViewBooking.RowTemplate.Height = 25
-        Me.DataGridViewBooking.Size = New System.Drawing.Size(337, 233)
+        Me.DataGridViewBooking.Size = New System.Drawing.Size(337, 205)
         Me.DataGridViewBooking.TabIndex = 103
         '
         'LblTotalBayar
@@ -491,12 +492,25 @@ Partial Class BookingKamar_
         Me.Panel1.Size = New System.Drawing.Size(829, 53)
         Me.Panel1.TabIndex = 100
         '
+        'BtnCheckIn
+        '
+        Me.BtnCheckIn.BackColor = System.Drawing.Color.Black
+        Me.BtnCheckIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.BtnCheckIn.ForeColor = System.Drawing.Color.White
+        Me.BtnCheckIn.Location = New System.Drawing.Point(494, 474)
+        Me.BtnCheckIn.Name = "BtnCheckIn"
+        Me.BtnCheckIn.Size = New System.Drawing.Size(337, 23)
+        Me.BtnCheckIn.TabIndex = 71
+        Me.BtnCheckIn.Text = "Checkin"
+        Me.BtnCheckIn.UseVisualStyleBackColor = False
+        '
         'BookingKamar_
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(865, 506)
+        Me.Controls.Add(Me.BtnCheckIn)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.ToolStripKamar_)
@@ -563,4 +577,5 @@ Partial Class BookingKamar_
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents BtnCheckIn As Button
 End Class
