@@ -136,4 +136,13 @@ Public Class EditBookingKamar
             Class_Kamar.dbConn.Close()
         End Try
     End Sub
+
+    Private Sub EditBookingKamar_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        BookingKamar_.datas = BookingKamar_.booking.getKamar(BookingKamar_.selectedTableBookingNoKamar)
+        CbBooking.Items.Clear()
+        For Each kamar In BookingKamar_.datas
+            CbBooking.Items.Add(kamar)
+        Next
+        BookingKamar_.datas.Clear()
+    End Sub
 End Class
