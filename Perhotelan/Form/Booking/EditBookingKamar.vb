@@ -1,5 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class EditBookingKamar
+    Dim status As String
+    Dim kamar_lama As String
     Public Sub New()
 
         ' This call is required by the designer.
@@ -26,10 +28,18 @@ Public Class EditBookingKamar
     End Sub
 
     Private Sub BtnEditBookingKamar_Click(sender As Object, e As EventArgs) Handles BtnEditBookingKamar.Click
+        kamar_lama = BookingKamar_.selectedTableBookingNoKamar.ToString()
         Dim cek = BookingKamar_.booking.CheckTxtTamu(CbTamu.Text)
         Dim count_ = cek.Count
 
         If count_ > 0 Then
+
+            If CbBooking.Text <> kamar_lama Then
+                status = "Belum Terisi"
+                BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.getIdKamarByNoKamar(kamar_lama), status)
+                MessageBox.Show(kamar_lama)
+            End If
+
             BookingKamar_.booking.GSCheckIn = DtpCheckIn.Value.ToString("yyyy/MM/dd")
             BookingKamar_.booking.GSCheckOut = DtpCheckOut.Value.ToString("yyyy/MM/dd")
             BookingKamar_.booking.GSIdTamu = BookingKamar_.booking.getIdTamuByNama(CbTamu.Text)
@@ -43,8 +53,17 @@ Public Class EditBookingKamar
                                    BookingKamar_.booking.GSCheckOut,
                                    BookingKamar_.booking.GSStatus)
 
-            Dim status As String = "Terisi"
-            BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.GSIdKamar, status)
+            If String.Compare(BookingKamar_.booking.GSStatus, "Check In") = 0 Then
+                status = "Terisi"
+                BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.GSIdKamar, status)
+            ElseIf String.Compare(BookingKamar_.booking.GSStatus, "Check Out") = 0 Then
+                status = "Belum Terisi"
+                BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.GSIdKamar, status)
+            ElseIf String.Compare(BookingKamar_.booking.GSStatus, "Reserved") = 0 Then
+                status = "Terisi"
+                BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.GSIdKamar, status)
+            End If
+
             CbStatusKamar.Text = "Reserved"
             LblTotalBayar.Text = "Total Bayar"
             DtpCheckIn.Value = DateTime.Today
@@ -93,17 +112,17 @@ Public Class EditBookingKamar
 
         If DtpCheckOut.Value.Year > DateTime.Today.Year Then
             BookingKamar_.booking.GSTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
-            LblTotalBayar.Text = BookingKamar_.booking.GSTotal
+            LblTotalBayar.Text = "Rp " + BookingKamar_.booking.GSTotal
         ElseIf DtpCheckOut.Value.Year = DateTime.Today.Year Then
 
             If DtpCheckOut.Value.Month > DateTime.Today.Month Then
                 BookingKamar_.booking.GSTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
-                LblTotalBayar.Text = BookingKamar_.booking.GSTotal
+                LblTotalBayar.Text = "Rp " + BookingKamar_.booking.GSTotal
             ElseIf DtpCheckOut.Value.Month = DateTime.Today.Month Then
 
                 If DtpCheckOut.Value.Day > DateTime.Today.Day Then
                     BookingKamar_.booking.GSTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
-                    LblTotalBayar.Text = BookingKamar_.booking.GSTotal
+                    LblTotalBayar.Text = "Rp " + BookingKamar_.booking.GSTotal
                 Else
                     LblTotalBayar.Text = 0
                 End If
@@ -115,8 +134,6 @@ Public Class EditBookingKamar
         ElseIf DtpCheckOut.Value.Year < DateTime.Today.Year Then
             LblTotalBayar.Text = 0
         End If
-
-        'LblTotalBayar.Text = BookingKamar_.booking.GSTotal.ToString()
     End Sub
 
     Private Sub EditBookingKamar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
