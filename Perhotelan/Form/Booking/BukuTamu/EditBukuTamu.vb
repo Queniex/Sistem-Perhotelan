@@ -17,56 +17,6 @@ Public Class EditBukuTamu
         LblTotalBayar.Text = BukuTamu_.hargaTotal.ToString()
     End Sub
 
-    'Private Sub BtnEditBukuTamu_Click(sender As Object, e As EventArgs) Handles BtnEditBukuTamu.Click
-    '    kamar_lama = BookingKamar_.selectedTableBookingNoKamar.ToString()
-    '    Dim cek = BookingKamar_.booking.CheckTxtTamu(CbTamu.Text)
-    '    Dim count_ = cek.Count
-
-    '    If count_ > 0 Then
-
-    '        If CbCheckin.Text <> kamar_lama Then
-    '            status = "Belum Terisi"
-    '            BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.getIdKamarByNoKamar(kamar_lama), status)
-    '            MessageBox.Show(kamar_lama)
-    '        End If
-
-    '        BookingKamar_.booking.GSCheckIn = DtpCheckIn.Value.ToString("yyyy/MM/dd")
-    '        BookingKamar_.booking.GSCheckOut = DtpCheckOut.Value.ToString("yyyy/MM/dd")
-    '        BookingKamar_.booking.GSIdTamu = BookingKamar_.booking.getIdTamuByNama(CbTamu.Text)
-    '        BookingKamar_.booking.GSIdKamar = BookingKamar_.booking.getIdKamarByNoKamar(CbCheckin.Text)
-    '        BookingKamar_.booking.GSStatus = CbStatusKamar.Text.ToString()
-
-    '        BookingKamar_.booking.UpdateDataBookingById(BookingKamar_.selectedTableBookingIdBooking,
-    '                               BookingKamar_.booking.GSIdTamu,
-    '                               BookingKamar_.booking.GSIdKamar,
-    '                               BookingKamar_.booking.GSCheckIn,
-    '                               BookingKamar_.booking.GSCheckOut,
-    '                               BookingKamar_.booking.GSStatus)
-
-    '        If String.Compare(BookingKamar_.booking.GSStatus, "Check In") = 0 Then
-    '            status = "Terisi"
-    '            BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.GSIdKamar, status)
-    '        ElseIf String.Compare(BookingKamar_.booking.GSStatus, "Check Out") = 0 Then
-    '            status = "Belum Terisi"
-    '            BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.GSIdKamar, status)
-    '        ElseIf String.Compare(BookingKamar_.booking.GSStatus, "Reserved") = 0 Then
-    '            status = "Terisi"
-    '            BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.GSIdKamar, status)
-    '        End If
-
-    '        CbStatusKamar.Text = "Reserved"
-    '        LblTotalBayar.Text = "Total Bayar"
-    '        DtpCheckIn.Value = DateTime.Today
-    '        DtpCheckOut.Value = DateTime.Today
-
-    '        Dim Info = New InfoBukuTamu()
-    '        Info.Show()
-    '        Me.Close()
-    '    Else
-    '        MessageBox.Show("Data Tamu Yang Anda Masukkan Salah")
-    '    End If
-    'End Sub
-
     Private Sub BtnEditBukuTamu_Click(sender As Object, e As EventArgs) Handles BtnEditBukuTamu.Click
         kamar_lama = BookingKamar_.selectedTableBookingNoKamar.ToString()
         Dim cek = BookingKamar_.booking.CheckTxtTamu(CbTamu.Text)
@@ -114,6 +64,30 @@ Public Class EditBukuTamu
             Me.Close()
         Else
             MessageBox.Show("Data Tamu Yang Anda Masukkan Salah")
+        End If
+    End Sub
+
+    Private Sub TxtBoxNoBooking_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsNumber(e.KeyChar) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) Then
+            e.Handled = True
+            MessageBox.Show("Hanya Dapat Memasukkan Angka!")
+        End If
+    End Sub
+
+    Private Sub TxtNamaTamu_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsLetter(e.KeyChar) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) And Not e.KeyChar = Chr(Keys.Space) Then
+            e.Handled = True
+            MessageBox.Show("Karakter Tidak Diketahui")
+        End If
+    End Sub
+
+    Private Sub CbCheckin_TextChanged(sender As Object, e As EventArgs) Handles CbCheckin.TextChanged
+        LblTotalBayar.Text = "Masukkan Ulang Tanggal"
+        Dim chk = BookingKamar_.booking.CheckTxtKamar2(BookingKamar_.textnokamar)
+        Dim count = chk.Count
+
+        If count > 0 Then
+            BookingKamar_.harga = chk(2)
         End If
     End Sub
 End Class
