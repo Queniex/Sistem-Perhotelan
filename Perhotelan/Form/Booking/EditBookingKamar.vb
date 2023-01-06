@@ -57,4 +57,28 @@ Public Class EditBookingKamar
             MessageBox.Show("Data Tamu Yang Anda Masukkan Salah")
         End If
     End Sub
+
+    Private Sub CbBooking_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsNumber(e.KeyChar) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) Then
+            e.Handled = True
+            MessageBox.Show("Hanya Dapat Memasukkan Angka!")
+        End If
+    End Sub
+
+    Private Sub CbTamu_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsLetter(e.KeyChar) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) And Not e.KeyChar = Chr(Keys.Space) Then
+            e.Handled = True
+            MessageBox.Show("Karakter Tidak Diketahui")
+        End If
+    End Sub
+
+    Private Sub CbBooking_TextChanged(sender As Object, e As EventArgs) Handles CbBooking.TextChanged
+        LblTotalBayar.Text = "Masukkan Ulang Tanggal"
+        Dim chk = BookingKamar_.booking.CheckTxtKamar2(CbBooking.Text)
+        Dim count = chk.Count
+
+        If count > 0 Then
+            BookingKamar_.harga = chk(2)
+        End If
+    End Sub
 End Class
