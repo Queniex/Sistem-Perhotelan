@@ -36,18 +36,19 @@ Partial Class Tamu_
         Me.Label14 = New System.Windows.Forms.Label()
         Me.BtnEdit = New System.Windows.Forms.Button()
         Me.BtnInfo = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.LblEmail = New System.Windows.Forms.Label()
-        Me.PictureBoxNama = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxBukuTamu = New System.Windows.Forms.PictureBox()
         Me.LblUser = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
         CType(Me.DataGridViewTamu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.ToolStripKamar_.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBoxNama, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridViewTamu
@@ -99,9 +100,9 @@ Partial Class Tamu_
         'Panel4
         '
         Me.Panel4.BackgroundImage = CType(resources.GetObject("Panel4.BackgroundImage"), System.Drawing.Image)
-        Me.Panel4.Location = New System.Drawing.Point(494, 116)
+        Me.Panel4.Location = New System.Drawing.Point(483, 116)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(335, 130)
+        Me.Panel4.Size = New System.Drawing.Size(346, 130)
         Me.Panel4.TabIndex = 118
         '
         'ToolStripKamar_
@@ -196,17 +197,34 @@ Partial Class Tamu_
         Me.BtnInfo.TabIndex = 100
         Me.BtnInfo.UseVisualStyleBackColor = False
         '
+        'Panel5
+        '
+        Me.Panel5.BackgroundImage = CType(resources.GetObject("Panel5.BackgroundImage"), System.Drawing.Image)
+        Me.Panel5.Location = New System.Drawing.Point(483, 254)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(346, 169)
+        Me.Panel5.TabIndex = 119
+        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Panel6)
         Me.Panel3.Controls.Add(Me.LblEmail)
-        Me.Panel3.Controls.Add(Me.PictureBoxNama)
+        Me.Panel3.Controls.Add(Me.PictureBoxBukuTamu)
         Me.Panel3.Controls.Add(Me.LblUser)
         Me.Panel3.Controls.Add(Me.Label7)
-        Me.Panel3.Location = New System.Drawing.Point(9, 116)
+        Me.Panel3.Location = New System.Drawing.Point(9, 117)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(468, 130)
-        Me.Panel3.TabIndex = 123
+        Me.Panel3.TabIndex = 114
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.Black
+        Me.Panel6.Location = New System.Drawing.Point(29, 96)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(249, 11)
+        Me.Panel6.TabIndex = 100
         '
         'LblEmail
         '
@@ -214,19 +232,19 @@ Partial Class Tamu_
         Me.LblEmail.BackColor = System.Drawing.Color.Transparent
         Me.LblEmail.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LblEmail.ForeColor = System.Drawing.Color.Black
-        Me.LblEmail.Location = New System.Drawing.Point(128, 63)
+        Me.LblEmail.Location = New System.Drawing.Point(128, 51)
         Me.LblEmail.Name = "LblEmail"
         Me.LblEmail.Size = New System.Drawing.Size(138, 21)
         Me.LblEmail.TabIndex = 99
         Me.LblEmail.Text = "User@gmail.com"
         '
-        'PictureBoxNama
+        'PictureBoxBukuTamu
         '
-        Me.PictureBoxNama.Location = New System.Drawing.Point(29, 29)
-        Me.PictureBoxNama.Name = "PictureBoxNama"
-        Me.PictureBoxNama.Size = New System.Drawing.Size(76, 70)
-        Me.PictureBoxNama.TabIndex = 0
-        Me.PictureBoxNama.TabStop = False
+        Me.PictureBoxBukuTamu.Location = New System.Drawing.Point(29, 17)
+        Me.PictureBoxBukuTamu.Name = "PictureBoxBukuTamu"
+        Me.PictureBoxBukuTamu.Size = New System.Drawing.Size(76, 70)
+        Me.PictureBoxBukuTamu.TabIndex = 0
+        Me.PictureBoxBukuTamu.TabStop = False
         '
         'LblUser
         '
@@ -234,7 +252,7 @@ Partial Class Tamu_
         Me.LblUser.BackColor = System.Drawing.Color.Transparent
         Me.LblUser.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LblUser.ForeColor = System.Drawing.Color.Black
-        Me.LblUser.Location = New System.Drawing.Point(175, 43)
+        Me.LblUser.Location = New System.Drawing.Point(175, 31)
         Me.LblUser.Name = "LblUser"
         Me.LblUser.Size = New System.Drawing.Size(44, 21)
         Me.LblUser.TabIndex = 98
@@ -246,19 +264,11 @@ Partial Class Tamu_
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(128, 43)
+        Me.Label7.Location = New System.Drawing.Point(128, 31)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(49, 21)
         Me.Label7.TabIndex = 97
         Me.Label7.Text = "Hello,"
-        '
-        'Panel5
-        '
-        Me.Panel5.BackgroundImage = CType(resources.GetObject("Panel5.BackgroundImage"), System.Drawing.Image)
-        Me.Panel5.Location = New System.Drawing.Point(494, 254)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(335, 169)
-        Me.Panel5.TabIndex = 119
         '
         'Tamu_
         '
@@ -266,8 +276,8 @@ Partial Class Tamu_
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(865, 427)
-        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.DataGridViewTamu)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
@@ -285,7 +295,7 @@ Partial Class Tamu_
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictureBoxNama, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -304,10 +314,11 @@ Partial Class Tamu_
     Friend WithEvents Label14 As Label
     Friend WithEvents BtnEdit As Button
     Friend WithEvents BtnInfo As Button
+    Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel6 As Panel
     Friend WithEvents LblEmail As Label
-    Friend WithEvents PictureBoxNama As PictureBox
+    Friend WithEvents PictureBoxBukuTamu As PictureBox
     Friend WithEvents LblUser As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Panel5 As Panel
 End Class

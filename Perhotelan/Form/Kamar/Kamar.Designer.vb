@@ -37,18 +37,19 @@ Partial Class Kamar
         Me.BtnLogOut = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.LblEmail = New System.Windows.Forms.Label()
-        Me.PictBoxNama = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxBukuTamu = New System.Windows.Forms.PictureBox()
         Me.LblUser = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.ToolStripKamar_.SuspendLayout()
         CType(Me.DataGridViewKamar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictBoxNama, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStripKamar_
@@ -59,7 +60,7 @@ Partial Class Kamar
         Me.ToolStripKamar_.Location = New System.Drawing.Point(785, 0)
         Me.ToolStripKamar_.Name = "ToolStripKamar_"
         Me.ToolStripKamar_.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStripKamar_.Size = New System.Drawing.Size(30, 565)
+        Me.ToolStripKamar_.Size = New System.Drawing.Size(30, 547)
         Me.ToolStripKamar_.TabIndex = 72
         Me.ToolStripKamar_.Text = "ToolStrip1"
         '
@@ -77,7 +78,7 @@ Partial Class Kamar
         Me.DataGridViewKamar.BackgroundColor = System.Drawing.Color.Black
         Me.DataGridViewKamar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridViewKamar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewKamar.Location = New System.Drawing.Point(12, 296)
+        Me.DataGridViewKamar.Location = New System.Drawing.Point(12, 281)
         Me.DataGridViewKamar.Name = "DataGridViewKamar"
         Me.DataGridViewKamar.RowTemplate.Height = 25
         Me.DataGridViewKamar.Size = New System.Drawing.Size(468, 256)
@@ -155,9 +156,9 @@ Partial Class Kamar
         'Panel4
         '
         Me.Panel4.BackgroundImage = CType(resources.GetObject("Panel4.BackgroundImage"), System.Drawing.Image)
-        Me.Panel4.Location = New System.Drawing.Point(505, 148)
+        Me.Panel4.Location = New System.Drawing.Point(486, 146)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(269, 130)
+        Me.Panel4.Size = New System.Drawing.Size(288, 130)
         Me.Panel4.TabIndex = 87
         '
         'Panel1
@@ -198,17 +199,34 @@ Partial Class Kamar
         '
         Me.OpenFileDialog.FileName = "OpenFileDialog"
         '
+        'Panel5
+        '
+        Me.Panel5.BackgroundImage = CType(resources.GetObject("Panel5.BackgroundImage"), System.Drawing.Image)
+        Me.Panel5.Location = New System.Drawing.Point(486, 282)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(288, 256)
+        Me.Panel5.TabIndex = 88
+        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Panel6)
         Me.Panel3.Controls.Add(Me.LblEmail)
-        Me.Panel3.Controls.Add(Me.PictBoxNama)
+        Me.Panel3.Controls.Add(Me.PictureBoxBukuTamu)
         Me.Panel3.Controls.Add(Me.LblUser)
         Me.Panel3.Controls.Add(Me.Label7)
-        Me.Panel3.Location = New System.Drawing.Point(12, 148)
+        Me.Panel3.Location = New System.Drawing.Point(12, 145)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(468, 130)
-        Me.Panel3.TabIndex = 112
+        Me.Panel3.TabIndex = 114
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.Black
+        Me.Panel6.Location = New System.Drawing.Point(29, 96)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(249, 11)
+        Me.Panel6.TabIndex = 100
         '
         'LblEmail
         '
@@ -216,19 +234,19 @@ Partial Class Kamar
         Me.LblEmail.BackColor = System.Drawing.Color.Transparent
         Me.LblEmail.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LblEmail.ForeColor = System.Drawing.Color.Black
-        Me.LblEmail.Location = New System.Drawing.Point(128, 63)
+        Me.LblEmail.Location = New System.Drawing.Point(128, 51)
         Me.LblEmail.Name = "LblEmail"
         Me.LblEmail.Size = New System.Drawing.Size(138, 21)
         Me.LblEmail.TabIndex = 99
         Me.LblEmail.Text = "User@gmail.com"
         '
-        'PictBoxNama
+        'PictureBoxBukuTamu
         '
-        Me.PictBoxNama.Location = New System.Drawing.Point(29, 29)
-        Me.PictBoxNama.Name = "PictBoxNama"
-        Me.PictBoxNama.Size = New System.Drawing.Size(76, 70)
-        Me.PictBoxNama.TabIndex = 0
-        Me.PictBoxNama.TabStop = False
+        Me.PictureBoxBukuTamu.Location = New System.Drawing.Point(29, 17)
+        Me.PictureBoxBukuTamu.Name = "PictureBoxBukuTamu"
+        Me.PictureBoxBukuTamu.Size = New System.Drawing.Size(76, 70)
+        Me.PictureBoxBukuTamu.TabIndex = 0
+        Me.PictureBoxBukuTamu.TabStop = False
         '
         'LblUser
         '
@@ -236,7 +254,7 @@ Partial Class Kamar
         Me.LblUser.BackColor = System.Drawing.Color.Transparent
         Me.LblUser.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LblUser.ForeColor = System.Drawing.Color.Black
-        Me.LblUser.Location = New System.Drawing.Point(175, 43)
+        Me.LblUser.Location = New System.Drawing.Point(175, 31)
         Me.LblUser.Name = "LblUser"
         Me.LblUser.Size = New System.Drawing.Size(44, 21)
         Me.LblUser.TabIndex = 98
@@ -248,29 +266,21 @@ Partial Class Kamar
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(128, 43)
+        Me.Label7.Location = New System.Drawing.Point(128, 31)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(49, 21)
         Me.Label7.TabIndex = 97
         Me.Label7.Text = "Hello,"
-        '
-        'Panel5
-        '
-        Me.Panel5.BackgroundImage = CType(resources.GetObject("Panel5.BackgroundImage"), System.Drawing.Image)
-        Me.Panel5.Location = New System.Drawing.Point(505, 296)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(269, 256)
-        Me.Panel5.TabIndex = 88
         '
         'Kamar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(815, 565)
+        Me.ClientSize = New System.Drawing.Size(815, 547)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel5)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.DataGridViewKamar)
@@ -287,7 +297,7 @@ Partial Class Kamar
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictBoxNama, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -306,10 +316,11 @@ Partial Class Kamar
     Friend WithEvents BtnLogOut As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents OpenFileDialog As OpenFileDialog
+    Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel6 As Panel
     Friend WithEvents LblEmail As Label
-    Friend WithEvents PictBoxNama As PictureBox
+    Friend WithEvents PictureBoxBukuTamu As PictureBox
     Friend WithEvents LblUser As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Panel5 As Panel
 End Class

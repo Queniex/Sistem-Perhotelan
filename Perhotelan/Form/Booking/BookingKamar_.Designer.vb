@@ -23,8 +23,6 @@ Partial Class BookingKamar_
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BookingKamar_))
-        Me.PictureBoxBooking = New System.Windows.Forms.PictureBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BtnHapus = New System.Windows.Forms.Button()
@@ -34,9 +32,6 @@ Partial Class BookingKamar_
         Me.BtnSaveBooking = New System.Windows.Forms.Button()
         Me.ToolStripKamar_ = New System.Windows.Forms.ToolStrip()
         Me.ToolStripBtnBooking = New System.Windows.Forms.ToolStripButton()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.LblEmail = New System.Windows.Forms.Label()
-        Me.LblUser = New System.Windows.Forms.Label()
         Me.CbStatusKamar = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -63,41 +58,27 @@ Partial Class BookingKamar_
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtnCheckIn = New System.Windows.Forms.Button()
-        CType(Me.PictureBoxBooking, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.LblEmail = New System.Windows.Forms.Label()
+        Me.PictureBoxBukuTamu = New System.Windows.Forms.PictureBox()
+        Me.LblUser = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.ToolStripKamar_.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         CType(Me.DataGridViewBooking, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbPemesanan.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PictureBoxBooking
-        '
-        Me.PictureBoxBooking.Location = New System.Drawing.Point(43, 17)
-        Me.PictureBoxBooking.Name = "PictureBoxBooking"
-        Me.PictureBoxBooking.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBoxBooking.TabIndex = 0
-        Me.PictureBoxBooking.TabStop = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(161, 46)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 20)
-        Me.Label7.TabIndex = 97
-        Me.Label7.Text = "Hello,"
         '
         'Panel4
         '
         Me.Panel4.BackgroundImage = CType(resources.GetObject("Panel4.BackgroundImage"), System.Drawing.Image)
-        Me.Panel4.Location = New System.Drawing.Point(496, 120)
+        Me.Panel4.Location = New System.Drawing.Point(485, 110)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(335, 130)
+        Me.Panel4.Size = New System.Drawing.Size(346, 130)
         Me.Panel4.TabIndex = 98
         '
         'Panel2
@@ -108,7 +89,7 @@ Partial Class BookingKamar_
         Me.Panel2.Controls.Add(Me.BtnEdit)
         Me.Panel2.Controls.Add(Me.BtnInfo)
         Me.Panel2.Controls.Add(Me.BtnSaveBooking)
-        Me.Panel2.Location = New System.Drawing.Point(3, 69)
+        Me.Panel2.Location = New System.Drawing.Point(3, 61)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(828, 45)
         Me.Panel2.TabIndex = 101
@@ -178,10 +159,10 @@ Partial Class BookingKamar_
         Me.ToolStripKamar_.Dock = System.Windows.Forms.DockStyle.Right
         Me.ToolStripKamar_.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ToolStripKamar_.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripBtnBooking})
-        Me.ToolStripKamar_.Location = New System.Drawing.Point(835, 0)
+        Me.ToolStripKamar_.Location = New System.Drawing.Point(832, 0)
         Me.ToolStripKamar_.Name = "ToolStripKamar_"
         Me.ToolStripKamar_.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStripKamar_.Size = New System.Drawing.Size(30, 506)
+        Me.ToolStripKamar_.Size = New System.Drawing.Size(33, 506)
         Me.ToolStripKamar_.TabIndex = 99
         Me.ToolStripKamar_.Text = "ToolStrip1"
         '
@@ -191,44 +172,8 @@ Partial Class BookingKamar_
         Me.ToolStripBtnBooking.Image = CType(resources.GetObject("ToolStripBtnBooking.Image"), System.Drawing.Image)
         Me.ToolStripBtnBooking.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripBtnBooking.Name = "ToolStripBtnBooking"
-        Me.ToolStripBtnBooking.Size = New System.Drawing.Size(25, 28)
+        Me.ToolStripBtnBooking.Size = New System.Drawing.Size(28, 28)
         Me.ToolStripBtnBooking.Text = "ToolStripButton1"
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.LblEmail)
-        Me.Panel3.Controls.Add(Me.PictureBoxBooking)
-        Me.Panel3.Controls.Add(Me.LblUser)
-        Me.Panel3.Controls.Add(Me.Label7)
-        Me.Panel3.Location = New System.Drawing.Point(3, 120)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(475, 130)
-        Me.Panel3.TabIndex = 97
-        '
-        'LblEmail
-        '
-        Me.LblEmail.AutoSize = True
-        Me.LblEmail.BackColor = System.Drawing.Color.Transparent
-        Me.LblEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LblEmail.ForeColor = System.Drawing.Color.Black
-        Me.LblEmail.Location = New System.Drawing.Point(161, 66)
-        Me.LblEmail.Name = "LblEmail"
-        Me.LblEmail.Size = New System.Drawing.Size(144, 20)
-        Me.LblEmail.TabIndex = 99
-        Me.LblEmail.Text = "User@gmail.com"
-        '
-        'LblUser
-        '
-        Me.LblUser.AutoSize = True
-        Me.LblUser.BackColor = System.Drawing.Color.Transparent
-        Me.LblUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LblUser.ForeColor = System.Drawing.Color.Black
-        Me.LblUser.Location = New System.Drawing.Point(208, 46)
-        Me.LblUser.Name = "LblUser"
-        Me.LblUser.Size = New System.Drawing.Size(47, 20)
-        Me.LblUser.TabIndex = 98
-        Me.LblUser.Text = "User"
         '
         'CbStatusKamar
         '
@@ -292,11 +237,11 @@ Partial Class BookingKamar_
         Me.DataGridViewBooking.BackgroundColor = System.Drawing.Color.Black
         Me.DataGridViewBooking.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridViewBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewBooking.Location = New System.Drawing.Point(494, 263)
+        Me.DataGridViewBooking.Location = New System.Drawing.Point(485, 246)
         Me.DataGridViewBooking.Name = "DataGridViewBooking"
         Me.DataGridViewBooking.RowHeadersWidth = 62
         Me.DataGridViewBooking.RowTemplate.Height = 25
-        Me.DataGridViewBooking.Size = New System.Drawing.Size(337, 205)
+        Me.DataGridViewBooking.Size = New System.Drawing.Size(346, 222)
         Me.DataGridViewBooking.TabIndex = 103
         '
         'LblTotalBayar
@@ -335,9 +280,9 @@ Partial Class BookingKamar_
         Me.GbPemesanan.Controls.Add(Me.Label2)
         Me.GbPemesanan.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.GbPemesanan.ForeColor = System.Drawing.Color.White
-        Me.GbPemesanan.Location = New System.Drawing.Point(3, 256)
+        Me.GbPemesanan.Location = New System.Drawing.Point(3, 239)
         Me.GbPemesanan.Name = "GbPemesanan"
-        Me.GbPemesanan.Size = New System.Drawing.Size(475, 241)
+        Me.GbPemesanan.Size = New System.Drawing.Size(475, 258)
         Me.GbPemesanan.TabIndex = 102
         Me.GbPemesanan.TabStop = False
         Me.GbPemesanan.Text = "Pemesanan"
@@ -487,7 +432,7 @@ Partial Class BookingKamar_
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.BtnLogout)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(3, 12)
+        Me.Panel1.Location = New System.Drawing.Point(3, 5)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(829, 53)
         Me.Panel1.TabIndex = 100
@@ -497,12 +442,77 @@ Partial Class BookingKamar_
         Me.BtnCheckIn.BackColor = System.Drawing.Color.Black
         Me.BtnCheckIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.BtnCheckIn.ForeColor = System.Drawing.Color.White
-        Me.BtnCheckIn.Location = New System.Drawing.Point(494, 474)
+        Me.BtnCheckIn.Location = New System.Drawing.Point(485, 474)
         Me.BtnCheckIn.Name = "BtnCheckIn"
-        Me.BtnCheckIn.Size = New System.Drawing.Size(337, 23)
+        Me.BtnCheckIn.Size = New System.Drawing.Size(346, 23)
         Me.BtnCheckIn.TabIndex = 71
         Me.BtnCheckIn.Text = "Checkin"
         Me.BtnCheckIn.UseVisualStyleBackColor = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Panel6)
+        Me.Panel3.Controls.Add(Me.LblEmail)
+        Me.Panel3.Controls.Add(Me.PictureBoxBukuTamu)
+        Me.Panel3.Controls.Add(Me.LblUser)
+        Me.Panel3.Controls.Add(Me.Label7)
+        Me.Panel3.Location = New System.Drawing.Point(3, 109)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(476, 130)
+        Me.Panel3.TabIndex = 113
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.Black
+        Me.Panel6.Location = New System.Drawing.Point(29, 96)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(249, 11)
+        Me.Panel6.TabIndex = 100
+        '
+        'LblEmail
+        '
+        Me.LblEmail.AutoSize = True
+        Me.LblEmail.BackColor = System.Drawing.Color.Transparent
+        Me.LblEmail.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LblEmail.ForeColor = System.Drawing.Color.Black
+        Me.LblEmail.Location = New System.Drawing.Point(128, 51)
+        Me.LblEmail.Name = "LblEmail"
+        Me.LblEmail.Size = New System.Drawing.Size(138, 21)
+        Me.LblEmail.TabIndex = 99
+        Me.LblEmail.Text = "User@gmail.com"
+        '
+        'PictureBoxBukuTamu
+        '
+        Me.PictureBoxBukuTamu.Location = New System.Drawing.Point(29, 17)
+        Me.PictureBoxBukuTamu.Name = "PictureBoxBukuTamu"
+        Me.PictureBoxBukuTamu.Size = New System.Drawing.Size(76, 70)
+        Me.PictureBoxBukuTamu.TabIndex = 0
+        Me.PictureBoxBukuTamu.TabStop = False
+        '
+        'LblUser
+        '
+        Me.LblUser.AutoSize = True
+        Me.LblUser.BackColor = System.Drawing.Color.Transparent
+        Me.LblUser.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LblUser.ForeColor = System.Drawing.Color.Black
+        Me.LblUser.Location = New System.Drawing.Point(175, 31)
+        Me.LblUser.Name = "LblUser"
+        Me.LblUser.Size = New System.Drawing.Size(44, 21)
+        Me.LblUser.TabIndex = 98
+        Me.LblUser.Text = "User"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(128, 31)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(49, 21)
+        Me.Label7.TabIndex = 97
+        Me.Label7.Text = "Hello,"
         '
         'BookingKamar_
         '
@@ -510,36 +520,33 @@ Partial Class BookingKamar_
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(865, 506)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.BtnCheckIn)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.ToolStripKamar_)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.DataGridViewBooking)
         Me.Controls.Add(Me.GbPemesanan)
         Me.Controls.Add(Me.Panel1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BookingKamar_"
         Me.Text = "BookingKamar_"
-        CType(Me.PictureBoxBooking, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.ToolStripKamar_.ResumeLayout(False)
         Me.ToolStripKamar_.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         CType(Me.DataGridViewBooking, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbPemesanan.ResumeLayout(False)
         Me.GbPemesanan.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents PictureBoxBooking As PictureBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BtnHapus As Button
@@ -549,9 +556,6 @@ Partial Class BookingKamar_
     Friend WithEvents BtnSaveBooking As Button
     Friend WithEvents ToolStripKamar_ As ToolStrip
     Friend WithEvents ToolStripBtnBooking As ToolStripButton
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents LblEmail As Label
-    Friend WithEvents LblUser As Label
     Friend WithEvents CbStatusKamar As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label10 As Label
@@ -578,4 +582,10 @@ Partial Class BookingKamar_
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents BtnCheckIn As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents LblEmail As Label
+    Friend WithEvents PictureBoxBukuTamu As PictureBox
+    Friend WithEvents LblUser As Label
+    Friend WithEvents Label7 As Label
 End Class

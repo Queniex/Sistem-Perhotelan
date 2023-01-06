@@ -23,8 +23,6 @@ Partial Class BukuTamu_
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BukuTamu_))
-        Me.PictureBoxBukuTamu = New System.Windows.Forms.PictureBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BtnHapus = New System.Windows.Forms.Button()
@@ -34,42 +32,25 @@ Partial Class BukuTamu_
         Me.Label14 = New System.Windows.Forms.Label()
         Me.ToolStripKamar_ = New System.Windows.Forms.ToolStrip()
         Me.ToolStripBtnCheckin = New System.Windows.Forms.ToolStripButton()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.LblEmail = New System.Windows.Forms.Label()
-        Me.LblUser = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewCheckin = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtnLogOut = New System.Windows.Forms.Button()
         Me.BtnCheckOut = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.LblEmail = New System.Windows.Forms.Label()
+        Me.PictureBoxBukuTamu = New System.Windows.Forms.PictureBox()
+        Me.LblUser = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         Me.ToolStripKamar_.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         CType(Me.DataGridViewCheckin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PictureBoxBukuTamu
-        '
-        Me.PictureBoxBukuTamu.Location = New System.Drawing.Point(43, 17)
-        Me.PictureBoxBukuTamu.Name = "PictureBoxBukuTamu"
-        Me.PictureBoxBukuTamu.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBoxBukuTamu.TabIndex = 0
-        Me.PictureBoxBukuTamu.TabStop = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(161, 46)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 21)
-        Me.Label7.TabIndex = 97
-        Me.Label7.Text = "Hello,"
         '
         'Panel4
         '
@@ -169,42 +150,6 @@ Partial Class BukuTamu_
         Me.ToolStripBtnCheckin.Size = New System.Drawing.Size(25, 28)
         Me.ToolStripBtnCheckin.Text = "ToolStripButton1"
         '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.LblEmail)
-        Me.Panel3.Controls.Add(Me.PictureBoxBukuTamu)
-        Me.Panel3.Controls.Add(Me.LblUser)
-        Me.Panel3.Controls.Add(Me.Label7)
-        Me.Panel3.Location = New System.Drawing.Point(9, 120)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(475, 130)
-        Me.Panel3.TabIndex = 97
-        '
-        'LblEmail
-        '
-        Me.LblEmail.AutoSize = True
-        Me.LblEmail.BackColor = System.Drawing.Color.Transparent
-        Me.LblEmail.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LblEmail.ForeColor = System.Drawing.Color.Black
-        Me.LblEmail.Location = New System.Drawing.Point(161, 66)
-        Me.LblEmail.Name = "LblEmail"
-        Me.LblEmail.Size = New System.Drawing.Size(138, 21)
-        Me.LblEmail.TabIndex = 99
-        Me.LblEmail.Text = "User@gmail.com"
-        '
-        'LblUser
-        '
-        Me.LblUser.AutoSize = True
-        Me.LblUser.BackColor = System.Drawing.Color.Transparent
-        Me.LblUser.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.LblUser.ForeColor = System.Drawing.Color.Black
-        Me.LblUser.Location = New System.Drawing.Point(208, 46)
-        Me.LblUser.Name = "LblUser"
-        Me.LblUser.Size = New System.Drawing.Size(44, 21)
-        Me.LblUser.TabIndex = 98
-        Me.LblUser.Text = "User"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -271,48 +216,107 @@ Partial Class BukuTamu_
         Me.Panel5.Size = New System.Drawing.Size(347, 233)
         Me.Panel5.TabIndex = 99
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Panel6)
+        Me.Panel3.Controls.Add(Me.LblEmail)
+        Me.Panel3.Controls.Add(Me.PictureBoxBukuTamu)
+        Me.Panel3.Controls.Add(Me.LblUser)
+        Me.Panel3.Controls.Add(Me.Label7)
+        Me.Panel3.Location = New System.Drawing.Point(8, 121)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(476, 130)
+        Me.Panel3.TabIndex = 112
+        '
+        'LblEmail
+        '
+        Me.LblEmail.AutoSize = True
+        Me.LblEmail.BackColor = System.Drawing.Color.Transparent
+        Me.LblEmail.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LblEmail.ForeColor = System.Drawing.Color.Black
+        Me.LblEmail.Location = New System.Drawing.Point(128, 51)
+        Me.LblEmail.Name = "LblEmail"
+        Me.LblEmail.Size = New System.Drawing.Size(138, 21)
+        Me.LblEmail.TabIndex = 99
+        Me.LblEmail.Text = "User@gmail.com"
+        '
+        'PictureBoxBukuTamu
+        '
+        Me.PictureBoxBukuTamu.Location = New System.Drawing.Point(29, 17)
+        Me.PictureBoxBukuTamu.Name = "PictureBoxBukuTamu"
+        Me.PictureBoxBukuTamu.Size = New System.Drawing.Size(76, 70)
+        Me.PictureBoxBukuTamu.TabIndex = 0
+        Me.PictureBoxBukuTamu.TabStop = False
+        '
+        'LblUser
+        '
+        Me.LblUser.AutoSize = True
+        Me.LblUser.BackColor = System.Drawing.Color.Transparent
+        Me.LblUser.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.LblUser.ForeColor = System.Drawing.Color.Black
+        Me.LblUser.Location = New System.Drawing.Point(175, 31)
+        Me.LblUser.Name = "LblUser"
+        Me.LblUser.Size = New System.Drawing.Size(44, 21)
+        Me.LblUser.TabIndex = 98
+        Me.LblUser.Text = "User"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Variable Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(128, 31)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(49, 21)
+        Me.Label7.TabIndex = 97
+        Me.Label7.Text = "Hello,"
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.Black
+        Me.Panel6.Location = New System.Drawing.Point(29, 96)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(249, 11)
+        Me.Panel6.TabIndex = 100
+        '
         'BukuTamu_
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(873, 497)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.BtnCheckOut)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.ToolStripKamar_)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.DataGridViewCheckin)
         Me.Controls.Add(Me.Panel1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BukuTamu_"
         Me.Text = "BukuTamu_"
-        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.ToolStripKamar_.ResumeLayout(False)
         Me.ToolStripKamar_.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         CType(Me.DataGridViewCheckin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents PictureBoxBukuTamu As PictureBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label14 As Label
     Friend WithEvents ToolStripKamar_ As ToolStrip
     Friend WithEvents ToolStripBtnCheckin As ToolStripButton
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents LblEmail As Label
-    Friend WithEvents LblUser As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents DataGridViewCheckin As DataGridView
     Friend WithEvents Panel1 As Panel
@@ -323,4 +327,10 @@ Partial Class BukuTamu_
     Friend WithEvents BtnLogOut As Button
     Friend WithEvents BtnCheckOut As Button
     Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents LblEmail As Label
+    Friend WithEvents PictureBoxBukuTamu As PictureBox
+    Friend WithEvents LblUser As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Panel6 As Panel
 End Class
