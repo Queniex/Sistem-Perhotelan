@@ -37,7 +37,6 @@ Public Class EditBookingKamar
             If CbBooking.Text <> kamar_lama Then
                 status = "Belum Terisi"
                 BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.getIdKamarByNoKamar(kamar_lama), status)
-                MessageBox.Show(kamar_lama)
             End If
 
             BookingKamar_.booking.GSCheckIn = DtpCheckIn.Value.ToString("yyyy/MM/dd")
