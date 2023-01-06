@@ -564,4 +564,136 @@ Public Class Booking
             MsgBox("Connection Error: " & ex.Message.ToString)
         End Try
     End Function
+
+    '================================================= Bagian checkin ============================================================='
+    Public Function GetDataCheckinDatabase() As DataTable
+        Dim result As New DataTable
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT tamu.nama AS 'Nama Lengkap',
+                        kamar.nama_kamar AS 'No. Kamar',
+                        check_in AS 'Tanggal Check In',
+                        check_out AS 'Tanggal Check Out',
+                        booking_kamar.status AS 'Status'
+                        FROM booking_kamar
+                        INNER JOIN tamu ON booking_kamar.id_tamu = tamu.nik
+                        INNER JOIN kamar ON booking_kamar.id_kamar = kamar.id_kamar WHERE booking_kamar.status = 'Check In' "
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+                result.Load(sqlRead)
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem : " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+    Public Function GetDataCheckoutDatabase() As DataTable
+        Dim result As New DataTable
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT tamu.nama AS 'Nama Lengkap',
+                        kamar.nama_kamar AS 'No. Kamar',
+                        check_in AS 'Tanggal Check In',
+                        check_out AS 'Tanggal Check Out',
+                        booking_kamar.status AS 'Status'
+                        FROM booking_kamar
+                        INNER JOIN tamu ON booking_kamar.id_tamu = tamu.nik
+                        INNER JOIN kamar ON booking_kamar.id_kamar = kamar.id_kamar WHERE booking_kamar.status = 'Check Out' "
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+                result.Load(sqlRead)
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem : " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+    Public Function UpdateDataStatusCheckout(ID_Kamar As Integer,
+                                            Status As String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+
+            sqlQuery = "UPDATE booking_kamar SET " _
+                        + "status='" & Status & "' WHERE id ='" & ID_Kamar & "' "
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+    Public Function getKamarKosong()
+        Dim result As New List(Of String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT COUNT(nama_kamar) FROM kamar WHERE status = 'Belum Terisi'"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0).ToString)
+                End While
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem : " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        End Try
+    End Function
+
+    Public Function getKamarTerisi()
+        Dim result As New List(Of String)
+
+        dbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+        Try
+            dbConn.Open()
+            sqlQuery = "SELECT COUNT(nama_kamar) FROM kamar WHERE status = 'Terisi'"
+            Try
+                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                sqlRead = sqlCommand.ExecuteReader
+
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0).ToString)
+                End While
+                Return result
+            Catch ex As Exception
+                MsgBox("Problem : " & ex.Message.ToString)
+            End Try
+            sqlRead.Close()
+        Catch ex As Exception
+            MsgBox("Connection : " & ex.Message.ToString)
+        End Try
+    End Function
+
 End Class
