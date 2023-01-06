@@ -4,6 +4,21 @@
     <Compile Update="Form\Booking\BookingKamar_.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Form\Booking\BukuTamu\BukuTamu_.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\Booking\BukuTamu\CheckOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\Booking\BukuTamu\EditBukuTamu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\Booking\BukuTamu\HapusBukuTamu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\Booking\BukuTamu\InfoBukuTamu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form\Booking\EditBookingKamar.vb">
       <SubType>Form</SubType>
     </Compile>
