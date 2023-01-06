@@ -41,7 +41,7 @@ Partial Class Kamar
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.LblEmail = New System.Windows.Forms.Label()
-        Me.PictureBoxBukuTamu = New System.Windows.Forms.PictureBox()
+        Me.PictBoxNama = New System.Windows.Forms.PictureBox()
         Me.LblUser = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ToolStripKamar_.SuspendLayout()
@@ -49,7 +49,7 @@ Partial Class Kamar
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictBoxNama, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStripKamar_
@@ -212,7 +212,7 @@ Partial Class Kamar
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.Panel6)
         Me.Panel3.Controls.Add(Me.LblEmail)
-        Me.Panel3.Controls.Add(Me.PictureBoxBukuTamu)
+        Me.Panel3.Controls.Add(Me.PictBoxNama)
         Me.Panel3.Controls.Add(Me.LblUser)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Location = New System.Drawing.Point(12, 145)
@@ -240,13 +240,13 @@ Partial Class Kamar
         Me.LblEmail.TabIndex = 99
         Me.LblEmail.Text = "User@gmail.com"
         '
-        'PictureBoxBukuTamu
+        'PictBoxNama
         '
-        Me.PictureBoxBukuTamu.Location = New System.Drawing.Point(29, 17)
-        Me.PictureBoxBukuTamu.Name = "PictureBoxBukuTamu"
-        Me.PictureBoxBukuTamu.Size = New System.Drawing.Size(76, 70)
-        Me.PictureBoxBukuTamu.TabIndex = 0
-        Me.PictureBoxBukuTamu.TabStop = False
+        Me.PictBoxNama.Location = New System.Drawing.Point(29, 17)
+        Me.PictBoxNama.Name = "PictBoxNama"
+        Me.PictBoxNama.Size = New System.Drawing.Size(76, 70)
+        Me.PictBoxNama.TabIndex = 0
+        Me.PictBoxNama.TabStop = False
         '
         'LblUser
         '
@@ -297,7 +297,7 @@ Partial Class Kamar
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictBoxNama, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -320,7 +320,7 @@ Partial Class Kamar
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents LblEmail As Label
-    Friend WithEvents PictureBoxBukuTamu As PictureBox
+    Friend WithEvents PictBoxNama As PictureBox
     Friend WithEvents LblUser As Label
     Friend WithEvents Label7 As Label
 End Class

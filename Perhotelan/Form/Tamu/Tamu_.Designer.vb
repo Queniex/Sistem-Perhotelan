@@ -40,7 +40,7 @@ Partial Class Tamu_
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.LblEmail = New System.Windows.Forms.Label()
-        Me.PictureBoxBukuTamu = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxNama = New System.Windows.Forms.PictureBox()
         Me.LblUser = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.DataGridViewTamu, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,7 +48,7 @@ Partial Class Tamu_
         Me.ToolStripKamar_.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxNama, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridViewTamu
@@ -210,7 +210,7 @@ Partial Class Tamu_
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.Panel6)
         Me.Panel3.Controls.Add(Me.LblEmail)
-        Me.Panel3.Controls.Add(Me.PictureBoxBukuTamu)
+        Me.Panel3.Controls.Add(Me.PictureBoxNama)
         Me.Panel3.Controls.Add(Me.LblUser)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Location = New System.Drawing.Point(9, 117)
@@ -238,13 +238,13 @@ Partial Class Tamu_
         Me.LblEmail.TabIndex = 99
         Me.LblEmail.Text = "User@gmail.com"
         '
-        'PictureBoxBukuTamu
+        'PictureBoxNama
         '
-        Me.PictureBoxBukuTamu.Location = New System.Drawing.Point(29, 17)
-        Me.PictureBoxBukuTamu.Name = "PictureBoxBukuTamu"
-        Me.PictureBoxBukuTamu.Size = New System.Drawing.Size(76, 70)
-        Me.PictureBoxBukuTamu.TabIndex = 0
-        Me.PictureBoxBukuTamu.TabStop = False
+        Me.PictureBoxNama.Location = New System.Drawing.Point(29, 17)
+        Me.PictureBoxNama.Name = "PictureBoxNama"
+        Me.PictureBoxNama.Size = New System.Drawing.Size(76, 70)
+        Me.PictureBoxNama.TabIndex = 0
+        Me.PictureBoxNama.TabStop = False
         '
         'LblUser
         '
@@ -295,7 +295,7 @@ Partial Class Tamu_
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxNama, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -318,7 +318,7 @@ Partial Class Tamu_
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents LblEmail As Label
-    Friend WithEvents PictureBoxBukuTamu As PictureBox
+    Friend WithEvents PictureBoxNama As PictureBox
     Friend WithEvents LblUser As Label
     Friend WithEvents Label7 As Label
 End Class

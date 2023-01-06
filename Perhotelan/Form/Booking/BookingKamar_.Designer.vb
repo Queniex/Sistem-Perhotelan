@@ -61,7 +61,7 @@ Partial Class BookingKamar_
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.LblEmail = New System.Windows.Forms.Label()
-        Me.PictureBoxBukuTamu = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxBooking = New System.Windows.Forms.PictureBox()
         Me.LblUser = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
@@ -70,7 +70,7 @@ Partial Class BookingKamar_
         Me.GbPemesanan.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxBooking, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel4
@@ -159,10 +159,10 @@ Partial Class BookingKamar_
         Me.ToolStripKamar_.Dock = System.Windows.Forms.DockStyle.Right
         Me.ToolStripKamar_.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ToolStripKamar_.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripBtnBooking})
-        Me.ToolStripKamar_.Location = New System.Drawing.Point(832, 0)
+        Me.ToolStripKamar_.Location = New System.Drawing.Point(835, 0)
         Me.ToolStripKamar_.Name = "ToolStripKamar_"
         Me.ToolStripKamar_.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStripKamar_.Size = New System.Drawing.Size(33, 506)
+        Me.ToolStripKamar_.Size = New System.Drawing.Size(30, 506)
         Me.ToolStripKamar_.TabIndex = 99
         Me.ToolStripKamar_.Text = "ToolStrip1"
         '
@@ -172,7 +172,7 @@ Partial Class BookingKamar_
         Me.ToolStripBtnBooking.Image = CType(resources.GetObject("ToolStripBtnBooking.Image"), System.Drawing.Image)
         Me.ToolStripBtnBooking.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripBtnBooking.Name = "ToolStripBtnBooking"
-        Me.ToolStripBtnBooking.Size = New System.Drawing.Size(28, 28)
+        Me.ToolStripBtnBooking.Size = New System.Drawing.Size(25, 28)
         Me.ToolStripBtnBooking.Text = "ToolStripButton1"
         '
         'CbStatusKamar
@@ -454,7 +454,7 @@ Partial Class BookingKamar_
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.Panel6)
         Me.Panel3.Controls.Add(Me.LblEmail)
-        Me.Panel3.Controls.Add(Me.PictureBoxBukuTamu)
+        Me.Panel3.Controls.Add(Me.PictureBoxBooking)
         Me.Panel3.Controls.Add(Me.LblUser)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Location = New System.Drawing.Point(3, 109)
@@ -482,13 +482,13 @@ Partial Class BookingKamar_
         Me.LblEmail.TabIndex = 99
         Me.LblEmail.Text = "User@gmail.com"
         '
-        'PictureBoxBukuTamu
+        'PictureBoxBooking
         '
-        Me.PictureBoxBukuTamu.Location = New System.Drawing.Point(29, 17)
-        Me.PictureBoxBukuTamu.Name = "PictureBoxBukuTamu"
-        Me.PictureBoxBukuTamu.Size = New System.Drawing.Size(76, 70)
-        Me.PictureBoxBukuTamu.TabIndex = 0
-        Me.PictureBoxBukuTamu.TabStop = False
+        Me.PictureBoxBooking.Location = New System.Drawing.Point(29, 17)
+        Me.PictureBoxBooking.Name = "PictureBoxBooking"
+        Me.PictureBoxBooking.Size = New System.Drawing.Size(76, 70)
+        Me.PictureBoxBooking.TabIndex = 0
+        Me.PictureBoxBooking.TabStop = False
         '
         'LblUser
         '
@@ -542,7 +542,7 @@ Partial Class BookingKamar_
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxBooking, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -585,7 +585,7 @@ Partial Class BookingKamar_
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents LblEmail As Label
-    Friend WithEvents PictureBoxBukuTamu As PictureBox
+    Friend WithEvents PictureBoxBooking As PictureBox
     Friend WithEvents LblUser As Label
     Friend WithEvents Label7 As Label
 End Class

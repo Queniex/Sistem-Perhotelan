@@ -39,11 +39,11 @@ Partial Class BukuTamu_
         Me.BtnCheckOut = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.LblEmail = New System.Windows.Forms.Label()
         Me.PictureBoxBukuTamu = New System.Windows.Forms.PictureBox()
         Me.LblUser = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         Me.ToolStripKamar_.SuspendLayout()
         CType(Me.DataGridViewCheckin, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -229,6 +229,14 @@ Partial Class BukuTamu_
         Me.Panel3.Size = New System.Drawing.Size(476, 130)
         Me.Panel3.TabIndex = 112
         '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.Black
+        Me.Panel6.Location = New System.Drawing.Point(29, 96)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(249, 11)
+        Me.Panel6.TabIndex = 100
+        '
         'LblEmail
         '
         Me.LblEmail.AutoSize = True
@@ -272,14 +280,6 @@ Partial Class BukuTamu_
         Me.Label7.Size = New System.Drawing.Size(49, 21)
         Me.Label7.TabIndex = 97
         Me.Label7.Text = "Hello,"
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.Black
-        Me.Panel6.Location = New System.Drawing.Point(29, 96)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(249, 11)
-        Me.Panel6.TabIndex = 100
         '
         'BukuTamu_
         '
