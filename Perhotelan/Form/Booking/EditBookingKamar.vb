@@ -81,4 +81,41 @@ Public Class EditBookingKamar
             BookingKamar_.harga = chk(2)
         End If
     End Sub
+
+    Private Sub DtpCheckOut_ValueChanged(sender As Object, e As EventArgs) Handles DtpCheckOut.ValueChanged
+        BookingKamar_.textnokamar = CbBooking.Text
+        Dim chk = BookingKamar_.booking.CheckTxtKamar2(BookingKamar_.textnokamar)
+        Dim count = chk.Count
+
+        If count > 0 Then
+            BookingKamar_.harga = chk(2)
+        End If
+
+        If DtpCheckOut.Value.Year > DateTime.Today.Year Then
+            BookingKamar_.booking.GSTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
+            LblTotalBayar.Text = BookingKamar_.booking.GSTotal
+        ElseIf DtpCheckOut.Value.Year = DateTime.Today.Year Then
+
+            If DtpCheckOut.Value.Month > DateTime.Today.Month Then
+                BookingKamar_.booking.GSTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
+                LblTotalBayar.Text = BookingKamar_.booking.GSTotal
+            ElseIf DtpCheckOut.Value.Month = DateTime.Today.Month Then
+
+                If DtpCheckOut.Value.Day > DateTime.Today.Day Then
+                    BookingKamar_.booking.GSTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
+                    LblTotalBayar.Text = BookingKamar_.booking.GSTotal
+                Else
+                    LblTotalBayar.Text = 0
+                End If
+
+            ElseIf DtpCheckOut.Value.Month < DateTime.Today.Month Then
+                LblTotalBayar.Text = 0
+            End If
+
+        ElseIf DtpCheckOut.Value.Year < DateTime.Today.Year Then
+            LblTotalBayar.Text = 0
+        End If
+
+        'LblTotalBayar.Text = BookingKamar_.booking.GSTotal.ToString()
+    End Sub
 End Class
