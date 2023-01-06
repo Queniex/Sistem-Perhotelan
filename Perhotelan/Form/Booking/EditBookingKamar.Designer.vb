@@ -24,8 +24,9 @@ Partial Class EditBookingKamar
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditBookingKamar))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CbBooking = New System.Windows.Forms.ComboBox()
+        Me.CbTamu = New System.Windows.Forms.ComboBox()
         Me.LblTotalBayar = New System.Windows.Forms.Label()
-        Me.TxtBoxNoBooking = New System.Windows.Forms.TextBox()
         Me.CbStatusKamar = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -35,14 +36,11 @@ Partial Class EditBookingKamar
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TxtNamaTamu = New System.Windows.Forms.TextBox()
         Me.DtpCheckOut = New System.Windows.Forms.DateTimePicker()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.BtnNamaTamu = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DtpCheckIn = New System.Windows.Forms.DateTimePicker()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.BtnNoBooking = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -56,8 +54,9 @@ Partial Class EditBookingKamar
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.CbBooking)
+        Me.GroupBox1.Controls.Add(Me.CbTamu)
         Me.GroupBox1.Controls.Add(Me.LblTotalBayar)
-        Me.GroupBox1.Controls.Add(Me.TxtBoxNoBooking)
         Me.GroupBox1.Controls.Add(Me.CbStatusKamar)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -67,23 +66,36 @@ Partial Class EditBookingKamar
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TxtNamaTamu)
         Me.GroupBox1.Controls.Add(Me.DtpCheckOut)
         Me.GroupBox1.Controls.Add(Me.Label18)
-        Me.GroupBox1.Controls.Add(Me.BtnNamaTamu)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.DtpCheckIn)
         Me.GroupBox1.Controls.Add(Me.Label19)
-        Me.GroupBox1.Controls.Add(Me.BtnNoBooking)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(15, 167)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(475, 235)
+        Me.GroupBox1.Size = New System.Drawing.Size(378, 235)
         Me.GroupBox1.TabIndex = 92
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Edit Pemesanan"
+        '
+        'CbBooking
+        '
+        Me.CbBooking.FormattingEnabled = True
+        Me.CbBooking.Location = New System.Drawing.Point(162, 32)
+        Me.CbBooking.Name = "CbBooking"
+        Me.CbBooking.Size = New System.Drawing.Size(187, 23)
+        Me.CbBooking.TabIndex = 114
+        '
+        'CbTamu
+        '
+        Me.CbTamu.FormattingEnabled = True
+        Me.CbTamu.Location = New System.Drawing.Point(162, 65)
+        Me.CbTamu.Name = "CbTamu"
+        Me.CbTamu.Size = New System.Drawing.Size(187, 23)
+        Me.CbTamu.TabIndex = 113
         '
         'LblTotalBayar
         '
@@ -96,21 +108,13 @@ Partial Class EditBookingKamar
         Me.LblTotalBayar.TabIndex = 112
         Me.LblTotalBayar.Text = "Total Bayar"
         '
-        'TxtBoxNoBooking
-        '
-        Me.TxtBoxNoBooking.BackColor = System.Drawing.SystemColors.Menu
-        Me.TxtBoxNoBooking.Location = New System.Drawing.Point(162, 28)
-        Me.TxtBoxNoBooking.Name = "TxtBoxNoBooking"
-        Me.TxtBoxNoBooking.Size = New System.Drawing.Size(187, 21)
-        Me.TxtBoxNoBooking.TabIndex = 95
-        '
         'CbStatusKamar
         '
         Me.CbStatusKamar.FormattingEnabled = True
         Me.CbStatusKamar.Items.AddRange(New Object() {"Reserved", "Check In", "Check Out"})
-        Me.CbStatusKamar.Location = New System.Drawing.Point(167, 191)
+        Me.CbStatusKamar.Location = New System.Drawing.Point(163, 190)
         Me.CbStatusKamar.Name = "CbStatusKamar"
-        Me.CbStatusKamar.Size = New System.Drawing.Size(190, 23)
+        Me.CbStatusKamar.Size = New System.Drawing.Size(187, 23)
         Me.CbStatusKamar.TabIndex = 111
         '
         'Label2
@@ -119,14 +123,14 @@ Partial Class EditBookingKamar
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label2.Location = New System.Drawing.Point(31, 29)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(74, 15)
+        Me.Label2.Size = New System.Drawing.Size(81, 15)
         Me.Label2.TabIndex = 93
-        Me.Label2.Text = "No. Booking"
+        Me.Label2.Text = "Nama Kamar"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(153, 193)
+        Me.Label6.Location = New System.Drawing.Point(150, 193)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(10, 15)
         Me.Label6.TabIndex = 110
@@ -162,7 +166,7 @@ Partial Class EditBookingKamar
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(152, 164)
+        Me.Label3.Location = New System.Drawing.Point(150, 164)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(10, 15)
         Me.Label3.TabIndex = 108
@@ -186,14 +190,6 @@ Partial Class EditBookingKamar
         Me.Label5.TabIndex = 107
         Me.Label5.Text = "Total Bayar"
         '
-        'TxtNamaTamu
-        '
-        Me.TxtNamaTamu.BackColor = System.Drawing.SystemColors.Menu
-        Me.TxtNamaTamu.Location = New System.Drawing.Point(162, 65)
-        Me.TxtNamaTamu.Name = "TxtNamaTamu"
-        Me.TxtNamaTamu.Size = New System.Drawing.Size(187, 21)
-        Me.TxtNamaTamu.TabIndex = 96
-        '
         'DtpCheckOut
         '
         Me.DtpCheckOut.CalendarMonthBackground = System.Drawing.SystemColors.Menu
@@ -210,18 +206,6 @@ Partial Class EditBookingKamar
         Me.Label18.Size = New System.Drawing.Size(10, 15)
         Me.Label18.TabIndex = 102
         Me.Label18.Text = ":"
-        '
-        'BtnNamaTamu
-        '
-        Me.BtnNamaTamu.BackColor = System.Drawing.Color.Black
-        Me.BtnNamaTamu.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.BtnNamaTamu.ForeColor = System.Drawing.Color.White
-        Me.BtnNamaTamu.Location = New System.Drawing.Point(362, 65)
-        Me.BtnNamaTamu.Name = "BtnNamaTamu"
-        Me.BtnNamaTamu.Size = New System.Drawing.Size(85, 23)
-        Me.BtnNamaTamu.TabIndex = 106
-        Me.BtnNamaTamu.Text = "Pilih"
-        Me.BtnNamaTamu.UseVisualStyleBackColor = False
         '
         'Label9
         '
@@ -249,18 +233,6 @@ Partial Class EditBookingKamar
         Me.Label19.TabIndex = 103
         Me.Label19.Text = ":"
         '
-        'BtnNoBooking
-        '
-        Me.BtnNoBooking.BackColor = System.Drawing.Color.Black
-        Me.BtnNoBooking.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.BtnNoBooking.ForeColor = System.Drawing.Color.White
-        Me.BtnNoBooking.Location = New System.Drawing.Point(362, 28)
-        Me.BtnNoBooking.Name = "BtnNoBooking"
-        Me.BtnNoBooking.Size = New System.Drawing.Size(85, 23)
-        Me.BtnNoBooking.TabIndex = 105
-        Me.BtnNoBooking.Text = "Pilih"
-        Me.BtnNoBooking.UseVisualStyleBackColor = False
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -275,7 +247,7 @@ Partial Class EditBookingKamar
         Me.Panel4.BackgroundImage = CType(resources.GetObject("Panel4.BackgroundImage"), System.Drawing.Image)
         Me.Panel4.Location = New System.Drawing.Point(15, 15)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(475, 130)
+        Me.Panel4.Size = New System.Drawing.Size(378, 130)
         Me.Panel4.TabIndex = 89
         '
         'Label1
@@ -283,7 +255,7 @@ Partial Class EditBookingKamar
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(118, 16)
+        Me.Label1.Location = New System.Drawing.Point(58, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(260, 25)
         Me.Label1.TabIndex = 0
@@ -295,14 +267,14 @@ Partial Class EditBookingKamar
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(15, 50)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(475, 60)
+        Me.Panel1.Size = New System.Drawing.Size(378, 60)
         Me.Panel1.TabIndex = 88
         '
         'BtnEditBookingKamar
         '
         Me.BtnEditBookingKamar.BackColor = System.Drawing.Color.Black
         Me.BtnEditBookingKamar.ForeColor = System.Drawing.Color.White
-        Me.BtnEditBookingKamar.Location = New System.Drawing.Point(381, 407)
+        Me.BtnEditBookingKamar.Location = New System.Drawing.Point(284, 407)
         Me.BtnEditBookingKamar.Name = "BtnEditBookingKamar"
         Me.BtnEditBookingKamar.Size = New System.Drawing.Size(109, 32)
         Me.BtnEditBookingKamar.TabIndex = 94
@@ -313,7 +285,7 @@ Partial Class EditBookingKamar
         '
         Me.BtnBatalKamar.BackColor = System.Drawing.Color.Black
         Me.BtnBatalKamar.ForeColor = System.Drawing.Color.White
-        Me.BtnBatalKamar.Location = New System.Drawing.Point(266, 407)
+        Me.BtnBatalKamar.Location = New System.Drawing.Point(169, 407)
         Me.BtnBatalKamar.Name = "BtnBatalKamar"
         Me.BtnBatalKamar.Size = New System.Drawing.Size(109, 32)
         Me.BtnBatalKamar.TabIndex = 93
@@ -325,7 +297,7 @@ Partial Class EditBookingKamar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(505, 448)
+        Me.ClientSize = New System.Drawing.Size(408, 448)
         Me.Controls.Add(Me.BtnEditBookingKamar)
         Me.Controls.Add(Me.BtnBatalKamar)
         Me.Controls.Add(Me.GroupBox1)
@@ -347,7 +319,6 @@ Partial Class EditBookingKamar
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents LblTotalBayar As Label
-    Friend WithEvents TxtBoxNoBooking As TextBox
     Friend WithEvents CbStatusKamar As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label6 As Label
@@ -357,15 +328,14 @@ Partial Class EditBookingKamar
     Friend WithEvents Label3 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TxtNamaTamu As TextBox
     Friend WithEvents DtpCheckOut As DateTimePicker
     Friend WithEvents Label18 As Label
-    Friend WithEvents BtnNamaTamu As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents DtpCheckIn As DateTimePicker
     Friend WithEvents Label19 As Label
-    Friend WithEvents BtnNoBooking As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents BtnEditBookingKamar As Button
     Friend WithEvents BtnBatalKamar As Button
+    Friend WithEvents CbBooking As ComboBox
+    Friend WithEvents CbTamu As ComboBox
 End Class
