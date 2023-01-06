@@ -118,4 +118,22 @@ Public Class EditBookingKamar
 
         'LblTotalBayar.Text = BookingKamar_.booking.GSTotal.ToString()
     End Sub
+
+    Private Sub EditBookingKamar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim conn As New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+            Dim cmd2 As New MySqlCommand("SELECT nama FROM tamu", conn)
+            Dim da2 As New MySqlDataAdapter(cmd2)
+            Dim dt As New DataTable()
+            Dim dt2 As New DataTable()
+            da2.Fill(dt2)
+            CbTamu.DataSource = dt2
+            CbTamu.ValueMember = "nama"
+            CbTamu.DisplayMember = "nama"
+        Catch ex As Exception
+            MsgBox("Error : " + ex.Message)
+        Finally
+            Class_Kamar.dbConn.Close()
+        End Try
+    End Sub
 End Class
