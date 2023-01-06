@@ -118,10 +118,10 @@ Partial Class BookingKamar_
         Me.BtnHapus.BackColor = System.Drawing.Color.DimGray
         Me.BtnHapus.BackgroundImage = CType(resources.GetObject("BtnHapus.BackgroundImage"), System.Drawing.Image)
         Me.BtnHapus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnHapus.Location = New System.Drawing.Point(791, 13)
+        Me.BtnHapus.Location = New System.Drawing.Point(777, 5)
         Me.BtnHapus.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnHapus.Name = "BtnHapus"
-        Me.BtnHapus.Size = New System.Drawing.Size(27, 23)
+        Me.BtnHapus.Size = New System.Drawing.Size(33, 33)
         Me.BtnHapus.TabIndex = 99
         Me.BtnHapus.UseVisualStyleBackColor = False
         '
@@ -141,10 +141,10 @@ Partial Class BookingKamar_
         Me.BtnEdit.BackColor = System.Drawing.Color.DimGray
         Me.BtnEdit.BackgroundImage = CType(resources.GetObject("BtnEdit.BackgroundImage"), System.Drawing.Image)
         Me.BtnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnEdit.Location = New System.Drawing.Point(729, 13)
+        Me.BtnEdit.Location = New System.Drawing.Point(703, 5)
         Me.BtnEdit.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnEdit.Name = "BtnEdit"
-        Me.BtnEdit.Size = New System.Drawing.Size(27, 23)
+        Me.BtnEdit.Size = New System.Drawing.Size(32, 33)
         Me.BtnEdit.TabIndex = 98
         Me.BtnEdit.UseVisualStyleBackColor = False
         '
@@ -153,10 +153,10 @@ Partial Class BookingKamar_
         Me.BtnInfo.BackColor = System.Drawing.Color.DimGray
         Me.BtnInfo.BackgroundImage = CType(resources.GetObject("BtnInfo.BackgroundImage"), System.Drawing.Image)
         Me.BtnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnInfo.Location = New System.Drawing.Point(760, 13)
+        Me.BtnInfo.Location = New System.Drawing.Point(739, 5)
         Me.BtnInfo.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnInfo.Name = "BtnInfo"
-        Me.BtnInfo.Size = New System.Drawing.Size(27, 23)
+        Me.BtnInfo.Size = New System.Drawing.Size(34, 33)
         Me.BtnInfo.TabIndex = 100
         Me.BtnInfo.UseVisualStyleBackColor = False
         '
@@ -165,10 +165,10 @@ Partial Class BookingKamar_
         Me.BtnSaveBooking.BackColor = System.Drawing.Color.DimGray
         Me.BtnSaveBooking.BackgroundImage = CType(resources.GetObject("BtnSaveBooking.BackgroundImage"), System.Drawing.Image)
         Me.BtnSaveBooking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnSaveBooking.Location = New System.Drawing.Point(699, 13)
+        Me.BtnSaveBooking.Location = New System.Drawing.Point(665, 5)
         Me.BtnSaveBooking.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveBooking.Name = "BtnSaveBooking"
-        Me.BtnSaveBooking.Size = New System.Drawing.Size(27, 23)
+        Me.BtnSaveBooking.Size = New System.Drawing.Size(34, 34)
         Me.BtnSaveBooking.TabIndex = 97
         Me.BtnSaveBooking.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnSaveBooking.UseVisualStyleBackColor = False
@@ -269,9 +269,9 @@ Partial Class BookingKamar_
         Me.BtnLogout.BackColor = System.Drawing.Color.Black
         Me.BtnLogout.BackgroundImage = CType(resources.GetObject("BtnLogout.BackgroundImage"), System.Drawing.Image)
         Me.BtnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnLogout.Location = New System.Drawing.Point(788, 13)
+        Me.BtnLogout.Location = New System.Drawing.Point(775, 7)
         Me.BtnLogout.Name = "BtnLogout"
-        Me.BtnLogout.Size = New System.Drawing.Size(29, 23)
+        Me.BtnLogout.Size = New System.Drawing.Size(33, 31)
         Me.BtnLogout.TabIndex = 82
         Me.BtnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnLogout.UseVisualStyleBackColor = False

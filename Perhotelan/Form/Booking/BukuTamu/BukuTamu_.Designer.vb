@@ -42,6 +42,7 @@ Partial Class BukuTamu_
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtnLogOut = New System.Windows.Forms.Button()
         Me.BtnCheckOut = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         CType(Me.PictureBoxBukuTamu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.ToolStripKamar_.SuspendLayout()
@@ -224,7 +225,7 @@ Partial Class BukuTamu_
         Me.DataGridViewCheckin.Name = "DataGridViewCheckin"
         Me.DataGridViewCheckin.RowHeadersWidth = 62
         Me.DataGridViewCheckin.RowTemplate.Height = 25
-        Me.DataGridViewCheckin.Size = New System.Drawing.Size(826, 199)
+        Me.DataGridViewCheckin.Size = New System.Drawing.Size(475, 199)
         Me.DataGridViewCheckin.TabIndex = 103
         '
         'Panel1
@@ -255,12 +256,20 @@ Partial Class BukuTamu_
         Me.BtnCheckOut.BackColor = System.Drawing.Color.Black
         Me.BtnCheckOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.BtnCheckOut.ForeColor = System.Drawing.Color.White
-        Me.BtnCheckOut.Location = New System.Drawing.Point(704, 462)
+        Me.BtnCheckOut.Location = New System.Drawing.Point(353, 462)
         Me.BtnCheckOut.Name = "BtnCheckOut"
         Me.BtnCheckOut.Size = New System.Drawing.Size(131, 28)
         Me.BtnCheckOut.TabIndex = 104
         Me.BtnCheckOut.Text = "Checkout"
         Me.BtnCheckOut.UseVisualStyleBackColor = False
+        '
+        'Panel5
+        '
+        Me.Panel5.BackgroundImage = CType(resources.GetObject("Panel5.BackgroundImage"), System.Drawing.Image)
+        Me.Panel5.Location = New System.Drawing.Point(490, 257)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(347, 233)
+        Me.Panel5.TabIndex = 99
         '
         'BukuTamu_
         '
@@ -268,6 +277,7 @@ Partial Class BukuTamu_
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(873, 497)
+        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.BtnCheckOut)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
@@ -312,4 +322,5 @@ Partial Class BukuTamu_
     Friend WithEvents BtnEdit As Button
     Friend WithEvents BtnLogOut As Button
     Friend WithEvents BtnCheckOut As Button
+    Friend WithEvents Panel5 As Panel
 End Class
