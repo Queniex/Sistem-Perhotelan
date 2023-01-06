@@ -263,7 +263,6 @@ Partial Class EditBukuTamu
         'CbCheckin
         '
         Me.CbCheckin.FormattingEnabled = True
-        Me.CbCheckin.Items.AddRange(New Object() {"Reserved", "Checkin", "Checkout"})
         Me.CbCheckin.Location = New System.Drawing.Point(163, 33)
         Me.CbCheckin.Name = "CbCheckin"
         Me.CbCheckin.Size = New System.Drawing.Size(187, 24)
@@ -272,7 +271,6 @@ Partial Class EditBukuTamu
         'CbTamu
         '
         Me.CbTamu.FormattingEnabled = True
-        Me.CbTamu.Items.AddRange(New Object() {"Reserved", "Checkin", "Checkout"})
         Me.CbTamu.Location = New System.Drawing.Point(162, 68)
         Me.CbTamu.Name = "CbTamu"
         Me.CbTamu.Size = New System.Drawing.Size(187, 24)

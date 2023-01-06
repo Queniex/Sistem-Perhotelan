@@ -27,7 +27,6 @@ Public Class EditBukuTamu
             If CbCheckin.Text <> kamar_lama Then
                 status = "Belum Terisi"
                 BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.getIdKamarByNoKamar(kamar_lama), status)
-                MessageBox.Show(kamar_lama)
             End If
 
             BookingKamar_.booking.GSCheckIn = DtpCheckIn.Value.ToString("yyyy/MM/dd")
@@ -136,5 +135,32 @@ Public Class EditBukuTamu
         Dim bk As New BukuTamu_(Login.Users.GSUserName, Login.Users.GSEmail)
         bk.Show()
         Me.Close()
+    End Sub
+
+    Private Sub EditBukuTamu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim conn As New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+            Dim cmd2 As New MySqlCommand("SELECT nama FROM tamu", conn)
+            Dim da2 As New MySqlDataAdapter(cmd2)
+            Dim dt As New DataTable()
+            Dim dt2 As New DataTable()
+            da2.Fill(dt2)
+            CbTamu.DataSource = dt2
+            CbTamu.ValueMember = "nama"
+            CbTamu.DisplayMember = "nama"
+        Catch ex As Exception
+            MsgBox("Error : " + ex.Message)
+        Finally
+            Class_Kamar.dbConn.Close()
+        End Try
+    End Sub
+
+    Private Sub EditBukuTamu_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        BookingKamar_.datas = BookingKamar_.booking.getKamar(BookingKamar_.selectedTableBookingNoKamar)
+        CbCheckin.Items.Clear()
+        For Each kamar In BookingKamar_.datas
+            CbCheckin.Items.Add(kamar)
+        Next
+        BookingKamar_.datas.Clear()
     End Sub
 End Class
