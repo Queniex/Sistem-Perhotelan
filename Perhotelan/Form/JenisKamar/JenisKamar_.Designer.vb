@@ -58,7 +58,7 @@ Partial Class JenisKamar_
         Me.ToolStripKamar_.Location = New System.Drawing.Point(835, 0)
         Me.ToolStripKamar_.Name = "ToolStripKamar_"
         Me.ToolStripKamar_.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStripKamar_.Size = New System.Drawing.Size(30, 511)
+        Me.ToolStripKamar_.Size = New System.Drawing.Size(30, 495)
         Me.ToolStripKamar_.TabIndex = 113
         Me.ToolStripKamar_.Text = "ToolStrip1"
         '
@@ -203,7 +203,7 @@ Partial Class JenisKamar_
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Variable Text", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(43, 13)
+        Me.Label1.Location = New System.Drawing.Point(43, 8)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(152, 28)
         Me.Label1.TabIndex = 0
@@ -231,7 +231,7 @@ Partial Class JenisKamar_
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(9, 8)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(822, 53)
+        Me.Panel1.Size = New System.Drawing.Size(820, 53)
         Me.Panel1.TabIndex = 114
         '
         'BtnLogout
@@ -267,7 +267,7 @@ Partial Class JenisKamar_
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(865, 511)
+        Me.ClientSize = New System.Drawing.Size(865, 495)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.ToolStripKamar_)
         Me.Controls.Add(Me.Panel3)
