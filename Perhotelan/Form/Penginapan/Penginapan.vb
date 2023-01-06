@@ -1,13 +1,14 @@
 ﻿Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class Penginapan
-
+    Dim bookings As BookingKamar_
     Public Sub New(ByVal Username As String, ByVal Email As String)
 
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
+        bookings = New BookingKamar_(Login.Users.GSUserName, Login.Users.GSEmail)
         LblTgl.Text = DateTime.Now.ToString("dd/MM/yyyy")
         Dim usn As String = Username
         LblUser.Text = usn.ToUpper()
@@ -17,6 +18,24 @@ Public Class Penginapan
             PbUser.Load(Login.Users.GSFoto)
             PbUser.SizeMode = PictureBoxSizeMode.StretchImage
         End If
+
+        ReloadDataTableDatabase()
+    End Sub
+
+    Private Sub ReloadDataTableDatabase()
+        DataGridViewCheckin.DataSource = BookingKamar_.booking.GetDataCheckinDatabase()
+        DataGridViewCheckout.DataSource = BookingKamar_.booking.GetDataCheckoutDatabase()
+        DataGridViewReserved.DataSource = BookingKamar_.booking.GetDataBookingDatabase()
+
+        Dim dataSelected As List(Of String) = BookingKamar_.booking.getKamarKosong()
+        LblKosong.Text = dataSelected(0).ToString()
+
+        Dim dataSelected2 As List(Of String) = BookingKamar_.booking.getKamarTerisi()
+        LblTerpakai.Text = dataSelected2(0).ToString()
+    End Sub
+
+    Private Sub Kamar_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        ReloadDataTableDatabase()
     End Sub
 
     Private Sub BtnLogout_Click(sender As Object, e As EventArgs) Handles BtnLogout.Click
