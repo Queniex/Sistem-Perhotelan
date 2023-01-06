@@ -42,7 +42,6 @@ Partial Class Penginapan
         Me.FormJenisKamar = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormKamar = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormTamu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FormBukuTamu = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
@@ -221,7 +220,7 @@ Partial Class Penginapan
         'ToolStripBtnPenginapan
         '
         Me.ToolStripBtnPenginapan.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripBtnPenginapan.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FormJenisKamar, Me.FormKamar, Me.FormTamu, Me.FormBukuTamu})
+        Me.ToolStripBtnPenginapan.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FormJenisKamar, Me.FormKamar, Me.FormTamu})
         Me.ToolStripBtnPenginapan.Image = CType(resources.GetObject("ToolStripBtnPenginapan.Image"), System.Drawing.Image)
         Me.ToolStripBtnPenginapan.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripBtnPenginapan.Name = "ToolStripBtnPenginapan"
@@ -248,13 +247,6 @@ Partial Class Penginapan
         Me.FormTamu.Name = "FormTamu"
         Me.FormTamu.Size = New System.Drawing.Size(191, 22)
         Me.FormTamu.Text = "[3] Form Tamu"
-        '
-        'FormBukuTamu
-        '
-        Me.FormBukuTamu.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.FormBukuTamu.Name = "FormBukuTamu"
-        Me.FormBukuTamu.Size = New System.Drawing.Size(191, 22)
-        Me.FormBukuTamu.Text = "[4] Form Buku Tamu"
         '
         'PictureBox3
         '
@@ -335,7 +327,6 @@ Partial Class Penginapan
     Friend WithEvents FormJenisKamar As ToolStripMenuItem
     Friend WithEvents FormKamar As ToolStripMenuItem
     Friend WithEvents FormTamu As ToolStripMenuItem
-    Friend WithEvents FormBukuTamu As ToolStripMenuItem
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents OpenFileDialog1 As OpenFileDialog

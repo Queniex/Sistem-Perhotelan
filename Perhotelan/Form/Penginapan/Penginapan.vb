@@ -44,4 +44,15 @@ Public Class Penginapan
         Me.Close()
     End Sub
 
+    Private Sub FormTamu_Click(sender As Object, e As EventArgs) Handles FormTamu.Click
+        Dim t As New Tamu_(Login.Users.GSUserName, Login.Users.GSEmail)
+        t.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub BtnBooking_Click(sender As Object, e As EventArgs) Handles BtnBooking.Click
+        Dim bk As New BookingKamar_(Login.Users.GSUserName, Login.Users.GSEmail)
+        bk.Show()
+        Me.Close()
+    End Sub
 End Class
