@@ -90,4 +90,51 @@ Public Class EditBukuTamu
             BookingKamar_.harga = chk(2)
         End If
     End Sub
+
+    Private Sub DtpCheckOut_ValueChanged(sender As Object, e As EventArgs) Handles DtpCheckOut.ValueChanged
+        BookingKamar_.textnokamar = CbCheckin.Text
+        Dim chk = BookingKamar_.booking.CheckTxtKamar2(BookingKamar_.textnokamar)
+        Dim count = chk.Count
+
+        If count > 0 Then
+            BookingKamar_.harga = chk(2)
+        End If
+
+        If DtpCheckOut.Value.Year > DateTime.Today.Year Then
+
+            BukuTamu_.hargaTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
+            LblTotalBayar.Text = "Rp " + BukuTamu_.hargaTotal
+        ElseIf DtpCheckOut.Value.Year = DateTime.Today.Year Then
+
+            If DtpCheckOut.Value.Month > DateTime.Today.Month Then
+                BukuTamu_.hargaTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
+                LblTotalBayar.Text = "Rp " + BukuTamu_.hargaTotal
+            ElseIf DtpCheckOut.Value.Month = DateTime.Today.Month Then
+
+                If DtpCheckOut.Value.Day > DateTime.Today.Day Then
+                    BukuTamu_.hargaTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
+                    LblTotalBayar.Text = "Rp " + BukuTamu_.hargaTotal
+                Else
+                    LblTotalBayar.Text = 0
+                End If
+
+            ElseIf DtpCheckOut.Value.Month < DateTime.Today.Month Then
+                LblTotalBayar.Text = 0
+            End If
+
+        ElseIf DtpCheckOut.Value.Year < DateTime.Today.Year Then
+            LblTotalBayar.Text = 0
+        End If
+    End Sub
+
+    Private Sub BtnBatalKamar_Click(sender As Object, e As EventArgs) Handles BtnBatalKamar.Click
+        BookingKamar_.selectedTableBookingNoKamar = ""
+        BookingKamar_.selectedTableBookingNamaTamu = ""
+        BookingKamar_.textnamatamu = ""
+        BookingKamar_.textnokamar = ""
+
+        Dim bk As New BukuTamu_(Login.Users.GSUserName, Login.Users.GSEmail)
+        bk.Show()
+        Me.Close()
+    End Sub
 End Class
