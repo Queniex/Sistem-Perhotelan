@@ -13,4 +13,48 @@ Public Class EditBookingKamar
         CbStatusKamar.Text = BookingKamar_.booking.GSStatus.ToString()
         LblTotalBayar.Text = BookingKamar_.booking.GSTotal.ToString()
     End Sub
+
+    Private Sub BtnBatalKamar_Click(sender As Object, e As EventArgs) Handles BtnBatalKamar.Click
+        BookingKamar_.selectedTableBookingNoKamar = ""
+        BookingKamar_.selectedTableBookingNamaTamu = ""
+        BookingKamar_.textnamatamu = ""
+        BookingKamar_.textnokamar = ""
+
+        Dim bk As New BookingKamar_(Login.Users.GSUserName, Login.Users.GSEmail)
+        bk.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub BtnEditBookingKamar_Click(sender As Object, e As EventArgs) Handles BtnEditBookingKamar.Click
+        Dim cek = BookingKamar_.booking.CheckTxtTamu(CbTamu.Text)
+        Dim count_ = cek.Count
+
+        If count_ > 0 Then
+            BookingKamar_.booking.GSCheckIn = DtpCheckIn.Value.ToString("yyyy/MM/dd")
+            BookingKamar_.booking.GSCheckOut = DtpCheckOut.Value.ToString("yyyy/MM/dd")
+            BookingKamar_.booking.GSIdTamu = BookingKamar_.booking.getIdTamuByNama(CbTamu.Text)
+            BookingKamar_.booking.GSIdKamar = BookingKamar_.booking.getIdKamarByNoKamar(CbBooking.Text)
+            BookingKamar_.booking.GSStatus = CbStatusKamar.Text.ToString()
+
+            BookingKamar_.booking.UpdateDataBookingById(BookingKamar_.selectedTableBookingIdBooking,
+                                   BookingKamar_.booking.GSIdTamu,
+                                   BookingKamar_.booking.GSIdKamar,
+                                   BookingKamar_.booking.GSCheckIn,
+                                   BookingKamar_.booking.GSCheckOut,
+                                   BookingKamar_.booking.GSStatus)
+
+            Dim status As String = "Terisi"
+            BookingKamar_.booking.UpdateDataStatusKamarById(BookingKamar_.booking.GSIdKamar, status)
+            CbStatusKamar.Text = "Reserved"
+            LblTotalBayar.Text = "Total Bayar"
+            DtpCheckIn.Value = DateTime.Today
+            DtpCheckOut.Value = DateTime.Today
+
+            Dim Info = New InfoBookingKamar()
+            Info.Show()
+            Me.Close()
+        Else
+            MessageBox.Show("Data Tamu Yang Anda Masukkan Salah")
+        End If
+    End Sub
 End Class
