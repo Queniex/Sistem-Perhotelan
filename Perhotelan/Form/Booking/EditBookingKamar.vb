@@ -28,7 +28,7 @@ Public Class EditBookingKamar
     End Sub
 
     Private Sub BtnEditBookingKamar_Click(sender As Object, e As EventArgs) Handles BtnEditBookingKamar.Click
-        If BookingKamar_.booking.GSTotal > 0 Then
+        If Not String.Compare(LblTotalBayar.Text, 0) = 0 Then
             kamar_lama = BookingKamar_.selectedTableBookingNoKamar.ToString()
             Dim cek = BookingKamar_.booking.CheckTxtTamu(CbTamu.Text)
             Dim count_ = cek.Count
