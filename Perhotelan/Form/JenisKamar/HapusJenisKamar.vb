@@ -14,6 +14,8 @@
         JenisKamar_.JenisKamar.DeleteDatakoleksiById(JenisKamar_.selectedTableKoleksi)
         MessageBox.Show("Data berhasil dihapus")
 
+        Dim jk As New JenisKamar_(Login.Users.GSUserName, Login.Users.GSEmail)
+        jk.Show()
         Me.Close()
     End Sub
 

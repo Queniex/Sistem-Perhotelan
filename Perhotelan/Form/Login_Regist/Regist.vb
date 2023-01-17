@@ -42,21 +42,21 @@ Public Class Regist
         End If
     End Sub
 
-    Public Function EncryptData(ByVal plaintext As String)
+    'Public Function EncryptData(ByVal plaintext As String)
 
-        Dim plaintextBytes() As Byte =
-            System.Text.Encoding.Unicode.GetBytes(plaintext)
+    '    Dim plaintextBytes() As Byte =
+    '        System.Text.Encoding.Unicode.GetBytes(plaintext)
 
-        Dim ms As New System.IO.MemoryStream
-        Dim encStream As New CryptoStream(ms,
-            TripleDes.CreateEncryptor(),
-            System.Security.Cryptography.CryptoStreamMode.Write)
+    '    Dim ms As New System.IO.MemoryStream
+    '    Dim encStream As New CryptoStream(ms,
+    '        TripleDes.CreateEncryptor(),
+    '        System.Security.Cryptography.CryptoStreamMode.Write)
 
-        encStream.Write(plaintextBytes, 0, plaintextBytes.Length)
-        encStream.FlushFinalBlock()
+    '    encStream.Write(plaintextBytes, 0, plaintextBytes.Length)
+    '    encStream.FlushFinalBlock()
 
-        Return Convert.ToBase64String(ms.ToArray)
-    End Function
+    '    Return Convert.ToBase64String(ms.ToArray)
+    'End Function
 
     Private Sub LblLogin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         Me.Close()

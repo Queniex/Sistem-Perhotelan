@@ -12,10 +12,10 @@ Public Class JenisKamar
     Public Shared sqlRead As MySqlDataReader
     Private sqlQuery As String
 
-    Private server As String = "localhost"
-    Private username As String = "root"
-    Private password As String = ""
-    Private database As String = "projek_uas"
+    'Private server As String = "localhost"
+    'Private username As String = "root"
+    'Private password As String = ""
+    'Private database As String = "projek_uas"
 
     Public Property GSJenis() As String
         Get

@@ -69,11 +69,11 @@ Partial Class Login
         Me.Label1.BackColor = System.Drawing.Color.Black
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Variable Text", 21.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(378, 85)
+        Me.Label1.Location = New System.Drawing.Point(405, 85)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(120, 37)
+        Me.Label1.Size = New System.Drawing.Size(90, 37)
         Me.Label1.TabIndex = 126
-        Me.Label1.Text = "Sign Up"
+        Me.Label1.Text = "Login"
         '
         'ChkShow
         '

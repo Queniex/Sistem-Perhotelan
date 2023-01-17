@@ -50,21 +50,21 @@ Public Class Users
         End Set
     End Property
 
-    Public Function EncryptData(ByVal plaintext As String)
+    'Public Function EncryptData(ByVal plaintext As String)
 
-        Dim plaintextBytes() As Byte =
-            System.Text.Encoding.Unicode.GetBytes(plaintext)
+    '    Dim plaintextBytes() As Byte =
+    '        System.Text.Encoding.Unicode.GetBytes(plaintext)
 
-        Dim ms As New System.IO.MemoryStream
-        Dim encStream As New CryptoStream(ms,
-            TripleDes.CreateEncryptor(),
-            System.Security.Cryptography.CryptoStreamMode.Write)
+    '    Dim ms As New System.IO.MemoryStream
+    '    Dim encStream As New CryptoStream(ms,
+    '        TripleDes.CreateEncryptor(),
+    '        System.Security.Cryptography.CryptoStreamMode.Write)
 
-        encStream.Write(plaintextBytes, 0, plaintextBytes.Length)
-        encStream.FlushFinalBlock()
+    '    encStream.Write(plaintextBytes, 0, plaintextBytes.Length)
+    '    encStream.FlushFinalBlock()
 
-        Return Convert.ToBase64String(ms.ToArray)
-    End Function
+    '    Return Convert.ToBase64String(ms.ToArray)
+    'End Function
 
     Public Function CheckUsn(ByVal username As String, ByVal email As String)
 
@@ -121,7 +121,7 @@ Public Class Users
                 sqlCommand = New MySqlCommand(sqlQuery, DbConn)
                 sqlRead = sqlCommand.ExecuteReader()
                 sqlRead.Close()
-                MsgBox("Data inserted.")
+                MsgBox("Akun Berhasil Diregistrasi.")
             Catch ex As Exception
                 MsgBox("Failed to insert data: " & ex.Message.ToString())
             End Try
@@ -131,59 +131,59 @@ Public Class Users
         End Try
     End Function
 
-    Public Function GetDataUser()
-        Dim result As New ArrayList
+    'Public Function GetDataUser()
+    '    Dim result As New ArrayList
 
-        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
-        Try
-            DbConn.Open()
-            sqlQuery = "SELECT Username, Pass, Email, Foto FROM user"
-            Try
-                sqlCommand = New MySqlCommand(sqlQuery, DbConn)
-                sqlRead = sqlCommand.ExecuteReader
+    '    DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+    '    Try
+    '        DbConn.Open()
+    '        sqlQuery = "SELECT Username, Pass, Email, Foto FROM user"
+    '        Try
+    '            sqlCommand = New MySqlCommand(sqlQuery, DbConn)
+    '            sqlRead = sqlCommand.ExecuteReader
 
-                While sqlRead.Read
-                    result.Add({sqlRead.GetString(0), sqlRead.GetString(1), sqlRead.GetString(2), sqlRead.GetString(3)})
-                End While
+    '            While sqlRead.Read
+    '                result.Add({sqlRead.GetString(0), sqlRead.GetString(1), sqlRead.GetString(2), sqlRead.GetString(3)})
+    '            End While
 
-                Return result
-            Catch ex As Exception
-                MsgBox("Problem loading data: " & ex.Message.ToString)
-            End Try
-            sqlRead.Close()
-        Catch ex As Exception
-            MsgBox("Connection Error: " & ex.Message.ToString)
-        End Try
-    End Function
+    '            Return result
+    '        Catch ex As Exception
+    '            MsgBox("Problem loading data: " & ex.Message.ToString)
+    '        End Try
+    '        sqlRead.Close()
+    '    Catch ex As Exception
+    '        MsgBox("Connection Error: " & ex.Message.ToString)
+    '    End Try
+    'End Function
 
-    Public Function GetDataUsers(
-                                 Username As String,
-                                 Password As String
-                                )
-        Dim result As New ArrayList
+    'Public Function GetDataUsers(
+    '                             Username As String,
+    '                             Password As String
+    '                            )
+    '    Dim result As New ArrayList
 
-        DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
-        Try
-            DbConn.Open()
-            sqlQuery = "SELECT Id_User, Username, Pass, Email, Foto FROM user WHERE Username = '" & Username & "' "
-            sqlQuery &= "AND Pass='" & EncryptMD5(Password) & "'"
-            Try
-                sqlCommand = New MySqlCommand(sqlQuery, DbConn)
-                sqlRead = sqlCommand.ExecuteReader
+    '    DbConn = New MySqlConnection("Data Source=localhost;user id=root;password=;database=projek_uas;Convert Zero Datetime=True;Allow Zero Datetime=True")
+    '    Try
+    '        DbConn.Open()
+    '        sqlQuery = "SELECT Id_User, Username, Pass, Email, Foto FROM user WHERE Username = '" & Username & "' "
+    '        sqlQuery &= "AND Pass='" & EncryptMD5(Password) & "'"
+    '        Try
+    '            sqlCommand = New MySqlCommand(sqlQuery, DbConn)
+    '            sqlRead = sqlCommand.ExecuteReader
 
-                While sqlRead.Read
-                    result.Add({sqlRead.GetString(0), sqlRead.GetString(1), sqlRead.GetString(2), sqlRead.GetString(3)})
-                End While
+    '            While sqlRead.Read
+    '                result.Add({sqlRead.GetString(0), sqlRead.GetString(1), sqlRead.GetString(2), sqlRead.GetString(3)})
+    '            End While
 
-                Return result
-            Catch ex As Exception
-                MsgBox("Problem loading data: " & ex.Message.ToString)
-            End Try
-            sqlRead.Close()
-        Catch ex As Exception
-            MsgBox("Connection Error: " & ex.Message.ToString)
-        End Try
-    End Function
+    '            Return result
+    '        Catch ex As Exception
+    '            MsgBox("Problem loading data: " & ex.Message.ToString)
+    '        End Try
+    '        sqlRead.Close()
+    '    Catch ex As Exception
+    '        MsgBox("Connection Error: " & ex.Message.ToString)
+    '    End Try
+    'End Function
 
     Public Function CheckAuth(username As String, ByVal plainPassword As String)
 

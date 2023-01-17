@@ -14,7 +14,8 @@ Public Class BookingKamar_
     Public Shared harga As Integer
     Public Shared textnokamar As String
     Public Shared textnamatamu As String
-    Private Status As New List(Of String) From {"Reserved", "Check In", "Check Out"}
+    Private Status As New List(Of String) From {"Reserved", "Check In"}
+
     Public Sub New(ByVal Username As String, ByVal Email As String)
 
         ' This call is required by the designer.
@@ -73,43 +74,49 @@ Public Class BookingKamar_
 
     Private Sub BtnSaveBooking_Click(sender As Object, e As EventArgs) Handles BtnSaveBooking.Click
 
-        Dim chk = booking.CheckTxtKamar(textnokamar)
-        Dim count = chk.Count
-        Dim cek = booking.CheckTxtTamu(textnamatamu)
-        Dim count_ = cek.Count
+        If booking.GSTotal > 0 Then
+            Dim chk = booking.CheckTxtKamar(textnokamar)
+            Dim count = chk.Count
+            Dim cek = booking.CheckTxtTamu(textnamatamu)
+            Dim count_ = cek.Count
 
-        If count > 0 Then
-            If count_ > 0 Then
-                booking.GSCheckIn = DtpCheckIn.Value.ToString("yyyy/MM/dd")
-                booking.GSCheckOut = DtpCheckOut.Value.ToString("yyyy/MM/dd")
-                booking.GSIdTamu = booking.getIdTamuByNama(textnamatamu)
-                booking.GSIdKamar = booking.getIdKamarByNoKamar(textnokamar)
-                booking.GSStatus = CbStatusKamar.Text.ToString()
+            If count > 0 Then
+                If count_ > 0 Then
+                    booking.GSCheckIn = DtpCheckIn.Value.ToString("yyyy/MM/dd")
+                    booking.GSCheckOut = DtpCheckOut.Value.ToString("yyyy/MM/dd")
+                    booking.GSIdTamu = booking.getIdTamuByNama(textnamatamu)
+                    booking.GSIdKamar = booking.getIdKamarByNoKamar(textnokamar)
+                    booking.GSStatus = CbStatusKamar.Text.ToString()
 
-                booking.AddBooking(booking.GSIdTamu,
-                                   booking.GSIdKamar,
-                                   booking.GSCheckIn,
-                                   booking.GSCheckOut,
-                                   booking.GSStatus)
+                    booking.AddBooking(booking.GSIdTamu,
+                                       booking.GSIdKamar,
+                                       booking.GSCheckIn,
+                                       booking.GSCheckOut,
+                                       booking.GSStatus)
 
-                Dim status As String = "Terisi"
-                booking.UpdateDataStatusKamarById(booking.GSIdKamar, status)
-                textnamatamu = ""
-                textnokamar = ""
-                TxtBoxNoKamar.Text = ""
-                TxtNamaTamu.Text = ""
-                CbStatusKamar.Text = "Reserved"
-                LblTotalBayar.Text = "Total Bayar"
-                DtpCheckIn.Value = DateTime.Today
-                DtpCheckOut.Value = DateTime.Today
+                    Dim status As String = "Terisi"
+                    booking.UpdateDataStatusKamarById(booking.GSIdKamar, status)
+                    textnamatamu = ""
+                    textnokamar = ""
+                    TxtBoxNoKamar.Text = ""
+                    TxtNamaTamu.Text = ""
+                    CbStatusKamar.Text = "Reserved"
+                    LblTotalBayar.Text = "Total Bayar"
+                    harga = 0
+                    DtpCheckIn.Value = DateTime.Today
+                    DtpCheckOut.Value = DateTime.Today
 
-                ReloadDataTableDatabase()
+                    ReloadDataTableDatabase()
+                Else
+                    MessageBox.Show("Data Tamu Yang Anda Masukkan Salah")
+                End If
             Else
-                MessageBox.Show("Data Tamu Yang Anda Masukkan Salah")
+                MessageBox.Show("Data Kamar Yang Anda Masukkan Salah")
             End If
         Else
-            MessageBox.Show("Data Kamar Yang Anda Masukkan Salah")
+            MessageBox.Show("Tanggal Tidak Valid")
         End If
+
     End Sub
 
     Public Shared Function getDay(CheckIn As Date, Checkout As Date, JenisKamar As Integer)
