@@ -58,7 +58,7 @@ __Terdapat Table:__ <br>
 ## DIAGRAM UML : 
 
 __💠USE CASE DIAGRAM :__ <br>
-<p align="left"> <img src="https://i.postimg.cc/MZ9k7jsG/Diagram-Projek-Vb-Diagram-Use-Case-drawio.png"> </p> <br>
+<p align="left"> <img src="https://i.postimg.cc/nVgSD7Lb/use-case.png"> </p> <br>
 
 __💠ACTIVITY DIAGRAM [USER] :__ <br>
 <p align="left"> <img src="https://i.postimg.cc/LXYph4pT/Use-Case-Login.png"> </p> <br>
@@ -76,7 +76,7 @@ __💠ACTIVITY DIAGRAM [BOOKING] :__ <br>
 <p align="left"> <img src="https://i.postimg.cc/ZR7Wz5Lx/Use-Case-Booking.png"> </p> <br>
 
 __💠CLASS DIAGRAM [USER] :__ <br>
-<p align="left"> <img src="https://i.postimg.cc/pTRzBd6n/cd-users.jpg"> </p> <br>
+<p align="left"> <img src="https://i.postimg.cc/JzmqNQVg/class-diagram-user.png"> </p> <br>
 
 __💠CLASS DIAGRAM [JENIS KAMAR] :__ <br>
 <p align="left"> <img src="https://i.postimg.cc/0QkKwBzY/cd-jenis-Kamar.jpg"> </p> <br>
