@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Jan 2023 pada 18.43
+-- Waktu pembuatan: 17 Jan 2023 pada 17.42
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -29,33 +29,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `booking_kamar` (
   `id` int(15) NOT NULL,
-  `id_tamu` int(15) NOT NULL,
-  `id_kamar` int(15) NOT NULL,
+  `id_tamu` int(100) NOT NULL,
+  `id_kamar` int(100) NOT NULL,
   `check_in` date NOT NULL,
   `check_out` date NOT NULL,
   `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `booking_kamar`
---
-
-INSERT INTO `booking_kamar` (`id`, `id_tamu`, `id_kamar`, `check_in`, `check_out`, `status`) VALUES
-(5, 2107411030, 10, '2023-01-01', '2023-01-03', 'Check Out'),
-(7, 2107411030, 9, '2023-01-01', '2023-01-04', 'Check Out'),
-(14, 2107411031, 12, '2023-01-02', '2023-01-07', 'Check Out'),
-(15, 2107411030, 11, '2023-01-02', '2023-01-05', 'Check Out'),
-(29, 2107411030, 13, '2023-01-02', '2023-01-04', 'Checkout'),
-(31, 2107411030, 14, '2023-01-03', '2023-01-05', 'Checkout'),
-(33, 2107411031, 10, '2023-01-03', '2023-01-03', 'Check Out'),
-(34, 2107411030, 11, '2023-01-03', '2023-01-03', 'Check Out'),
-(37, 2107411030, 9, '2023-01-03', '2023-01-04', 'Checkout'),
-(39, 2107411030, 14, '2023-01-03', '2023-01-05', 'Checkout'),
-(40, 2107411030, 13, '2023-01-03', '2023-01-05', 'Checkout'),
-(41, 2107411030, 10, '2023-01-03', '2023-01-05', 'Checkout'),
-(43, 2107411030, 9, '2023-01-03', '2023-01-04', 'Check Out'),
-(44, 2107411030, 13, '2023-01-03', '2023-01-05', 'Check Out'),
-(45, 2107411030, 10, '2023-01-04', '2023-01-07', 'Check Out');
 
 -- --------------------------------------------------------
 
@@ -74,8 +53,7 @@ CREATE TABLE `jenis_kamar` (
 --
 
 INSERT INTO `jenis_kamar` (`id_jenis_kamar`, `jenis_kamar`, `harga`) VALUES
-(2, 'Vanillaa', 100000),
-(3, 'Chocolate', 300000);
+(6, 'vanilla', 100000);
 
 -- --------------------------------------------------------
 
@@ -85,7 +63,7 @@ INSERT INTO `jenis_kamar` (`id_jenis_kamar`, `jenis_kamar`, `harga`) VALUES
 
 CREATE TABLE `kamar` (
   `id_kamar` int(15) NOT NULL,
-  `id_jenis_kamar` int(15) NOT NULL,
+  `id_jenis_kamar` int(100) NOT NULL,
   `nama_kamar` varchar(30) NOT NULL,
   `status` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -95,12 +73,7 @@ CREATE TABLE `kamar` (
 --
 
 INSERT INTO `kamar` (`id_kamar`, `id_jenis_kamar`, `nama_kamar`, `status`) VALUES
-(9, 3, '103', 'Belum Terisi'),
-(10, 3, '201', 'Belum Terisi'),
-(11, 3, '301', 'Belum Terisi'),
-(12, 3, '302', 'Belum Terisi'),
-(13, 2, '501', 'Belum Terisi'),
-(14, 2, '502', 'Belum Terisi');
+(18, 6, '101', 'Belum Terisi');
 
 -- --------------------------------------------------------
 
@@ -143,7 +116,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`Id_User`, `Username`, `Pass`, `Email`, `Foto`) VALUES
 (13, 'Fildzah', '202cb962ac59075b964b07152d234b70', 'Fildzah@gmail.com', 'C:/Users/hp/Downloads/Fildzah Marissa.png'),
-(14, 'Quenie', '202cb962ac59075b964b07152d234b70', 'Quenie@gmail.com', 'C:/Users/hp/Downloads/Learning-pana.png');
+(14, 'Quenie', '202cb962ac59075b964b07152d234b70', 'Quenie@gmail.com', 'C:/Users/hp/Downloads/Learning-pana.png'),
+(15, 'test20', '202cb962ac59075b964b07152d234b70', 'test@gmail.com', 'C:/Users/hp/Downloads/Learning-bro.png'),
+(16, 'test21', '202cb962ac59075b964b07152d234b70', 'test21@gmail.com', 'C:/Users/hp/Downloads/Use Case Login.png'),
+(17, 'test33', '202cb962ac59075b964b07152d234b70', 'test33@gmail.com', 'C:/Users/hp/Downloads/Learning-pana.png');
 
 --
 -- Indexes for dumped tables
@@ -154,8 +130,8 @@ INSERT INTO `user` (`Id_User`, `Username`, `Pass`, `Email`, `Foto`) VALUES
 --
 ALTER TABLE `booking_kamar`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_tamu` (`id_tamu`),
-  ADD KEY `id_kamar` (`id_kamar`);
+  ADD KEY `fk_kamar` (`id_kamar`),
+  ADD KEY `fk_tamu` (`id_tamu`);
 
 --
 -- Indeks untuk tabel `jenis_kamar`
@@ -168,7 +144,7 @@ ALTER TABLE `jenis_kamar`
 --
 ALTER TABLE `kamar`
   ADD PRIMARY KEY (`id_kamar`),
-  ADD KEY `id_jenis_kamar` (`id_jenis_kamar`);
+  ADD KEY `fk_jenis_kamar` (`id_jenis_kamar`);
 
 --
 -- Indeks untuk tabel `tamu`
@@ -190,25 +166,42 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `booking_kamar`
 --
 ALTER TABLE `booking_kamar`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_kamar`
 --
 ALTER TABLE `jenis_kamar`
-  MODIFY `id_jenis_kamar` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_jenis_kamar` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `kamar`
 --
 ALTER TABLE `kamar`
-  MODIFY `id_kamar` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_kamar` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `Id_User` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Id_User` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `booking_kamar`
+--
+ALTER TABLE `booking_kamar`
+  ADD CONSTRAINT `fk_kamar` FOREIGN KEY (`id_kamar`) REFERENCES `kamar` (`id_kamar`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_tamu` FOREIGN KEY (`id_tamu`) REFERENCES `tamu` (`nik`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `kamar`
+--
+ALTER TABLE `kamar`
+  ADD CONSTRAINT `fk_jenis_kamar` FOREIGN KEY (`id_jenis_kamar`) REFERENCES `jenis_kamar` (`id_jenis_kamar`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
