@@ -126,20 +126,21 @@ Public Class BookingKamar_
     End Function
 
     Private Sub DtpCheckOut_ValueChanged(sender As Object, e As EventArgs) Handles DtpCheckOut.ValueChanged
-        If DtpCheckOut.Value.Year > DateTime.Today.Year Then
+        If DtpCheckOut.Value.Year > DateTime.Today.Year And DtpCheckIn.Value.Year > DateTime.Today.Year Then
 
             booking.GSTotal = getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, harga).ToString()
 
-        ElseIf DtpCheckOut.Value.Year = DateTime.Today.Year Then
+        ElseIf DtpCheckOut.Value.Year = DateTime.Today.Year And DtpCheckIn.Value.Year = DateTime.Today.Year Then
 
-            If DtpCheckOut.Value.Month > DateTime.Today.Month Then
+            If DtpCheckOut.Value.Month > DateTime.Today.Month And DtpCheckIn.Value.Month > DateTime.Today.Month Then
                 booking.GSTotal = getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, harga).ToString()
 
-            ElseIf DtpCheckOut.Value.Month = DateTime.Today.Month Then
+            ElseIf DtpCheckOut.Value.Month = DateTime.Today.Month And DtpCheckIn.Value.Month = DateTime.Today.Month Then
 
-                If DtpCheckOut.Value.Day > DateTime.Today.Day Then
+                If DtpCheckOut.Value.Day > DateTime.Today.Day And DtpCheckIn.Value.Day > DateTime.Today.Day Then
                     booking.GSTotal = getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, harga).ToString()
-
+                ElseIf DtpCheckOut.Value.Day > DateTime.Today.Day And DtpCheckIn.Value.Day = DateTime.Today.Day Then
+                    booking.GSTotal = getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, harga).ToString()
                 Else
                     booking.GSTotal = 0
                 End If

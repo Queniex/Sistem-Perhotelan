@@ -113,17 +113,20 @@ Public Class EditBookingKamar
             BookingKamar_.harga = chk(2)
         End If
 
-        If DtpCheckOut.Value.Year > DateTime.Today.Year Then
+        If DtpCheckOut.Value.Year > DateTime.Today.Year And DtpCheckIn.Value.Year > DateTime.Today.Year Then
             BookingKamar_.booking.GSTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
             LblTotalBayar.Text = "Rp " + BookingKamar_.booking.GSTotal
-        ElseIf DtpCheckOut.Value.Year = DateTime.Today.Year Then
+        ElseIf DtpCheckOut.Value.Year = DateTime.Today.Year And DtpCheckIn.Value.Year = DateTime.Today.Year Then
 
-            If DtpCheckOut.Value.Month > DateTime.Today.Month Then
+            If DtpCheckOut.Value.Month > DateTime.Today.Month And DtpCheckIn.Value.Month > DateTime.Today.Month Then
                 BookingKamar_.booking.GSTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
                 LblTotalBayar.Text = "Rp " + BookingKamar_.booking.GSTotal
-            ElseIf DtpCheckOut.Value.Month = DateTime.Today.Month Then
+            ElseIf DtpCheckOut.Value.Month = DateTime.Today.Month And DtpCheckIn.Value.Month = DateTime.Today.Month Then
 
-                If DtpCheckOut.Value.Day > DateTime.Today.Day Then
+                If DtpCheckOut.Value.Day > DateTime.Today.Day And DtpCheckIn.Value.Day > DateTime.Today.Day Then
+                    BookingKamar_.booking.GSTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
+                    LblTotalBayar.Text = "Rp " + BookingKamar_.booking.GSTotal
+                ElseIf DtpCheckOut.Value.Day > DateTime.Today.Day And DtpCheckIn.Value.Day = DateTime.Today.Day Then
                     BookingKamar_.booking.GSTotal = BookingKamar_.getDay(DtpCheckIn.Value.Date, DtpCheckOut.Value.Date, BookingKamar_.harga).ToString()
                     LblTotalBayar.Text = "Rp " + BookingKamar_.booking.GSTotal
                 Else
